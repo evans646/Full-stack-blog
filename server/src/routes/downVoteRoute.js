@@ -11,12 +11,9 @@ export const downVoteRoute = {
         const articleName = req.params.name;
 
         const {userId} = req.params;
-        
-        const user = await db.collection('users').findOne({ _id:ObjectID(userId)}); 
-               
+
             try {
                 const articleInfo = await db.collection('articles').findOne({name: articleName });
-                if(userId===articleInfo.Upvoted_id) return;
                     await db.collection('articles').updateOne({ name: articleName }, {
                         '$set': {
                             upvotes: articleInfo.upvotes - 1,
@@ -26,6 +23,10 @@ export const downVoteRoute = {
             } catch (e) {
                 res.sendStatus(500);
             }
+   
+            await db.collection('articles').updateOne(
+                { name: articleName},
+                { $pull: { upvotedIds:userId} })
         
        const updatedArticleInfo = await db.collection('articles').findOne({ name: articleName })
        res.status(200).json(updatedArticleInfo);

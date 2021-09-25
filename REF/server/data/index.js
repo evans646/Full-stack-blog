@@ -17,11 +17,17 @@ const articles = [
     {
         name: 'learn-react',
         upvotes: 0,
-        upvotedIs:[],
+        upvotedIs:[
+            {
+                user:'6145c642a451370b41162fdf'
+            }
+        ],
     }, {
         name: 'learn-node',
         upvotes: 0,
-        upvotedIds:[],
+        upvotedIds:[
+          
+        ],
     },
     {
         name: 'my-thoughts-on-resumes',

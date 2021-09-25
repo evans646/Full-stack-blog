@@ -404,13 +404,6 @@ input[type="text"], input[type="email"], input[type="url"], textarea {
 	width: 250px;
 }
 
-input[type="submit"] {
-	display:block;
-	margin: 1em 0;
-	background-color: black;
-    color: white;
-}
-
 .inline {
 	display: inline;
 }
@@ -435,6 +428,13 @@ input[type="search"] {
 	width: 250px;
 	background-color:rgb(237, 228, 214);
 	outline: none;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 1em 0;
+    background-color: #fab70f;
+    color: black;
 }
 
 #pageFooter label {

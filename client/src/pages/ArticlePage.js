@@ -24,9 +24,12 @@ const ArticlePage = ({ match }) => {
 const name = match.params.name;
 
     const user = useUser();
+    const {id} = user ||''
+
+
     const article = articleContent.find(article => article.name === name);
 
-    const [articleInfo, setArticleInfo] = useState({ upvotes:0, comments: []});
+    const [articleInfo, setArticleInfo] = useState({ upvotes:0, comments: [],upvotedIds:0});
     const [loading,setLoading] = useState(false)
   
     useEffect(() => {
@@ -38,7 +41,7 @@ const name = match.params.name;
              setLoading(true)
              setTimeout(() => {
             setLoading(false)
-           },500*10)
+           },500*0)
          };
           fetchData();
         }catch(error){
@@ -51,14 +54,20 @@ const name = match.params.name;
 
     if (!article) return <NotFoundPage/>;
 
+    const voted = Object.values(articleInfo.upvotedIds).filter(v => v ===id).length > 0 ? true : false;
+ 
+   
+    
 
     const otherArticles = articleContent.filter(article => article.name !== name);//instead of other articles, it will be related articles. 
+    
+
 
     let content = (
         <>
             <h1 style={{ textAlign: 'center', fontSize: '30px' ,fontWeight: 'bold'}}>{article.title}</h1>
 
-            <UpvotesSection articleName={name} upvotes={articleInfo.upvotes} setArticleInfo={setArticleInfo} hasUpvoted={articleInfo.hasUpvoted} upvotedId={articleInfo.Upvoted_id}/>
+            <UpvotesSection articleName={name} upvotes={articleInfo.upvotes} setArticleInfo={setArticleInfo}  hasUpvoted={voted}/>
             {article.content.map((paragraph, key) => (
                 <p style={{ textAlign: 'center',margin:'20px'}} key={key}>{paragraph}</p>
             ))}
@@ -73,14 +82,5 @@ const name = match.params.name;
     return loading ? loadingMessage : content;
 };
 
-// const mapStateToProps = state => ({
-//     loading: getArticlesLoading(state),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//     loadAllArticles: () => dispatch(getAllArticles()),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ArticlePage);
 
 export default ArticlePage;

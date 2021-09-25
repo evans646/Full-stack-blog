@@ -6,7 +6,11 @@ const articleSchema = new Schema({
     name: String,
     upvotes: Number,
     comments:[],
-    upvotedIds:[],
+    upvotedIds:[
+       {
+           user:String
+       }
+    ],
 });
 
 

@@ -7,12 +7,16 @@ import { useUser } from '../auth/useUser';
 
 const UpvotesSection = ({ articleName, upvotes, setArticleInfo,hasUpvoted,upvotedId}) => {
   
+  
+  
   const history = useHistory();
   const user = useUser();
 
+
   
   const {id,Upvoted} = user || '';
-  console.log(upvotedId);
+
+console.log(hasUpvoted)
 
 
 const upvoteArticle = async () => {
@@ -30,14 +34,17 @@ const downvoteArticle = async () =>{
 
   return (
   <div id='upvotes-section'>
-   {!user ? (<button onClick={() => history.push('/login')}>Add Upvote</button>):(<button onClick={() =>{upvotedId === id && upvotes > 0? downvoteArticle():upvoteArticle()}}>Upvote</button>)}
-     {/* upvotedId ===id ? (<button onClick={() => downvoteArticle()} style={{backgroundColor:'red'}}>Downvote</button>) :( <button onClick={() =>  upvoteArticle()} style={{color:'teal'}}>Upvote</button>)} */}
+   {!hasUpvoted ? ( <button onClick={() =>  upvoteArticle()} style={{color:'teal'}}>Upvote</button>): (<button onClick={() => downvoteArticle()} style={{backgroundColor:'red'}}>Downvote</button>)}
+
     {upvotes > 1 ? <p>{upvotes} Upvotes</p> : <p>{upvotes} Upvote</p>}
   </div>
   );
 };
 
 export default UpvotesSection;
+
+// (<button onClick={() => history.push('/login')}>Add Upvote</button>):(<button onClick={() =>upvoteArticle()}>Upvote</button>)
+
 
 // {!user ? (<button onClick={() => history.push('/login')}>Add Upvote</button>) : (<button onClick={() => upvoteArticle()}>Upvote</button>) && 
 // upvotedId ===id ? (<button onClick={() => downvoteArticle()} style={{backgroundColor:'red'}}>Downvote</button>) :( <button onClick={() =>  upvoteArticle()} style={{color:'teal'}}>Upvote</button>)}
