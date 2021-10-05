@@ -1,5 +1,5 @@
 import { getDbConnection } from '../db';
-import { ObjectID } from 'mongodb';
+//import { ObjectID } from 'mongodb';
 
 
 
@@ -10,22 +10,21 @@ export const upvoteRoute = {
         const db = getDbConnection('my-blog');
         const articleName = req.params.name;
         const {userId } = req.params;
-        //const user = await db.collection('users').findOne(ObjectID(userId));
-       
+
         const articleInfo = await db.collection('articles').findOne({ name: articleName });
-               //  console.log(articleInfo.upvotedIds)
-        await db.collection('articles').updateOne({ name: articleName }, {
+   
+        await db.collection('articles').updateOne({ name: articleName },{
                    '$set': {
                       upvotes: articleInfo.upvotes + 1,
                       hasUpvoted:true,
-                     }});
+                  }}); 
                      
-        await db.collection('articles').updateOne(
-                     { _id: articleInfo._id },
-                     { $push: { upvotedIds:userId} })
+        await db.collection('articles').updateOne({ _id: articleInfo._id },
+         { $push: {
+               upvotedIds:userId
+         }});
      
        const updatedArticleInfo = await db.collection('articles').findOne({ name: articleName }); 
-       console.log(updatedArticleInfo.upvotedIds)
        res.status(200).json(updatedArticleInfo);
     }
 };

@@ -1,8 +1,11 @@
 import React, { useState,useEffect } from 'react';
 import Container from '@material-ui/core/Container';
+import GoogleButton from 'react-google-button';
+import GithubButton from 'react-github-login-button';
 import {useHistory,Link } from 'react-router-dom';
-
 import axios from 'axios';
+
+
 import { useToken } from '../../auth/useToken';
 import {useQueryParams} from '../util/useQueryParams';
 import './login.css';
@@ -19,18 +22,10 @@ export const LogInPage = () => {
     const [usernameValue, setUsernameValue] = useState('');
     const [googleOauthUrl, setGoogleOauthUrl] = useState('');
     const [showErrorMessage, setShowErrorMessage] = useState(false);
-    let history = useHistory();
-    // const lastLocation = useLocation();
+    let   history = useHistory();
+    // const Location = useLocation();
     //  console.log(lastLocation)
     const { token: oauthToken } = useQueryParams();
-
-    
-    useEffect(() => {
-        if (oauthToken) {
-            setToken(oauthToken);
-            history.push('/');
-        }
-    }, [oauthToken, setToken, history]);
 
     useEffect(() => {
         if (showErrorMessage) {
@@ -82,7 +77,7 @@ export const LogInPage = () => {
     //So if status code is 500, incorrect username or pass
     //if it is 401 //invalid credentials user does not exist
     return (
-        <Container maxWidth="sm">
+        <Container maxWidth="md" className='bottom-container'>
               {showErrorMessage && <div className="fail">{errorMessage}</div>}
             <form className="loginPage" id="registration">
                 <h1>Login</h1>
@@ -104,16 +99,15 @@ export const LogInPage = () => {
                 </label>
                 <button
                     disabled={!usernameValue || !passwordValue}
-                    onClick={onLogInClicked}>Log In</button>
-                <button
-                    disabled={!googleOauthUrl}
-                    onClick={() => { window.location.href = googleOauthUrl }}
-                >Log in with Google</button>
-                <button
-                    disabled={!googleOauthUrl}
-                    onClick={() => { window.location.href = googleOauthUrl }}
-                >Log in with Github</button>
-                <hr />
+                    onClick={onLogInClicked}>Log In
+                </button>
+                <div style={{marginLeft:'27%',padding:'10px'}}>
+                <GoogleButton disabled={!googleOauthUrl} type="dark" onClick={() => { window.location.href = googleOauthUrl }}/>
+                <div style={{paddingTop:'10px'}}>
+                <GithubButton   onClick={() => {window.location.href='https://github.com/login/oauth/authorize?scope=user:email&client_id=7e882fa62dfb6bdf83e8'}}/>
+                </div>
+                </div>
+                <hr/>
                 <div className='link'>
                     <Link to='/signup'><em>Don't have an account? Sign Up</em></Link>
                     <Link to='/forgot-password'><em>Forgot your password?</em></Link>

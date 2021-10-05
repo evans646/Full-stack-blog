@@ -10,14 +10,14 @@ import { forgotPasswordRoute } from './forgotPasswordRoute';
 import { resetPasswordRoute } from './resetPasswordRoute';
 import { getGoogleOauthUrlRoute } from './getGoogleUrlAuthRoute';
 import { googleOauthCallbackRoute } from './googleAuthCallbackRoute';
-import {getUserDataRoute } from './loadUserDataRoute';
 import {downVoteRoute} from './downVoteRoute';
+import {githubOauthCallbackRoute} from './githubAuthCallbackRoute';
 
 
 export const routes = [
+    githubOauthCallbackRoute,
     upvoteRoute,
     downVoteRoute,
-    getUserDataRoute ,
     getGoogleOauthUrlRoute,
     googleOauthCallbackRoute,
     articleRoute,

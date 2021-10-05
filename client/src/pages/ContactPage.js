@@ -1,8 +1,5 @@
 import React from 'react';
-
-
-
-
+import Container from '@material-ui/core/Container';
 
 
 
@@ -11,8 +8,8 @@ export const ContactPage = ()=> {
 
 
     return(
-        <div>
+        <Container maxWidth='lg'>
             <h1>Contact me</h1>
-        </div>
+        </Container>
     )
 };

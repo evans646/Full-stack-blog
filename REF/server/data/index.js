@@ -18,9 +18,7 @@ const articles = [
         name: 'learn-react',
         upvotes: 0,
         upvotedIs:[
-            {
-                user:'6145c642a451370b41162fdf'
-            }
+         
         ],
     }, {
         name: 'learn-node',

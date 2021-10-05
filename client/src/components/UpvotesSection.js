@@ -1,69 +1,45 @@
-import React,{useEffect,useState} from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import Container from '@material-ui/core/Container';
 import { useUser } from '../auth/useUser';
-//import { useToken } from '../auth/useToken';
+import audio from '../audios/upvotesound2.mp3'
 
 
-const UpvotesSection = ({ articleName, upvotes, setArticleInfo,hasUpvoted,upvotedId}) => {
+const UpvotesSection = ({ articleName, upvotes, setArticleInfo,hasUpvoted}) => {
   
-  
-  
-  const history = useHistory();
-  const user = useUser();
+  const playAudio = () => {
+    new Audio(audio).play();
+  }
 
+    const history = useHistory();
+    const user = useUser();
 
-  
-  const {id,Upvoted} = user || '';
+    const {id} = user || '';
 
-console.log(hasUpvoted)
-
-
-const upvoteArticle = async () => {
-    const response = await axios.post(`/api/articles/${articleName}/${id}/upvote`)
+    const upvoteArticle = async () => {
+    const response = await axios.post(`/api/articles/${articleName}/${id}/upvote`);
     const body = response.data; 
     setArticleInfo(body);
 };
 
-  
-const downvoteArticle = async () =>{
-    const response = await axios.post(`/api/articles/${articleName}/${id}/downvote`)
+    const downvoteArticle = async () =>{
+    const response = await axios.post(`/api/articles/${articleName}/${id}/downvote`);
     const body = response.data;
     setArticleInfo(body);
-  };
+  }; 
 
   return (
-  <div id='upvotes-section'>
-   {!hasUpvoted ? ( <button onClick={() =>  upvoteArticle()} style={{color:'teal'}}>Upvote</button>): (<button onClick={() => downvoteArticle()} style={{backgroundColor:'red'}}>Downvote</button>)}
-
-    {upvotes > 1 ? <p>{upvotes} Upvotes</p> : <p>{upvotes} Upvote</p>}
-  </div>
+  <Container id='upvotes-section'>
+   {!user ? (<button onClick={() => history.push('/login')}> Upvote</button>) : (<button onClick={() => upvoteArticle() && playAudio()}>Upvote</button>) && !hasUpvoted ? ( <button onClick={() =>  upvoteArticle()&&playAudio()}>Upvote</button>):(<button onClick={() => downvoteArticle()}>Downvote</button>)}
+  
+   {upvotes > 1 ? <p>{upvotes} Upvotes </p> : <p> {upvotes}</p>}
+  </Container>
   );
 };
 
+
+
 export default UpvotesSection;
 
-// (<button onClick={() => history.push('/login')}>Add Upvote</button>):(<button onClick={() =>upvoteArticle()}>Upvote</button>)
 
-
-// {!user ? (<button onClick={() => history.push('/login')}>Add Upvote</button>) : (<button onClick={() => upvoteArticle()}>Upvote</button>) && 
-// upvotedId ===id ? (<button onClick={() => downvoteArticle()} style={{backgroundColor:'red'}}>Downvote</button>) :( <button onClick={() =>  upvoteArticle()} style={{color:'teal'}}>Upvote</button>)}
-  
-
-
-
- //const [token,setToken] = useToken();
-//  if(token){
-//   useEffect(async () =>{
-//     const loadUserData = async () => {
-//       try {
-//           const response = await axios.get(`/api/${id}/getUser`);
-//           const { token: newToken } = await response.data;
-//             setToken(newToken);
-//       } catch (e) {
-//           console.log(e);
-//       }
-//   }
-//     loadUserData()
-//   },[])
-//  }

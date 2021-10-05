@@ -4,7 +4,6 @@
     our components. Don't worry about the details
     unless you're curious :)
 */
-
 import { useLocation } from 'react-router-dom';
 
 const pairs = arr => arr.reduce((acc, x, i) => {

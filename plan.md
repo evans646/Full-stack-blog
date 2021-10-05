@@ -31,19 +31,28 @@ Gatsby
 
 so when a user send the unlike to the end point , it will set the hasupvoted to false and -1 from upvotes 
 
-i need to gen upvoted id and check it against the user to see if that is the owner 
-
-
-
   upvotedId:shortid.generate(),
 
 
-  so if 
 
-_____::
-I can use hook to heck th state of the upvote,  by having an upvoted and setUpvoted  and give it an initial value of false , i can use it to determine wether the post has been liked by the user or not, os if it's false we will giove the button to upvote and if true we will give the button to downvote 
+The share icons will be in content and i will have a share and a share icon so when you click on teh share icon it will open the menu with the icons inside 
 
 
+it should also display upon scroll down of the page 
 
+I will also paste :
 
+useEffect(() => {
+        const loadOauthUrl = async () => {
+            try {
+                const response = await axios.get('/auth/google/url');
+                const { url } = response.data;
+                setGoogleOauthUrl(url);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        loadOauthUrl();
+    }, []);
 
+    On the comments list page, to see if when a suer is logged out still we can load the url 

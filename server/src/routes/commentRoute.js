@@ -12,7 +12,8 @@ export const commentRoute = {
         const articleInfo = await db.collection('articles').findOne({ name: articleName });
         await db.collection('articles').updateOne({ name: articleName }, {
             '$set': {
-                comments: articleInfo.comments.concat({ username, text }),
+                comments: articleInfo.comments.concat({ username, text ,date:new Date().toISOString().slice(0,10),time:new Date().toISOString().slice(11,19)}),
+         
             },
         });
         const updatedArticleInfo = await db.collection('articles').findOne({ name: articleName });

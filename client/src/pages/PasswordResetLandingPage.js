@@ -1,6 +1,8 @@
 import React,{ useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Container from '@material-ui/core/Container';
+
 import { PasswordResetSuccess } from './PasswordResetSuccess';
 import { PasswordResetFail } from './PasswordResetFail';
 
@@ -24,7 +26,7 @@ export const PasswordResetLandingPage = () => {
     if (isSuccess) return <PasswordResetSuccess />
 
     return (
-        <div className="container">
+        <Container maxWidth='md'>
             <h1>Reset Password</h1>
             <p>Please enter a new password</p>
             <input
@@ -41,6 +43,6 @@ export const PasswordResetLandingPage = () => {
                 disabled={!passwordValue || !confirmPasswordValue || passwordValue !== confirmPasswordValue}
                 onClick={onResetClicked}
             >Reset Password</button>
-        </div>
+        </Container>
     )
 };

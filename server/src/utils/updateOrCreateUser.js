@@ -14,13 +14,12 @@ export const updateOrCreateUserFromOauth = async({ oauthUserInfo }) => {
     const existingUser = await db.collection('users').findOne({ email });
 
     if (existingUser) {
-        const result = await db.collection('users').findOneAndUpdate({ email }, { $set: { googleId, isVerified, hasUpvoted: false } }, { returnOriginal: false }, );
+        const result = await db.collection('users').findOneAndUpdate({ email }, { $set: { googleId, isVerified } }, { returnNewDocument: false });
         return result.value;
     } else {
         const result = await db.collection('users').insertOne({
             given_name,
             picture,
-            Upvoted: false,
             name,
             email,
             given_name,

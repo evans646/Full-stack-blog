@@ -1,6 +1,8 @@
 import React,{ useState ,useEffect} from 'react';
 import {useHistory } from 'react-router-dom';
 import axios from 'axios';
+import Container from '@material-ui/core/Container';
+
 
 export const ForgotPasswordPage = () => {
     const [errorMessage, setErrorMessage] = useState('');
@@ -35,12 +37,12 @@ export const ForgotPasswordPage = () => {
         };
     };
     return success ? (
-        <div className='container'>
+        <Container maxWidth='md' className='bottom-container'>
            {showSuccessMessage && <div className="success">Success!</div>}
             <p>A reset link has been sent to your email</p>
-        </div>
+        </Container>
     ) : (
-        <div className='container'>
+        <Container maxWidth='md' className='bottom-container'>
             {showErrorMessage && <div className='fail'> {errorMessage}</div>}
             <div className='forgot-password'>
                 <h1>Password reset</h1>
@@ -57,7 +59,6 @@ export const ForgotPasswordPage = () => {
                     onClick={onSubmitClicked}
                 >Send reset link</button>
             </div>
-        </div>
-
+        </Container>
     );
 };

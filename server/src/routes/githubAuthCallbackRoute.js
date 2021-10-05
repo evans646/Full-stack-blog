@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import {github}  from '../utils/githubClient';
+import { githubUpdateOrCreate } from '../utils/githubUpdateOrCreate';
 
   export const githubOauthCallbackRoute = {
     path: '/auth/github/callback',
@@ -7,24 +7,24 @@ import {github}  from '../utils/githubClient';
     handler:async (req, res) => {
 
         const code = req.query.code;
-        const options = {
-          code,
-          redirect_uri: 'http://localhost:3000/auth/github/callback'
-        };
       
-        try {
-          // The resulting token.
-          const result = await  oauth2.authorizationCode.getToken(options);
-      
-          // Exchange for the access token.
-          const token =  oauth2.accessToken.create(result);
-      
-          return res.status(200).json(token);
-        } catch (error) {
-          console.error('Access Token Error', error.message);
-          return res.status(500).json('Authentication failed');
-        }
-    }
-};
+     const response = await axios({
+          method: 'post',
+          url: `https://github.com/login/oauth/access_token?client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRETE}&code=${code}`,
+          // Set the content type header, so that we get the response in JSON
+          headers: {
+               accept: 'application/json'
+          }
+        }).then(res.send(response))
+     
+      //   jwt.sign(
+      //     { id, isVerified, email,name,picture,given_name,Upvoted },
+      //     process.env.JWT_SECRET,
+      //     (err, token) => {
+      //         if (err) return res.sendStatus(500)
+      //         res.redirect(`http://localhost:3000/login?token=${token}`)
+      //     }
+      // );
+}};
 
 

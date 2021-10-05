@@ -1,6 +1,7 @@
 import React,{ useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+
 import { useToken } from '../auth/useToken';
 import { EmailVerificationSuccess } from './EmailVerificationSuccess';
 import { EmailVerificationFail } from './EmailVerificationFail';
@@ -28,10 +29,9 @@ export const EmailVerificationLandingPage = () => {
             }
         };
         loadVerification();
-        
     }, [setToken, verificationString]);
 
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <p>Loading...</p>
     if (!isSuccess) return <EmailVerificationFail />
     return <EmailVerificationSuccess />
 };

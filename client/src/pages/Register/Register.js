@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import Container from '@material-ui/core/Container';
+
 import { useToken } from '../../auth/useToken';
 import './register.css'
 
@@ -17,10 +18,7 @@ const [passwordValue, setPasswordValue] = useState('');
 const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
 const [showErrorMessage, setShowErrorMessage] = useState(false);
 
-
 const history = useHistory();
-
-
 
 useEffect(() => {
     if (showErrorMessage) {
@@ -29,7 +27,6 @@ useEffect(() => {
         }, 3000);
     };
 }, [showErrorMessage]);
-
 
 const onSignUpClicked = async() => {
     try {
@@ -47,9 +44,8 @@ const onSignUpClicked = async() => {
     };
 };
 
-
 return (
-<Container>
+<Container maxWidth='md' className='register-container'>
 {showErrorMessage && <div className="fail">{errorMessage}</div>}
     <div className="signUpPage" id="registration">
                 <h1>Register</h1>
@@ -94,6 +90,5 @@ return (
                  <Link to='/login'><em>Have an account already? login</em></Link>
                  </div>
         </div>
-    
    </Container>
 )};

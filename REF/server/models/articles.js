@@ -8,7 +8,7 @@ const articleSchema = new Schema({
     comments:[],
     upvotedIds:[
        {
-           user:String
+           
        }
     ],
 });
