@@ -39,7 +39,7 @@ const ArticlePage = ({ match }) => {
              setLoading(true)
              setTimeout(() => {
             setLoading(false)
-           },500)
+           },5000)
          };
           fetchData();
         }catch(error){

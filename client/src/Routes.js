@@ -33,6 +33,7 @@ import {PasswordResetLandingPage } from './pages/PasswordResetLandingPage'
 
 import { NavBar } from './NavBar';
 import { Header } from './Header';
+import { Header2 } from './Header2';
 import {Footer} from './Footer';
 import './App.css';
 import './index.css';
@@ -43,6 +44,7 @@ export class Routes extends Component {
       return (
         <Router>
           <div>
+            <Header2/>
             <Header/>
             <NavBar />
             <hr/>

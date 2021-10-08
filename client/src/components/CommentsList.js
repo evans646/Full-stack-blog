@@ -1,15 +1,7 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import Avatar, { ConfigProvider }  from 'react-avatar';
-import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
+import axios from 'axios';
 
-import ShareIcon from '@mui/icons-material/Share';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Popper from '@mui/material/Popper';
-import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
-import Fade from '@mui/material/Fade';
-import Popover from '@mui/material/Popover';
-import Paper from '@mui/material/Paper';
 import { useUser } from '../auth/useUser'; 
 import {
    FacebookShareCount, 
@@ -39,24 +31,24 @@ let colors = [
 
 
 const CommentsList = ({ comments ,content}) => {
-   
-   const [anchorEl, setAnchorEl] = React.useState(null);
 
-   const handleClick = (event) => {
-     setAnchorEl(event.currentTarget);
-   };
+   const [googleOauthUrl, setGoogleOauthUrl] = useState('');  
  
-   const handleClose = () => {
-     setAnchorEl(null);
-   };
- 
-   const open = Boolean(anchorEl);
-   const id = open ? 'simple-popover' : undefined;
-
     const user = useUser();
     const { given_name,name, picture} = user || '';
     
-
+    useEffect(() => {
+      const loadOauthUrl = async () => {
+          try {
+              const response = await axios.get('/auth/google/url');
+              const { url } = response.data;
+              setGoogleOauthUrl(url);
+          } catch (e) {
+              console.log(e);
+          }
+      }
+      loadOauthUrl();
+  }, []);
 
 
 

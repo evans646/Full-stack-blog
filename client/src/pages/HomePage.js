@@ -10,8 +10,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+import { DiCode} from "react-icons/di";
 
-
+// FcNews
+// GiNewspaper
 
 
 const HomePage = () => {
@@ -29,7 +31,7 @@ const HomePage = () => {
   </div>
   <article id="latest">
     <h1>Latest Tech news</h1>
-    <section class="philly">
+    <section className="philly">
       <h2><Link to="philadelphia.htm" title="Philadelphia gallery">Philadelphia</Link></h2>
       <p className="pubdate">
         <time datetime="2011-08-16" pubdate>Aug 2011</time>

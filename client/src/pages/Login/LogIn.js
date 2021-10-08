@@ -70,6 +70,7 @@ export const LogInPage = () => {
             window.location.reload();
         } catch (e) {
             setErrorMessage(e.message);
+            console.log(e.status)
             setShowErrorMessage(true)
         };
     };
@@ -78,7 +79,9 @@ export const LogInPage = () => {
     //if it is 401 //invalid credentials user does not exist
     return (
         <Container maxWidth="md" className='bottom-container'>
-              {showErrorMessage && <div className="fail">{errorMessage}</div>}
+             <div style={{marginBottom:'5%'}}>
+            {showErrorMessage && <div className="fail">{errorMessage}</div>}
+            </div>
             <form className="loginPage" id="registration">
                 <h1>Login</h1>
                 <label htmlFor="username">

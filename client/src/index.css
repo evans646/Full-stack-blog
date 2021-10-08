@@ -47,7 +47,6 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
 /*limited reset*/
 html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
 	margin: 0;
@@ -90,9 +89,6 @@ a.phone:hover {
 	cursor: default;
 }
 
-/* html {
-	background: rgb(123, 121, 143);
-} */
 
 body {
 	font: 100% Cantarell, Arial, Helvetica, sans-serif;
@@ -133,9 +129,14 @@ header h1 {
 	overflow: hidden;
 	margin: 0%;	
 	padding: 10px;
-	background-image: url("https://assets.codepen.io/296057/lil-graydots.png");
-
+	background-image: url("./images/hb3.png");
+	background-position: center;
+	background-size: cover;
 }
+
+/* https://assets.codepen.io/296057/lil-graydots.png */
+
+
 #mainNav li {
 	float: left;
 }
@@ -146,6 +147,7 @@ header h1 {
 	color: rgb(76, 67, 65);
 	border: none;
 }
+
 
 #mainNav li:hover {
 	color: rgb(123, 121, 143);
@@ -521,10 +523,7 @@ article .preview {
 .intro {
 	height: 155px;
 	overflow: hidden;
-	margin-bottom: 2em;/*we could use transitions here. However, because the text is so tall, it's unlikely that the animation would have any visual impact, therefore adding the additional overhead for mobile devices seems unwise. Feel free to experiment with this.*//*-webkit-transition: height .75s ease-out;
-	-moz-transition: height .75s ease-out;
-	-o-transition: height .75s ease-out;
-	transition: height .75s ease-out;*/
+	margin-bottom: 2em;
 }
 
 .nonTouch:hover, .hover_effect {
@@ -933,6 +932,9 @@ body {
 	margin: 0 auto;
 	min-width: 1024px;
 	max-width: 1280px;
+	background-color:rgba(216,226,243,.2);
+	height: inherit;
+
 }
 nav {
     padding: 0;
@@ -940,6 +942,7 @@ nav {
     height: auto;
     transform: translateY(0);
   }
+
 
 .hamburger,
 .close {
@@ -950,8 +953,9 @@ nav ul {
     justify-content: center;
   }
 
+
 #pageFooter  {
-	margin-top: 70vh;
+	padding-bottom:50px;
 }
 
 #pageFooter label {
@@ -1248,7 +1252,9 @@ nav select {
  margin: 10 auto;
  min-width: 1000px;
  max-width: 1200px;
+ height: 100%;
 }
+
 #mainNav a.hamburger,
 #mainNav a.close {
   display: none;

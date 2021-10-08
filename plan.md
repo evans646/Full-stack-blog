@@ -56,3 +56,8 @@ useEffect(() => {
     }, []);
 
     On the comments list page, to see if when a suer is logged out still we can load the url 
+
+
+
+
+i will use some of the bckgrounds from canva to design the bg for the second header 

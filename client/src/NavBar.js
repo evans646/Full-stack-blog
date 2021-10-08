@@ -8,9 +8,10 @@ import MenuItem from '@mui/material/MenuItem';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 
-import { FaLinkedinIn, FaUserCircle} from "react-icons/fa";
+import {FaUserCircle} from "react-icons/fa";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {AiOutlineClose} from "react-icons/ai";
+import {IoMdArrowDropdown} from "react-icons/io";
 
 import { IconContext } from "react-icons";
 
@@ -31,7 +32,6 @@ export const NavBar = () => {
 
   const location = useLocation();
   const { pathname } = location;
-  const splitLocation = pathname.split("/");
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -45,7 +45,7 @@ export const NavBar = () => {
   };
 
   const user = useUser();
-  const { given_name,name, picture,username} = user || '';
+
   
 
   const handleLogOut = (e) => {
@@ -128,19 +128,15 @@ export const NavBar = () => {
       {(popupState) => (
         <>
           <Link variant="contained" {...bindTrigger(popupState)}>
-  
           <IconContext.Provider
-      value={{ color: 'black', size: '23px' }}
-    >
-      <div>
-      <FaUserCircle/>
-      <em>welcome {username}</em>
-      </div>
+      value={{ color: 'black', size: '23px' }}>
+      <FaUserCircle size={50} color={'orange'}/>
+     <span><IoMdArrowDropdown style={{marginBottom:'5px',marginRight:'15vh'}} /></span>
     </IconContext.Provider>
           </Link>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={popupState.close}>Profile</MenuItem>
             <MenuItem onClick={popupState.close}>My account</MenuItem>
+            <MenuItem onClick={popupState.close}>Settings</MenuItem>
             <MenuItem onClick={popupState.close}><Link to="/" onClick={handleLogOut}>Logout</Link></MenuItem>
           </Menu>
         </>
@@ -148,7 +144,7 @@ export const NavBar = () => {
     </PopupState>
           </li>
         </ul>
-        <Link className="close"  href="#" aria-label="Close main menu">
+        <Link className="close"  to="#" aria-label="Close main menu">
         <span className="sr-only">Close main menu</span>
        <AiOutlineClose/>
       </Link>
