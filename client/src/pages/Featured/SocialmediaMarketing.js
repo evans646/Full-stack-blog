@@ -27,8 +27,14 @@ const center={
    
 }
 
+
+
 export const SocialMediaMarketing = () => {
  
+
+  
+
+
 
     return (
         <Container maxWidth='lg' className="archItem" >
@@ -75,7 +81,6 @@ export const SocialMediaMarketing = () => {
  <p>
  The major social media platforms (at the moment) are Facebook, Instagram, Twitter, LinkedIn, Pinterest, YouTube, and Snapchat
  </p>
-
     <h1 style={center}>Purpose of Social media marketing</h1>
     <p style={{padding:'10px'}}>Social media can be used to market a companies product or services and engage with customers online. With social media, companies are able to,  </p>
    <Container maxWidth='lg'>
@@ -98,7 +103,7 @@ export const SocialMediaMarketing = () => {
       <p>
          While there are many ways to market a business, social media is an option that provides many Benefits.
       </p>
-     <Container maxWidth='md'>
+     <Container maxWidth='lg'>
      <ol>
          <li><h4><b>Inexpensive :</b> </h4></li><p> Most social media platforms are free and easy to join and create account.</p>
          <li><h4><b>Audience Targeting :</b> </h4></li><p>Social media allows you to  reach your target audience and provide a way for your current  customers to reach you. </p>
@@ -138,16 +143,16 @@ Each platform such as <b>Facebook</b> ,<b>Instagram </b>and <b>Twitter</b> comes
   </ul>
  </Container>
 </Container>
-<p style={{padding:'5vh'}}>
+<p style={{padding:'3vh'}}>
   To begin establishing a social media market, you need to build a marketing plan for your business. Here are a few key steps to take. 
 </p>
 <img src={planPic}  width={600} style={{marginLeft:'25%',padding:'0.5%'}}/>
 <Container maxWidth='lg'>
 <ol>
 <li><h4><b>Define your goals:</b> </h4></li>
-<p> Define what you want to achieve with your marketing plan: </p>
+<p  style={{padding:'1vh'}}> Define what you want to achieve with your marketing plan: </p>
  <Container maxWidth='md'>
- <ul>
+ <ul  style={{listStyle:'disc'}}>
     <li>	Increase traffic to your website or business </li>
     <li>Build awareness of your brand  </li>
     <li>Establish better business processes</li>
@@ -165,7 +170,7 @@ For example increase website traffic by 20% in one year.
 Determine your target  audience to help you shape the content and platforms of your social media channels 
 </p>
 <Container maxWidth='md'>
- <ul>
+ <ul  style={{listStyle:'disc'}}>
     <li>	Location </li>
     <li>Age  </li>
     <li>Gender</li>
@@ -182,7 +187,7 @@ Understanding who your customers are will help you connect with them on a person
 Your brand’s social personality should reflect : 
 </p>
 <Container maxWidth='md'>
- <ul>
+ <ul  style={{listStyle:'disc'}}>
     <li>What makes your business special </li>
     <li>It's value to your customer</li>
     <li>What inspires you to do the work you</li>
@@ -197,20 +202,16 @@ Your audience will stay connected to you if they regularly see interesting conte
  Social media helps build relationships with your customers :
  </p>
  <Container maxWidth='md'>
- <ul>
+ <ul style={{listStyle:'disc'}}>
     <li> Allows communications to flow in both directions </li>
     <li> Enables you and your customers to add value to the interaction  </li>
  </ul>
  </Container>
-
 </ol>
 </Container>
-<div>
-   <button>Previous</button>
-   <button>Next</button>
-</div>
-
+<button>Me</button>
+<button>You</button>
  </div>
-    </Container>
+</Container>
     );
 };

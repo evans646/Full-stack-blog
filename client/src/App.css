@@ -8,9 +8,22 @@
 }
 
 
-
 html{
   background-color: #fff;
+}
+
+.profile-items a{
+  border: none;
+  padding: 0%;
+ 
+}
+
+.profile-items li:hover{
+  background-color:  #515551;
+}
+.profile-items a:hover{
+  color: white !important;
+  padding: 0%;
 }
 
 
@@ -21,6 +34,9 @@ html{
 
 .e-lib-item a:hover{
   border:0px;
+}
+.e-lib-item li:hover{
+  background-color: #515551;
 }
 
 .article-list-item p {

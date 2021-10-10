@@ -26,10 +26,14 @@ import {GraphicDesignPage} from './pages/Featured/GraphicDesign';
 import {DataStructures} from './pages/Featured/DataStructures';
 import {DatabaseManagementSys} from './pages/Featured/DbManagementSystems';
 import {SocialMediaMarketing} from './pages/Featured/SocialmediaMarketing';
+import { BusinessManagement } from './pages/Featured/BusinessManagement';
 //import { PrivateRoute } from './auth/PrivateRoute'
 import { PleaseVerifyEmailPage } from './pages/PleaseVerifyEmail';
 import { EmailVerificationLandingPage } from './pages/EmailVerificationLandingPage';
-import {PasswordResetLandingPage } from './pages/PasswordResetLandingPage'
+import {PasswordResetLandingPage } from './pages/PasswordResetLandingPage';
+
+import { HardwarePage } from './pages/HardwarePage';
+import { SoftwarePage } from './pages/SoftwarePage';
 
 import { NavBar } from './NavBar';
 import { Header } from './Header';
@@ -68,6 +72,9 @@ export class Routes extends Component {
                 <Route path="/featured/dataStructures" component={DataStructures} />
                 <Route path="/featured/databaseManSys" component={DatabaseManagementSys} />
                 <Route path="/featured/socialMediamrkting" component={SocialMediaMarketing} />
+                <Route path="/featured/businessManagement" component={BusinessManagement} />
+                <Route path="/hardware" component={HardwarePage} />
+                <Route path="/software" component={SoftwarePage} />
                 <Route path="/reset-password/:passwordResetCode" component={PasswordResetLandingPage}/>
                 <PrivateRoute path="/forum" component={ForumPage}/>
                 <Route path="/contact" component={ContactPage}/>

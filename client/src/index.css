@@ -62,10 +62,10 @@ html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h
 
 a {
 	text-decoration: none;
-	color: #667F6A;
+	color: #738976;
 }
 a:hover {
-	color: #7B798F;
+	color: #ffffff;
 	border-bottom: 1px solid #7B798F;
 }
 
@@ -337,6 +337,8 @@ aside h2 {
 #pageFooter {
 	background: rgb(173, 169, 130);
 	padding-top: 1.5em;
+	margin-top: auto;
+	border: 5px solid #00bff3;
 }
 
 #pageFooter input[type="search"] {
@@ -346,7 +348,7 @@ aside h2 {
 #pageFooter label {
 	display: block;
 	font-size: 1.2em;
-	text-transform:uppercase;
+	text-transform:uppercase
 }
 
 #pageFooter a {

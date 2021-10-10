@@ -46,7 +46,7 @@ export const NavBar = () => {
 
   const user = useUser();
 
-  
+
 
   const handleLogOut = (e) => {
     e.preventDefault();
@@ -126,20 +126,24 @@ export const NavBar = () => {
           <li >
           <PopupState variant="popover" popupId="demo-popup-menu">
       {(popupState) => (
-        <>
-          <Link variant="contained" {...bindTrigger(popupState)}>
+        <div>
+          <div variant="contained" {...bindTrigger(popupState)} >
           <IconContext.Provider
       value={{ color: 'black', size: '23px' }}>
       <FaUserCircle size={50} color={'orange'}/>
      <span><IoMdArrowDropdown style={{marginBottom:'5px',marginRight:'15vh'}} /></span>
     </IconContext.Provider>
-          </Link>
+          </div>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem onClick={popupState.close}>My account</MenuItem>
-            <MenuItem onClick={popupState.close}>Settings</MenuItem>
-            <MenuItem onClick={popupState.close}><Link to="/" onClick={handleLogOut}>Logout</Link></MenuItem>
+            <div className='profile-items'>
+            <MenuItem onClick={popupState.close}><Link  to="/myAccount">My account</Link></MenuItem>
+            <Divider />
+            <MenuItem onClick={popupState.close}><Link  to="/profile/setting">Settings</Link></MenuItem>
+            <Divider />
+            <MenuItem onClick={popupState.close}><Link  to="/" onClick={handleLogOut}>Logout</Link></MenuItem>
+            </div>
           </Menu>
-        </>
+        </div>
       )}
     </PopupState>
           </li>

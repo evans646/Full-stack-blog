@@ -33,7 +33,7 @@ const UpvotesSection = ({ articleName, upvotes, setArticleInfo,hasUpvoted}) => {
   <Container id='upvotes-section'>
    {!user ? (<button onClick={() => history.push('/login')}> Upvote</button>) : (<button onClick={() => upvoteArticle() && playAudio()}>Upvote</button>) && !hasUpvoted ? ( <button onClick={() =>  upvoteArticle()&&playAudio()}>Upvote</button>):(<button onClick={() => downvoteArticle()}>Downvote</button>)}
   
-   {upvotes > 1 ? <p>{upvotes} Upvotes </p> : <p> {upvotes}</p>}
+   {upvotes > 1 ? <p>{upvotes} Upvotes </p> : <p> {upvotes} Upvote</p>}
   </Container>
   );
 };
