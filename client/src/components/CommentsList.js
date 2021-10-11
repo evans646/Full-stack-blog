@@ -60,34 +60,34 @@ const CommentsList = ({ comments ,content}) => {
         <FacebookShareButton url={"http://www.techboost.com"} quote={content} hashtag="#techboost">
                  <FacebookIcon size={45} />
               </FacebookShareButton>
-             <TwitterShareButton  style={{padding:'1px'}}
+             <TwitterShareButton 
                 url={"http://www.techboost.com"}
                 quote={''}
                 hashtag="#techboost">
                  <TwitterIcon size={45} />
               </TwitterShareButton>
-             <WhatsappShareButton  style={{padding:'1px'}}
+             <WhatsappShareButton 
                 url={"http://www.techboost.com"}
                 quote={''}
                 hashtag="#techboost"
                 >
                  <WhatsappIcon size={45} />
               </WhatsappShareButton>
-             <VKShareButton  style={{padding:'1px'}}
+             <VKShareButton  
                 url={"http://www.techboost.com"}
                 quote={'JJ'}
                 hashtag="#techboost"
                 >
                  <VKIcon size={45} />
               </VKShareButton>
-             <PinterestShareButton style={{padding:'1px'}}
+             <PinterestShareButton
                 url={"http://www.techboost.com"}
                 quote={'JJ'}
                 hashtag="#techboost"
                 >
                  <PinterestIcon size={45} />
               </PinterestShareButton>
-             <RedditShareButton style={{padding:'1px'}}
+             <RedditShareButton
                 url={"http://www.techboost.com"}
                 quote={'JJ'}
                 hashtag="#techboost"
@@ -95,7 +95,8 @@ const CommentsList = ({ comments ,content}) => {
                  <RedditIcon size={45} />
               </RedditShareButton>
             </section>  
-            {comments.length > 1 ? <h4 className='comments-list-h4' >{comments.length} COMMENTS</h4>:<h4 className='comments-list-h4' >{comments.length} COMMENT</h4>  }
+   
+      {comments.length > 1 ? <h4 className='comments-list-h4' >{comments.length} COMMENTS</h4>:<h4 className='comments-list-h4' >{comments.length} COMMENT</h4>  }
             {comments.map((comment, key) => (
                 <div className='comment' key={key} >
                     <h4 className='comment-username'><Avatar src={picture}  size="70" round={true} name={comment.username ||name} /><span > {comment.username || name|| given_name} </span> wrote</h4>
@@ -105,7 +106,7 @@ const CommentsList = ({ comments ,content}) => {
                </span>
                 </div>
             ))}
-        </div>
+         </div>
         </ConfigProvider>
      )
 };

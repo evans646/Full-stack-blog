@@ -32,13 +32,12 @@ export const Header2 = () => {
       
     return (
      
-  <div style={{backgroundColor:'lightRed'}}>
+  <div style={{backgroundColor:'#E1E2E2',paddingTop:'5px'}}>
        <div style={{float:'right',display:'inline'}}>
-          {user? <h4 style={{marginRight:'10px',textAlign:'right',paddingTop:'3px',color:'green'}}>Hi, {username||name||given_name} <span style={{color:'black'}}>| </span><Link style={{color:'green',paddingLeft:'5px',border:'none'}} to="/" onClick={handleLogOut}>Logout</Link></h4>:''}
+          {user? <h4 style={{marginRight:'10px',textAlign:'right',paddingTop:'3px',color:'rgb(3, 176, 176)'}}>Hi, {username||name||given_name} <span style={{color:'black'}}>| </span><Link style={{color:'rgb(3, 176, 176)',paddingLeft:'5px',border:'none'}} to="/" onClick={handleLogOut}>Logout</Link></h4>:''}
        </div>
 
-
-    <h4 style={{marginLeft:'10px',textAlign:'left',paddingRight:'0.2vh',float:'left',color:'green'}}>Stay connected</h4>
+    <h4 style={{marginLeft:'10px',textAlign:'left',paddingRight:'0.2vh',float:'left',color:'rgb(3, 176, 176)'}}>Stay connected</h4>
     <span style={{padding:'10px'}}>
       <FaFacebook size={25} color={'#3b5998'} style={iconsStyles}/>
       <IoLogoTwitter size={25} color={'#00acee'} style={iconsStyles}/>

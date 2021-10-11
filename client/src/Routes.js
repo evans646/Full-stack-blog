@@ -25,8 +25,9 @@ import {WebTechnologiesPage} from './pages/Featured/WebTechnologies';
 import {GraphicDesignPage} from './pages/Featured/GraphicDesign';
 import {DataStructures} from './pages/Featured/DataStructures';
 import {DatabaseManagementSys} from './pages/Featured/DbManagementSystems';
-import {SocialMediaMarketing} from './pages/Featured/SocialmediaMarketing';
+import {SocialMediaMarketing} from './pages/SocialmediaMarketing/SocialmediaMarketing';
 import { BusinessManagement } from './pages/Featured/BusinessManagement';
+import {SecondSocialMediaPage} from './pages/SocialmediaMarketing/SocialmediaMarketing';
 //import { PrivateRoute } from './auth/PrivateRoute'
 import { PleaseVerifyEmailPage } from './pages/PleaseVerifyEmail';
 import { EmailVerificationLandingPage } from './pages/EmailVerificationLandingPage';
@@ -38,7 +39,7 @@ import { SoftwarePage } from './pages/SoftwarePage';
 import { NavBar } from './NavBar';
 import { Header } from './Header';
 import { Header2 } from './Header2';
-import {Footer} from './Footer';
+import {FooterSection} from './Footer';
 import './App.css';
 import './index.css';
 
@@ -71,7 +72,8 @@ export class Routes extends Component {
                 <Route path="/featured/graphicDesign" component={GraphicDesignPage} />
                 <Route path="/featured/dataStructures" component={DataStructures} />
                 <Route path="/featured/databaseManSys" component={DatabaseManagementSys} />
-                <Route path="/featured/socialMediamrkting" component={SocialMediaMarketing} />
+                <Route path="/featured/socialMediamrkting/pages/1" component={SocialMediaMarketing} exact/>
+                <Route path="/featured/socialMediamrkting/pages/2" component={SecondSocialMediaPage} exact />
                 <Route path="/featured/businessManagement" component={BusinessManagement} />
                 <Route path="/hardware" component={HardwarePage} />
                 <Route path="/software" component={SoftwarePage} />
@@ -81,7 +83,7 @@ export class Routes extends Component {
                 <Route component={NotFoundPage} />
               </Switch>
             </div>
-            <Footer />
+            <FooterSection />
           </div>
         </Router>
       );

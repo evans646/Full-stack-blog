@@ -154,7 +154,7 @@ header h1 {
 }
 
  #mainNav a.current {
-	color: rgb(123, 121, 143);
+	color: rgb(74, 70, 115);
 	cursor: default;
 }
 
@@ -174,7 +174,7 @@ article section {
 article h1 {
 	font: 1.8em Cardo, Georgia, serif;
 	border-bottom: 2px solid rgb(76, 67, 65);
-	margin-bottom: 1.5em;
+	margin-bottom: 1.0em;
 }
 
 article h2 a {
@@ -337,7 +337,7 @@ aside h2 {
 #pageFooter {
 	background: rgb(173, 169, 130);
 	padding-top: 1.5em;
-	margin-top: auto;
+	margin-top: 5vh;
 	border: 5px solid #00bff3;
 }
 
@@ -1069,7 +1069,7 @@ a.shop {
 	height: 350px;
 	font-size: 1em;
 	color: #fff;
-	background: rgba(123, 121, 143, .8);
+	background: rgba(158, 184, 193, 0.8);
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -1088,8 +1088,11 @@ article section {
 }
 
 article h1 {
-	background: url(./images1/icon_sprites_50.png) no-repeat right top;
 	padding: 20px 0 5px;
+}
+.icon{
+	padding: -30px 5px 20px;
+	
 }
 
 article h2 {
@@ -1191,7 +1194,8 @@ aside nav a {
 }
 
 aside nav li {
-	background: rgb(216, 213, 188);
+	/* background: rgb(229, 224, 181); */
+	background: rgb(3, 176, 176);
 }
 
 aside nav li:nth-child(even) {
@@ -1201,7 +1205,7 @@ aside nav li:nth-child(even) {
 aside nav a:hover {
 	color: #fff;
 	border:none;
-	background: rgb(100, 98, 102);
+	background: rgb(84, 81, 86);
 }
 
 nav select {
@@ -1217,10 +1221,6 @@ nav select {
 .contest p {
 	font-size: .9em;
 	margin: 0 auto 1.5em;
-}
-
-.enter a {
-	float: right;
 }
 
 /*footer styles*/
@@ -1262,7 +1262,7 @@ nav select {
   display: none;
 }
 #mainNav .active {
-	color:#971919;
+	color:rgb(3, 176, 176);
 }
  
 .banner h1{
@@ -1281,4 +1281,3 @@ color: rgb(241, 240, 240) !important;
 .archItem{
 	font-size: 20px;
 }
-

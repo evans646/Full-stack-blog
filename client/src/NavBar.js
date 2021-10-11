@@ -130,7 +130,7 @@ export const NavBar = () => {
           <div variant="contained" {...bindTrigger(popupState)} >
           <IconContext.Provider
       value={{ color: 'black', size: '23px' }}>
-      <FaUserCircle size={50} color={'orange'}/>
+      <FaUserCircle size={50} color={'rgb(3, 176, 176)'}/>
      <span><IoMdArrowDropdown style={{marginBottom:'5px',marginRight:'15vh'}} /></span>
     </IconContext.Provider>
           </div>
@@ -148,10 +148,6 @@ export const NavBar = () => {
     </PopupState>
           </li>
         </ul>
-        <Link className="close"  to="#" aria-label="Close main menu">
-        <span className="sr-only">Close main menu</span>
-       <AiOutlineClose/>
-      </Link>
       </>
     </nav>
   ) : (

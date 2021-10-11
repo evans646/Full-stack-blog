@@ -8,11 +8,17 @@ import AddCommentForm from '../components/AddCommentForm';
 import NotFoundPage from './NotFoundPage';
 import articleContent from './article-content';
 
+import { css } from "@emotion/react";
+import RingLoader from "react-spinners/RingLoader";
 
 
 import '../index.css'
 import { useUser } from '../auth/useUser';
 
+const override = css`
+  display: block;
+  margin: 0 auto;
+`;
 
 const ArticlePage = ({ match }) => {
   
@@ -29,6 +35,8 @@ const ArticlePage = ({ match }) => {
 
     const [articleInfo, setArticleInfo] = useState({ upvotes:0, comments: [],upvotedIds:[]});
     const [loading,setLoading] = useState(false)
+    let [color,setColor] = useState("#ffffff");
+    
   
     useEffect(() => {
         try{
@@ -37,9 +45,10 @@ const ArticlePage = ({ match }) => {
              const body = await result.json();
              setArticleInfo(body)
              setLoading(true)
+             setColor('teal')
              setTimeout(() => {
             setLoading(false)
-           },5000)
+           },500)
          };
           fetchData();
         }catch(error){
@@ -48,7 +57,8 @@ const ArticlePage = ({ match }) => {
         }
      },[name]);
 
-    const loadingMessage = <div style={{textAlign:'center'}}>Loading article...</div>;
+    const loadingMessage =  <RingLoader  color={color} loading={loading} css={override} size={100} />
+    // <div style={{textAlign:'center'}}>Loading article...</div>;
 
     if (!article) return <NotFoundPage/>;
 

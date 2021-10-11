@@ -11,6 +11,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 import { DiCode} from "react-icons/di";
+import QuestionPic from '../images/mark2.png';
 
 // FcNews
 // GiNewspaper
@@ -32,12 +33,14 @@ const HomePage = () => {
     <p>We’re betting you do to. Welcome to our site, a growing collection of galleries taken by a small group of passionate urban photographers. Visit our galleries, buy some of our prints, or drop us a line. While you’re at it, feel free to submit a gallery of your own. <strong>Welcome</strong>.</p>
   </div>
   <article id="latest">
+  <span style={{float:'right'}}><DiCode size={75} color={'rgb(3, 176, 176)'} className='icon'/></span>
     <h1>Latest Tech news</h1>
     <section className="philly">
       <h2><Link to="philadelphia.htm" title="Philadelphia gallery">Philadelphia</Link></h2>
       <p className="pubdate">
         <time datetime="2011-08-16" pubdate>Aug 2011</time>
       </p>
+      {/* <img src={ QuestionPic} width={800} /> */}
       <div className="preview"><Link to="philadelphia.htm" title="Philadelphia gallery"></Link></div>
       <p className="caption">Join us as we visit the city of brotherly love.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque provident repellat iure magnam quam doloremque nostrum id maiores ea. Dolorem.</p>
     </section>
@@ -68,7 +71,7 @@ const HomePage = () => {
         <li><Link to="/featured/dataStructures" title="data structures">Data Structures</Link></li>
         <li><Link to="/featured/databaseManSys" title="data bases">Database Management  Systems </Link></li>
         <li><Link to="/featured/businessManagement" title="school">Business Management</Link></li>
-        <li><Link to="/featured/socialMediamrkting" title="social media marketing">Social Media Marketing</Link></li>
+        <li><Link to="/featured/socialMediamrkting/pages/1" title="social media marketing">Social Media Marketing</Link></li>
         <li><Link to="cincinnati.htm" title="school">Typing</Link></li>
       </ul>
       <select>
@@ -103,7 +106,7 @@ const HomePage = () => {
     <section class="contest">
     <h2>Hardware</h2>
    <Link to='/hardware'><img src={hardwareImg} width="200" height="200" alt="hardware"/></Link>
-      <p>
+    <p>
 Tempora obcaecati velit suscipit at sunt officiis nostrum excepturi facilis repudiandae cum nam, consequuntur in assumenda iure? Earum iure ut rem iusto explicabo inventore ipsam, 
 </p>
     </section>
