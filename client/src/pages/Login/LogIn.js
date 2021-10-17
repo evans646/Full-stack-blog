@@ -4,6 +4,7 @@ import GoogleButton from 'react-google-button';
 import GithubButton from 'react-github-login-button';
 import {useHistory,Link } from 'react-router-dom';
 import axios from 'axios';
+import Typography from '@mui/material/Typography';
 
 
 import { useToken } from '../../auth/useToken';
@@ -83,7 +84,7 @@ export const LogInPage = () => {
             {showErrorMessage && <div className="fail">{errorMessage}</div>}
             </div>
             <form className="loginPage" id="registration">
-                <h1>Login</h1>
+                <Typography variant='h4' className='loginPage-h1'>Login</Typography>
                 <label htmlFor="username">
                     username:
                     <input type="text" id="username"

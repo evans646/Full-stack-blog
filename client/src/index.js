@@ -6,6 +6,8 @@ import './App.css'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
+import 'animate.css';
+
 import configureStore from './store/store';
 
 

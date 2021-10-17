@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import { useHistory } from "react-router";
 import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
@@ -8,16 +8,18 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { FaRegShareSquare } from "react-icons/fa";
+
 
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
-import mediapic from '../../images/media1.png'
-import followpic from '../../images/follow.webp'
+import mediapic from '../../images/media1.png';
+import followpic from '../../images/follow.webp';
 import connectpic from '../../images/connect.jpg'
-import processesPic from '../../images/processes.jpg'
-import socialPic from '../../images/social1.jpg'
-import planPic from '../../images/plan.webp'
+import processesPic from '../../images/processes.jpg';
+import socialPic from '../../images/social1.jpg';
+import planPic from '../../images/plan.webp';
 import CalenderPic from '../../images/calender.webp';
 import QuestionPic from '../../images/mark2.png';
 // import facebookPic from '../../images/facebook.png'
@@ -25,34 +27,33 @@ import QuestionPic from '../../images/mark2.png';
 // import Paginations from "../../Pagination";
 
 
-const h4={
+const h4 = {
   textDecoration:'1px underline',
   fontSize:'20px',
-}
-const center={
+};
+const center = {
    textAlign:'center',
    padding:'15px',
    fontSize:'27px'
-   
-}
+};
 
 
+export const SecondSocialMediaPage = () => {
 
-export const SecondSocialMediaPage =()=>{
    const history = useHistory();
+
+
    return(
        <Container maxWidth='lg' className="archItem" >
        <div className='content-container'>
-          
        <p>
-      <Link to='/https://tagboard.com/'>Tagboard</Link>,<Link to='/https://hashtagify.me/'>hashtagify.me</Link> are tools that can help you set alerts to notify you when your brand is mentioned.
+      <Link to='/https://tagboard.com/'>Tagboard<sup>{<FaRegShareSquare/>}</sup></Link>,<Link to='/https://hashtagify.me/'>hashtagify.me<sup>{<FaRegShareSquare/>}</sup></Link> are tools that can help you set alerts to notify you when your brand is mentioned.
         By interacting with your customers on social media channels, they are likely to return to your platform for the information they value.
         </p>
         <Container>
           <ol>
           <li value='5'><h4><b>Measure success:</b> </h4></li>
           </ol>
-
           <p>
           Every social media platform provides metrics  to help you measure the effectiveness of your social media marketing presence. Smart social medial users monitor metrics often.
           </p>
@@ -86,7 +87,7 @@ export const SecondSocialMediaPage =()=>{
        <img src={CalenderPic} width={600} style={{marginLeft:'25%',padding:'0.5%'}}/>
        </div>
       <p>
-          To create a free social media calender click <Link to='/https://wepik.com/search?q=social+media+calender'>here</Link>
+          To create a free social media calender click <Link to='/https://wepik.com/search?q=social+media+calender'>here <sup>{<FaRegShareSquare/>}</sup></Link>
        </p>
 <p>
 It is also a good idea to plan for commonly asked questions and comments you may receive from customers through your social media platforms. 
@@ -123,7 +124,7 @@ Having a response plan will help you maintain a consistent brand voice
 <h2 style={{textAlign:'center'}}>Technology skill<sup style={{fontSize:'15px',color:'black',textDecoration:'none'}}>1.1</sup></h2>
 
 <p>
-The first step to start Facebook social media business is to start by creating a   <Link to='/facebook.com/pages '>page</Link> select the business type you want.<br/>
+The first step to start Facebook social media business is to start by creating a   <Link to='/facebook.com/pages '>page <sup>{<FaRegShareSquare/>}</sup></Link> select the business type you want.<br/>
 As you create the Facebook page you need to make sure of the following : 
 </p>
 <Container maxWidth='md'>
@@ -159,13 +160,13 @@ export const SocialMediaMarketing = () => {
    let contents = [
       <Container maxWidth='lg' className="archItem" >
       <div className='content-container'>
-                <Accordion style={{backgroundColor:'#D8E2F366',width:'40vh',overflow:'hidden'}}>
+                <Accordion style={{backgroundColor:'#f2f2f2',width:'40vh',overflow:'hidden'}}>
               <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
            >
-              <Typography  variant="h5" style={h4}>Table of Contents</Typography>
+            <Typography  variant="h5" style={h4}>Table of Contents</Typography>
               </AccordionSummary>
             <AccordionDetails>
             <div style={{marginLeft:'20px',listStyle:'none',fontSize:'15px',padding:'5px',lineHeight:'2.0em'}}>
@@ -333,16 +334,14 @@ export const SocialMediaMarketing = () => {
 
 
  
-let indexPage = contents
-
-
+let indexPage = contents;
 
 
     return (
        <div>
-       {indexPage[0]}
+       {indexPage}
 
-      <div style={{padding:'3px',marginTop:'5vh'}}>
+      <div style={{padding:'3px',margin:'3vh'}}>
       
      <Stack spacing={2}>
       <Pagination count={2} variant="outlined" shape="rounded"    onChange={()=> history.push('/featured/socialMediamrkting/pages/2')}/>

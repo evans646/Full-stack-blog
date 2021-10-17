@@ -25,3 +25,4 @@ export const resetPasswordRoute = {
         console.log('done')
     },
 };
+

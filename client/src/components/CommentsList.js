@@ -1,19 +1,15 @@
 import React, { useState,useEffect } from 'react';
 import Avatar, { ConfigProvider }  from 'react-avatar';
 import axios from 'axios';
+import Typography from '@mui/material/Typography';
 
 import { useUser } from '../auth/useUser'; 
-import {
-   FacebookShareCount, 
-   OKShareCount,
-   PinterestShareCount,
-   RedditShareCount,
-   VKShareCount,  
+import { 
    PinterestShareButton,
    PinterestIcon,
     RedditShareButton,
-     RedditIcon,
-      VKShareButton,
+    RedditIcon,
+   VKShareButton,
     VKIcon,
     FacebookIcon,
     FacebookShareButton,
@@ -58,51 +54,51 @@ const CommentsList = ({ comments ,content}) => {
       
    <section>
         <FacebookShareButton url={"http://www.techboost.com"} quote={content} hashtag="#techboost">
-                 <FacebookIcon size={45} />
+                 <FacebookIcon size={45}  style={{marginTop:'25px'}}/>
               </FacebookShareButton>
              <TwitterShareButton 
                 url={"http://www.techboost.com"}
-                quote={''}
+                quote={content}
                 hashtag="#techboost">
                  <TwitterIcon size={45} />
               </TwitterShareButton>
              <WhatsappShareButton 
                 url={"http://www.techboost.com"}
-                quote={''}
+                quote={content}
                 hashtag="#techboost"
                 >
                  <WhatsappIcon size={45} />
               </WhatsappShareButton>
              <VKShareButton  
                 url={"http://www.techboost.com"}
-                quote={'JJ'}
+                quote={content}
                 hashtag="#techboost"
                 >
                  <VKIcon size={45} />
               </VKShareButton>
              <PinterestShareButton
                 url={"http://www.techboost.com"}
-                quote={'JJ'}
+                quote={content}
                 hashtag="#techboost"
                 >
                  <PinterestIcon size={45} />
               </PinterestShareButton>
              <RedditShareButton
                 url={"http://www.techboost.com"}
-                quote={'JJ'}
+                quote={content}
                 hashtag="#techboost"
                 >
                  <RedditIcon size={45} />
               </RedditShareButton>
             </section>  
    
-      {comments.length > 1 ? <h4 className='comments-list-h4' >{comments.length} COMMENTS</h4>:<h4 className='comments-list-h4' >{comments.length} COMMENT</h4>  }
+      {comments.length > 1 ? <Typography variant='h6' className='comments-list-h4' >{comments.length} COMMENTS</Typography>:<Typography variant='h6' className='comments-list-h4' >{comments.length} COMMENT</Typography >  }
             {comments.map((comment, key) => (
                 <div className='comment' key={key} >
-                    <h4 className='comment-username'><Avatar src={picture}  size="70" round={true} name={comment.username ||name} /><span > {comment.username || name|| given_name} </span> wrote</h4>
+                    <Typography variant='h6' className='comment-username'><Avatar src={picture}  size="70" round={true} name={comment.username ||name} /><span > {comment.username || name|| given_name} </span> wrote</Typography>
                     <p >{comment.text}</p>
                <span>
-              <em><p className='comment-span' ><b>On</b> {comment.date}  <b>at</b> {comment.time} </p></em>
+              <p className=' date-time' ><b>On</b> {comment.date}  <b>at</b> {comment.time} </p>
                </span>
                 </div>
             ))}

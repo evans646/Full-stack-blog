@@ -20,7 +20,7 @@ export const PasswordResetLandingPage = () => {
         } catch (e) {
             setIsFailure(true);
         }
-    }
+    };
 
     if (isFailure) return <PasswordResetFail />
     if (isSuccess) return <PasswordResetSuccess />

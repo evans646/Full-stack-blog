@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link,NavLink,useLocation } from "react-router-dom";
+import { Link,NavLink} from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -10,7 +10,7 @@ import Divider from '@mui/material/Divider';
 
 import {FaUserCircle} from "react-icons/fa";
 import {GiHamburgerMenu} from "react-icons/gi";
-import {AiOutlineClose} from "react-icons/ai";
+//import {AiOutlineClose} from "react-icons/ai";
 import {IoMdArrowDropdown} from "react-icons/io";
 
 import { IconContext } from "react-icons";
@@ -30,8 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const NavBar = () => {
 
-  const location = useLocation();
-  const { pathname } = location;
+ 
 
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -59,8 +58,7 @@ export const NavBar = () => {
   return user ? (
    
     <nav id="mainNav">
-       <Link className="hamburger" href="#navbar" aria-label="Open main menu" >
-    <GiHamburgerMenu/>
+       <Link to="#navbar" aria-label="Open main menu" >
   </Link>
       <>
         <ul>
@@ -102,7 +100,7 @@ export const NavBar = () => {
            onClose={handleClose}
          >
            <span className='e-lib-item' >
-           <MenuItem>
+           <MenuItem onClick={handleClose}>
              <NavLink exact  to="/e-library"  activeClassName="active" >
                E-Books
              </NavLink>
@@ -115,9 +113,9 @@ export const NavBar = () => {
            </MenuItem>
            <Divider />
            <MenuItem onClick={handleClose}>
-             <NavLink className="articles" to="/forum" activeClassName="active">
+             <a className="articles" href="https://techboost.nodebb.com" target="_blank" >
                Forum
-             </NavLink>
+             </a>
            </MenuItem>
            </span>
          </Menu>
@@ -136,9 +134,9 @@ export const NavBar = () => {
           </div>
           <Menu {...bindMenu(popupState)}>
             <div className='profile-items'>
-            <MenuItem onClick={popupState.close}><Link  to="/myAccount">My account</Link></MenuItem>
+            <MenuItem onClick={popupState.close}><Link  to="/user/profile">My account</Link></MenuItem>
             <Divider />
-            <MenuItem onClick={popupState.close}><Link  to="/profile/setting">Settings</Link></MenuItem>
+            <MenuItem onClick={popupState.close}><Link  to="/user/profile/settings">Settings</Link></MenuItem>
             <Divider />
             <MenuItem onClick={popupState.close}><Link  to="/" onClick={handleLogOut}>Logout</Link></MenuItem>
             </div>

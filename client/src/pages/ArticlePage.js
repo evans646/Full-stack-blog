@@ -48,7 +48,7 @@ const ArticlePage = ({ match }) => {
              setColor('teal')
              setTimeout(() => {
             setLoading(false)
-           },500)
+           },800)
          };
           fetchData();
         }catch(error){

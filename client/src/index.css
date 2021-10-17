@@ -64,30 +64,10 @@ a {
 	text-decoration: none;
 	color: #738976;
 }
-a:hover {
+/* a:hover {
 	color: #ffffff;
 	border-bottom: 1px solid #7B798F;
-}
-
-.preview a {
-	display: block;
-	height:100%;
-}
-
-.preview a:hover {
-	border: none;
-}
-
-a.phone {
-	border: none;
-	color: inherit;
-}
-
-a.phone:hover {
-	border: none;
-	color: inherit;
-	cursor: default;
-}
+} */
 
 
 body {
@@ -1028,21 +1008,6 @@ header h2 {
 	text-transform: lowercase;
 }
 
-a.gallery {
-	background: url(./images1/icon_sprites_25.png) no-repeat 0 3px;
-}
-
-a.gear {
-	background: url(./images1/icon_sprites_25.png) no-repeat 38px -98px;
-}
-
-a.interact {
-	background: url(./images1/icon_sprites_25.png) no-repeat 62px -197px;
-}
-
-a.shop {
-	background: url(./images1/icon_sprites_25.png) no-repeat 6px -297px;
-}
 
 /*banner styles*/
 .banner {
@@ -1095,41 +1060,34 @@ article h1 {
 	
 }
 
-article h2 {
-	font: 2.8em Cardo, Georgia, serif;
+
+.news h2 {
+	font: 1.8em Cardo, Georgia, serif;
+	font-weight: 600;
 	float: left;
 	margin-bottom: .1em;
 }
-
-article p {
-	font-size:1.2em;
-	margin: .8em 0;
+.news a {
+	color: #738976;
 }
+
+ .news p {
+	font-size:1.1em;
+	margin: .5em 0;
+}
+
 
 article p.pubdate {
 	font-size: 1.2em;
 	text-transform: uppercase;
 	float: right;
-	padding-top: .8em;
-	margin:0;
+	padding-top:.8em;
+	margin-bottom:20px;
 }
 
-article .preview {
-	height: 250px;
-	clear:both;
-}
-
-.philly .preview {
-	background: url(./images1/philly_banner.jpg) no-repeat;
-}
-
-.chicago .preview {
-	background: url(./images1/chicago_banner.jpg) no-repeat;
-}
-
-.nyc .preview {
-	background: url(./images1/featured.png) 0 50px no-repeat, url(./images1/nyc_banner.jpg) no-repeat;
-}
+.date-time {
+	color: 	#6c757d ;
+  }
 
 /*gallery styles*/
 #gallery h1 {

@@ -1,7 +1,7 @@
 import { logInRoute } from './logInRoute';
 import { signUpRoute } from './signUpRoute';
 import { testEmailRoute } from './testRoute';
-//import { updateUserInfoRoute } from './updateUserInfoRoute';
+import { updateUserInfoRoute } from './updateUserInfoRoute';
 import { articleRoute } from './articleRoute';
 import { upvoteRoute } from './upvoteRoute';
 import { commentRoute } from './commentRoute';
@@ -28,4 +28,5 @@ export const routes = [
     testEmailRoute,
     verifyEmailRoute,
     commentRoute,
+    updateUserInfoRoute
 ];
