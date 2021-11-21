@@ -26,8 +26,8 @@ const getArticlesError = payload => ({
 
 export const getAllArticles = (name) => async dispatch => {
     dispatch({type:GET_ALL_ARTICLES_REQUEST });
-    try {
-  useEffect(() => {
+ try {
+   useEffect(() => {
     const fetchData = async () => {
         const result = await fetch(`/api/articles/${name}`);
         const body = await result.json();
@@ -35,19 +35,9 @@ export const getAllArticles = (name) => async dispatch => {
         dispatch(getArticlesSuccess(body));
     };
     fetchData();
-}, )
+},)
     } catch (error) {
         dispatch(getArticlesError("Something went wrong!"));
         return await Promise.reject({});
     };
 };
-
-
-
-// useEffect(() => {
-//     const fetchData = async () => {
-//         const result = await fetch(`/api/articles/${name}`);
-//         const body = await result.json();
-//     };
-//     fetchData();
-// }, [name]);

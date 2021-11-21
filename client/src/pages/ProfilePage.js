@@ -1,25 +1,25 @@
-import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
-import Avatar, { ConfigProvider }  from 'react-avatar';
 
 import { useUser } from '../auth/useUser';
 
-
-
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { CardActionArea } from '@mui/material';
 
 
 
 export const ProfilePage = ()=>{
 
-const user = useUser();
-let {username,picture,id,email,name} = user;
+  const user = useUser();
+  let {username,email} = user;
 
-
+  
     return(
        <Container maxWidth='md'>
+         <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardContent>
         <div className='bottom-container'>
-            <h1>Hi there i am the profile page</h1>
-          <div>
           <h3>Username:</h3>
             <p>{username}</p>
           </div>
@@ -28,10 +28,10 @@ let {username,picture,id,email,name} = user;
             <p>{email}</p>
            </div>
            <h3>Avatar</h3>
-           <Avatar src={picture}  size="100" round={true} name={username ||name} />
-        </div>
-        <p>You can make changes to your account <Link to='/user/profile/settings'>here</Link></p>
+        </CardContent>
+      </CardActionArea>
+    </Card>
        </Container>
     )
 
-}
+};

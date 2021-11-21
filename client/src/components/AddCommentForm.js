@@ -32,7 +32,7 @@ import { useUser } from '../auth/useUser';
     if (user) {
         return (
             <div id='add-comment-form'>
-                <h3>Comment as <span> { username||given_name||name}</span></h3>
+                <h3>Comment as <span><Link to={'/user/profile'}>{ username||given_name||name}</Link></span></h3>
                 <label>
                     <textarea rows='4' cols='50' value={commentText} onChange={(event) => setCommentText(event.target.value)} />
                 </label>
@@ -45,5 +45,6 @@ import { useUser } from '../auth/useUser';
         </div>
     );
 };
+
 
 export default AddCommentForm;

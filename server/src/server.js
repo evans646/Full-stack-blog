@@ -15,19 +15,13 @@ app.use(express.json());
 routes.forEach(route => {
     app[route.method](route.path, route.handler);
 });
-
-app.use((err, req, res, next) => {
-    const { statusCode = 500 } = err;
-    if (!err.message) err.message = 'Oh No, Something Went Wrong!'
-    res.status(statusCode).json({err})
-});
 // Connect to the database, then start the server.
 // This prevents us from having to create a new DB
 // connection for every request.
 initializeDbConnection()
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`LISTENING ON PORT ${PORT}`);
+            console.log(`DATABASE CONNECTED AND APP IS LISTENING ON PORT ${PORT}`);
         });
     });
 

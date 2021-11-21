@@ -8,8 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import 'animate.css';
 
-import configureStore from './store/store';
-
+import {configureStore} from './store/store';
 
 
 const store = configureStore({});
