@@ -1,5 +1,5 @@
 
-.loginPage-h1 {
+.loginPage-header{
     font-size: 1.5rem;
     color: #fff;
     font-family: 'Cantarell';
@@ -174,4 +174,7 @@
   transition: max-height 1s ease-in;
 }
 
-
+.social-login-options{
+  margin-left:27%;
+  padding:10px;
+}

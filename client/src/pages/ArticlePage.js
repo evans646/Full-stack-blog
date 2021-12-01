@@ -20,7 +20,7 @@ const override = css`
   margin: 0 auto;
 `;
 
-const ArticlePage = ({ match }) => {
+const ArticlePage = ({ match,upvotes }) => {
   
     const name = match.params.name;
 
@@ -57,11 +57,12 @@ const ArticlePage = ({ match }) => {
         }
      },[name]);
 
-    const loadingMessage =  <RingLoader  color={color} loading={loading} css={override} size={100} />
+    const loadingMessage = <RingLoader  color={color} loading={loading} css={override} size={100} />;
   
     if (!article) return <NotFoundPage/>;
    //check to see if the user has upvoted 
     const voted = Object.values(articleInfo.upvotedIds).filter(userId => userId ===id).length > 0 ? true : false;
+   
  
     const otherArticles = articleContent.filter(article => article.name !== name);
 
@@ -73,7 +74,6 @@ const ArticlePage = ({ match }) => {
            <Container maxWidth='lg'>
            {article.content.map((paragraph, key) => (
                 <p className='article' key={key}>{paragraph}</p>
-        
             ))}
            </Container>
             <CommentsList comments={articleInfo.comments} content={article.content}/>

@@ -10,6 +10,7 @@
 html {
   background-color: #fff;
   scroll-behavior: smooth;
+
 };
 
 .profile-items a{
@@ -25,7 +26,6 @@ html {
   color: white !important;
   padding: 0%;
 }
-
 
 .article{
   text-align: center;
@@ -103,7 +103,7 @@ padding: 10px;
   margin-bottom: 16px ;
   margin-left: 10px;
   font-size: 20px;
-
+  font-weight: bold
 }
 
 #add-comment-form span{
@@ -143,21 +143,12 @@ span.comments-list-head{
 .share-icons{
   width: 2px;
   height: 10px;
-
   z-index: 10;
   left: 100%;
   top: -2%;
-  bottom:50% !important;
+  bottom:-50% !important;
   position: sticky;
 }
-
-/* width: 80px;
-height: 240px;
-z-index: 10;
-left: 100%;
-top: 15%;
-margin-top: -10px; 
-position: sticky; */
 
   .comment {
     border-bottom: 2px solid black;
@@ -260,11 +251,31 @@ position: sticky; */
   font-size: 20px;
   margin-left: 30px;
   padding: 16px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.649);
   color: white;
   border-radius: 8px;
   cursor: pointer;
   margin-bottom: 40px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+};
+
+button.downvote-btn{
+  box-sizing: border-box;
+  font-size: 20px;
+  margin-left: 30px;
+  padding: 16px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
 .aboutPage h1{
@@ -293,6 +304,9 @@ hr{
   border-width: 2 px;
 }
 /* <--Main----> */
+#alert-container{
+  margin-bottom:5%;
+}
 .success {
   background-color: #90ee90;
   border-radius: 8px;
@@ -302,14 +316,10 @@ hr{
 }
 
 .fail {
-  background-color: #ffcccb;
+  background-color: #fbc1c0;
   border-radius: 8px;
   margin-bottom: 8px;
   padding: 16px;
   text-align: center;
 };
 
-.social-icons{
-  text-decoration: none !important;
-  padding: 10px;
-}

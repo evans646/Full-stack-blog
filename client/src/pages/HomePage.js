@@ -14,14 +14,14 @@ const HomePage = () => {
   return (
     <section id="content">
       <div className="banner">
-        <h1>I love Software And I love Technology</h1>
+        <h1>Modern Technology</h1>
         <p>
           We’re betting you do to. Welcome to our site, a growing small group of
           passionate programmers. feel free to browse through for any
-          information you may need concerning TECH <strong>Welcome</strong>.
+          information you may need concerning TECH.
         </p>
       </div>
-      <article id="latest">
+      <article id="latest" >
         <span style={{ float: "right" }}>
           <DiCode size={75} color={"rgb(3, 176, 176)"} className="icon" />
         </span>

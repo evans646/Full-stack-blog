@@ -10,8 +10,8 @@ import { forgotPasswordRoute } from './forgotPasswordRoute';
 import { resetPasswordRoute } from './resetPasswordRoute';
 import { getGoogleOauthUrlRoute } from './getGoogleUrlAuthRoute';
 import { googleOauthCallbackRoute } from './googleAuthCallbackRoute';
-import {downVoteRoute} from './downVoteRoute';
-import {githubOauthCallbackRoute} from './githubAuthCallbackRoute';
+import { downVoteRoute } from './downVoteRoute';
+import { githubOauthCallbackRoute } from './githubCallbackRoute';
 
 
 export const routes = [

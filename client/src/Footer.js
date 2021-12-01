@@ -4,7 +4,7 @@ import React from "react";
 export const FooterSection = () => {
   return (
     <footer id="pageFooter">
-      <form action="http://desolve.org" method="post" className="search-form">
+      <form action="/" method="post" className="search-form">
         <label htmlFor="search">Looking for something? </label>
         <input
           type="search"
@@ -17,7 +17,6 @@ export const FooterSection = () => {
         <input type="submit" className="submit" value="Go" name="submit" />
       </form>
       <p className="notice">&copy; 2021 Techboost.com</p>
-      <div></div>
     </footer>
   );
 };

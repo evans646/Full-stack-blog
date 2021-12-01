@@ -8,9 +8,10 @@ import ArticlePage from "./pages/ArticlePage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import { PrivateRoute } from "./auth/PrivateRoute";
-import { RegisterPage } from "./pages/Register/Register";
-import { LogInPage } from "./pages/Login/LogIn";
+import { RegisterPage } from "./pages/Forms/Register";
+import { LogInPage } from "./pages/Forms/LogIn";
 import { ForgotPasswordPage } from "./pages/ForgotPasswordPage";
+
 import { ContactPage } from "./pages/ContactPage";
 import { EbooksPage } from "./e-Library/EbooksPage";
 import { Tutorials } from "./e-Library/Tutorials";
@@ -21,13 +22,13 @@ import { WebTechnologiesPage } from "./pages/Featured/WebTechnologies";
 import { GraphicDesignPage } from "./pages/Featured/GraphicDesign";
 import { DataStructures } from "./pages/Featured/DataStructures";
 import { DatabaseManagementSys } from "./pages/Featured/DbManagementSystems";
-
 import { SocialMediaMarketing } from "./pages/SocialmediaMarketing/SocialmediaMarketing";
 import { BusinessManagement } from "./pages/Featured/BusinessManagement";
 import { SecondSocialMediaPage } from "./pages/SocialmediaMarketing/SecondPage";
 import { PleaseVerifyEmailPage } from "./pages/PleaseVerifyEmail";
 import { EmailVerificationLandingPage } from "./pages/EmailVerificationLandingPage";
 import { PasswordResetLandingPage } from "./pages/PasswordResetLandingPage";
+
 import { HardwarePage } from "./pages/HardwarePage";
 import { SoftwarePage } from "./pages/SoftwarePage";
 import { ProfilePage } from "./pages/ProfilePage";
@@ -62,16 +63,13 @@ export class Routes extends Component {
               <Route path="/forgot-password" component={ForgotPasswordPage} />
               <Route path="/please-verify" component={PleaseVerifyEmailPage} />
               <Route path="/article/:name" component={ArticlePage} />
-              <Route path="/signup" component={RegisterPage} />
+              <Route path="/account/register" component={RegisterPage} />
               <Route path="/login" component={LogInPage} />
               <PrivateRoute path="/forum" component={ForumPage} exact />
               <PrivateRoute path="/e-library" component={EbooksPage} />
               <PrivateRoute path="/tutorials" component={Tutorials} />
               <PrivateRoute
-                path="/user/profile"
-                component={ProfilePage}
-                exact
-              />
+                path="/user/profile" component={ProfilePage} exact />
               <Route
                 path="/featured/webdevelopement"
                 component={WebDevelopmentPage}

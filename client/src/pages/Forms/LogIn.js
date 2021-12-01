@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import { useToken } from '../../auth/useToken';
 import {useQueryParams} from '../util/useQueryParams';
+
 import './login.css';
 
 
@@ -75,7 +76,6 @@ export const LogInPage = () => {
             setShowErrorMessage(true)
         };
     };
-
     //So if status code is 500, incorrect username or pass
     //if it is 401 //invalid credentials user does not exist
     return (
@@ -83,8 +83,8 @@ export const LogInPage = () => {
              <div style={{marginBottom:'5%'}}>
             {showErrorMessage && <div className="fail">{errorMessage}</div>}
             </div>
-            <form className="loginPage" id="registration">
-                <Typography variant='h4' className='loginPage-h1'>Login</Typography>
+            <form className="loginPage">
+                <Typography variant='h5' className='loginPage-header'>Login</Typography>
                 <label htmlFor="username">
                     username:
                     <input type="text" id="username"
@@ -105,7 +105,7 @@ export const LogInPage = () => {
                     disabled={!usernameValue || !passwordValue}
                     onClick={onLogInClicked}>Log In
                 </button>
-                <div style={{marginLeft:'27%',padding:'10px'}}>
+                <div  className='social-login-options'>
                 <GoogleButton disabled={!googleOauthUrl} type="dark" onClick={() => { window.location.href = googleOauthUrl }}/>
                 <div style={{paddingTop:'10px'}}>
                 <GithubButton   onClick={() => {window.location.href='https://github.com/login/oauth/authorize?scope=user:email&client_id=7e882fa62dfb6bdf83e8'}}/>
@@ -113,8 +113,8 @@ export const LogInPage = () => {
                 </div>
                 <hr/>
                 <div className='link'>
-                    <Link to='/signup'><em>Don't have an account? Sign Up</em></Link>
-                    <Link to='/forgot-password'><em>Forgot your password?</em></Link>
+                    <Link to='/account/register'><em>Don't have an account? register</em></Link>
+                    <Link to='/forgot-password'><em>Forgot your password ?</em></Link>
                 </div>
             </form>
         </Container>

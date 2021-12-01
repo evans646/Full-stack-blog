@@ -12,6 +12,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { IconContext } from "react-icons";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 import { useUser } from "./auth/useUser";
+// import menuIcon from './images/menu.png';
 
 import "./index.css";
 
@@ -43,9 +44,8 @@ export const NavBar = () => {
   };
 
   return user ? (
-    <nav id="mainNav">
-      <Link to="#navbar" aria-label="Open main menu"></Link>
-      <>
+    <div className="navWrap">
+      <nav id="mainNav">
         <ul>
           <li>
             <NavLink exact className="current" to="/">
@@ -150,8 +150,9 @@ export const NavBar = () => {
             </PopupState>
           </li>
         </ul>
-      </>
-    </nav>
+      </nav>
+      {/* <img src={menuIcon} className='menu-icon'/> */}
+    </div>
   ) : (
     <div>
       <nav id="mainNav">
@@ -218,7 +219,11 @@ export const NavBar = () => {
             </Menu>
           </li>
           <li>
-            <NavLink className="signup" to="/signup" activeclassname="active">
+            <NavLink
+              className="signup"
+              to="/account/register"
+              activeclassname="active"
+            >
               Register
               <em>new account</em>
             </NavLink>

@@ -1,13 +1,10 @@
-
-.signUpPage h1 {
+.registration-header {
     font-size: 1.5rem;
     color: #fff;
     font-family: 'Cantarell';
     font-weight: normal;
     padding: 15px 20px;
-    /* background-color: rgb(1, 144, 180); */
     background-color: rgba(124, 122, 147, 0.8);
-    
     box-shadow: 0px 3px 6px #42424299;
     margin-bottom: 20px;
     text-align: center;
@@ -18,13 +15,12 @@
   margin: 10vh;
 }
 
-.signUpPage{
+#registration-page{
     background-color: #fffffff5;
     max-width: 600px;
     margin: 0 auto;
     padding-bottom: 20px;
     box-shadow: 1px 1px 1px 1px rgba(1, 1, 1, 0.3);
-    /* box-shadow: 5px 2px 3px 5px rgba(6, 188, 188, 0.3); */
     border-bottom: 5px solid teal;
     border-radius: 10px 10px 0 0;
 }
@@ -39,28 +35,27 @@
   color: rgb(150,150,150);
 }
 
-.signUpPage fieldset {
+#registration-page fieldset {
   padding: 0;
   border: 0;
 }
 
-.signUpPage legend {
+#registration-page legend {
   padding: 0;
   font-weight: inherit;
 }
 
-.signUpPage input, .signUpPage textarea, .signUpPage select, .signUpPage button, .signUpPage legend, .signUpPage fieldset {
+#registration-page input, #registration-page textarea, #registration-page select, #registration-page button, #registration-page legend, #registration-page fieldset {
   box-sizing: border-box;
   outline: none;
   font-size: 15px;
-  color: rgb(40, 40, 40);
-  vertical-align: top;
+  color: rgb(40, 40, 40); 
   display: block;
   margin: 10px auto 0;
   text-align: center;
 }
 
-.signUpPage label {
+#registration-page label {
   display: block;
   margin: 10px auto;
   text-align: center;
@@ -69,11 +64,10 @@
   padding: 0 20px;
 }
 /* Input & Textarea ------------------ */
-
 /* Fields with standard width */
-.signUpPage input[type="text"],
-.signUpPage input[type="email"],
-.signUpPage input[type="password"] {
+#registration-page input[type="text"],
+#registration-page input[type="email"],
+#registration-page input[type="password"] {
   width: 100%;
   max-width: 400px;
   padding: calc( 40px / 5 );
@@ -85,9 +79,9 @@
 }
 
 /* Fields with standard height */
-.signUpPage input[type="text"],
-.signUpPage input[type="email"],
-.signUpPage input[type="password"] {
+#registration-page input[type="text"],
+#registration-page input[type="email"],
+#registration-page input[type="password"] {
   height: 40px;
   font-family: 'Cantarell';
   -webkit-appearance: none;
@@ -95,9 +89,9 @@
 
 /* Buttons, Input Type Submit/Reset ------------------ */
 
-.signUpPage button,
-.signUpPage input[type="button"],
-.signUpPage input[type="submit"] {
+#registration-page button,
+#registration-page input[type="button"],
+#registration-page input[type="submit"] {
   height:50px;
   width: 70%;
   font-family: 'Cantarell';
@@ -114,30 +108,30 @@
   -moz-appearance: none;
   border: 1px solid rgb(200, 200, 200);
 }
+
  .link a{
-     text-decoration: none;
+    text-decoration: none;
     font-weight: normal;
     display: block;
-    margin-top: 5px;
-    padding-left: 5px;
+    margin-top: 10px;
+    padding-left: 5px 3px;
 }
-/* States ------------------ */
 
-.signUpPage input[disabled],.signUpPage button[disabled] {
+/* States ------------------ */
+#registration-page  input[disabled],#registration-page  button[disabled] {
   cursor: not-allowed;
 }
 
-.signUpPage input:focus, .signUpPage button:focus  {
+#registration-page  input:focus, #registration-page  button:focus  {
   background-color: rgb(250,250,250);
   border-color: #000;
 }
 
-  .signUpPage button:hover, .signUpPage input[type="button"]:hover, .signUpPage input[type="submit"]:hover,
-  .signUpPage button:focus,.signUpPage input[type="button"]:focus, .signUpPage input[type="submit"]:focus {
+  #registration-page  button:hover, #registration-page  input[type="button"]:hover, #registration-page  input[type="submit"]:hover,
+  #registration-page  button:focus,#registration-page input[type="button"]:focus, #registration-page  input[type="submit"]:focus {
   background-color: rgb(255, 219, 58);
   color: rgb(40, 40, 40);
 }
-
 
 .inputRequirements li.invalid {
     color: #e77c3c;;
@@ -152,24 +146,27 @@
     padding-left: 10px;
     content: "\2713";
 }
-
-.signUpPage input:not([type="submit"]):valid {
+#registration-page  input:not([type="submit"]):valid {
   border-color: #79a743;
 }
 
 /* Hide and show related .inputRequirements when interacting with input */
-
-.signUpPage input:not([type="submit"]) + .inputRequirements {
+#registration-page  input:not([type="submit"]) + .inputRequirements {
   overflow: hidden;
   max-height: 0;
   transition: max-height 1s ease-out;  
 }
+#registration-page  input:not([type="submit"]):hover + .inputRequirements,#registration-page  input:not([type="submit"]):focus + .inputRequirements,
+#registration-page input:not([type="submit"]):active + .inputRequirements {
+  max-height: 1000px;
+  /*anylargenumber(biggerthenthe.inputRequirementslist)*/transition: max-height 1s ease-in;
+  -webkit-transition: max-height 1s ease-in;
+  -moz-transition: max-height 1s ease-in;
+  -ms-transition: max-height 1s ease-in;
+  -o-transition: max-height 1s ease-in;
+};
 
-.signUpPage input:not([type="submit"]):hover + .inputRequirements,
-.signUpPage input:not([type="submit"]):focus + .inputRequirements,
-.signUpPage input:not([type="submit"]):active + .inputRequirements {
-  max-height: 1000px; /* any large number (bigger then the .inputRequirements list) */
-  transition: max-height 1s ease-in;
+#register-divider{
+  padding:10px;
 }
-
 

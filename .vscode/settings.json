@@ -7,7 +7,6 @@
         "Theloveofmylife",
         "activeclassname",
         "pubdate",
-        "theywillbedone"
     ],
     "better-comments.tags": [
         {
@@ -27,6 +26,10 @@
           "backgroundColor": "transparent",
           "bold": false,
           "italic": false
+        },
+        {
+          "editor.fontLigatures": true,
+          "editor.fontFamily": "'Fira Code iScript', Consolas, 'Courier New', monospace"
         },
         {
           "tag": "//",
@@ -54,8 +57,10 @@
           "backgroundColor": "transparent",
           "bold": false,
           "italic": false
-        }
-      ]
-
-}
-
+        },
+        // {"editor.fontFamily": "Operator Mono, Consolas, 'Courier New', monospace"
+        // }
+        
+      ],
+    }
+  

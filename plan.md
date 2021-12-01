@@ -99,7 +99,7 @@ REDUX ACTIONS
 REDUCERS 
 
 ACTIONS - Are JSON objects consisting of two things, {type , payload}
-type is name of the string in action and payload is the data. 
+type is the name of the string in action and payload is the data. 
 
 eg. USER_DATA_LOADED - is the type and payload will hold teh info of the data that has been loaded, 
 
@@ -107,7 +107,7 @@ MESSAGE_RECEIEVED
 ITEM_ADDED_TO_CART
 
 
-Where as,REDUCER are a way of specifying what should happen to the redux store in the centralized state when a given action occurs, 
+Where as,REDUCERS are a way of specifying what should happen to the redux store in the centralized state when a given action occurs, 
 
 
 Components are only allowed to interact with the state by triggering redux actions 

@@ -47,18 +47,16 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
 /*limited reset*/
-
 html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	vertical-align: baseline;
+	vertical-align:baseline;
+	font: inherit;
 }
 
-/* html5 display rule*/
-
+/*html5 display rule*/
 address, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
 	display: block;
 }
@@ -75,6 +73,26 @@ pre[class*="language-javascript"] {
 	width: 50%;
 	padding: 20px;
 }
+.variable {
+	color: #12bb31;
+}
+
+.result {
+	color: #cf8128;
+}
+.content-container {
+	margin-top: 8vh;
+}
+
+.archItem {
+	font-size: 20px;
+}
+
+.menu-icon{
+    width: 25px;
+    cursor: pointer;
+    display: none;
+}
 
 .software-page{
 	text-align: center;
@@ -83,7 +101,7 @@ pre[class*="language-javascript"] {
 
 a {
 	text-decoration: none;
-	color: #738976;
+	color: #618b67;
 }
 
 body {
@@ -124,25 +142,29 @@ header h1 {
 header h3{
 	background: url(./images/hlogo.png) no-repeat ;
 }
-.header-social-icons{
+
+.header-social-icons {
 	text-decoration: none !important;
 	padding: 10px;
   }
+
 #header-icon{
 	padding-right:3px;
     text-decoration:none;
 }
+
 .header-str-connect{
+	font-weight: bold;
 	margin-left:10px;
 	text-align:left;
 	padding-Right:0.2vh;
 	float:left;
 	color:rgb(3, 176, 176);
 }
-
 .header-greet{
 	margin-right:10px;
 	text-align:right;
+	font-weight:bold;
 	padding-top:3px;
 	color:rgb(3, 176, 176);
 }
@@ -168,6 +190,10 @@ span.header-title{
 	color: #d4e7a5;
 	font-size: 10vh;
   }
+
+.menu-button {
+	display:none
+}
 /*nav styles*/
 
 #mainNav {
@@ -177,9 +203,8 @@ span.header-title{
 	background-image: url("./images/hb3.png");
 	background-position: center;
 	background-size: cover;
+	background-repeat: no-repeat;
 }
-
-
 /* https://assets.codepen.io/296057/lil-graydots.png */
 
 #mainNav li {
@@ -202,6 +227,9 @@ span.header-title{
 	cursor: default;
 }
 
+.navWrap {
+	position: sticky;/*  ** note the menu will not be sticky until we add more page content */
+  }
 /*banner styles*/
 
 .banner h1 {
@@ -293,7 +321,6 @@ article h2 a:hover {
 }
 
 /*form styles*/
-
 fieldset {
 	border: none;
 	background: rgb(237, 228, 214);
@@ -386,11 +413,8 @@ aside h2 {
 	border: none;
 	color: rgb(76, 67, 65);
 	padding-left: 95px;
-	background: url(./images1/tweet_90.png) no-repeat;
 }
-
 /*mobile styles*/
-
 @media only screen and (max-width:480px) {
 	/*disable text sizing on orientation change*/
 	html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
@@ -402,10 +426,6 @@ aside h2 {
 		min-width: 320px;
 		max-width: 480px;
 	}
-	#mainNav a.hamburger, #mainNav a.close {
-		font-size: 2rem;
-		color: #00bff3;
-	}
 	/*header styles*/
 	header {
 		height: 70px;
@@ -416,10 +436,9 @@ aside h2 {
 		line-height: 70px;
 		width: 190px;
 		margin: 0 auto;
-		background: url(./images1/desolve_logo_50.png) no-repeat left center;
 	}
 	header h2 {
-		display: none;
+		display: block;
 	}
 	/*nav styles*/
 	#mainNav {
@@ -472,7 +491,6 @@ aside h2 {
 		padding-bottom: 20px;
 	}
 	article h1 {
-		background: url(./images1/icon_sprites_50.png) no-repeat right top;
 		padding: 20px 0 5px;
 	}
 	article h2 {
@@ -613,7 +631,6 @@ aside h2 {
 	}
 }
 /*tablet styles*/
-
 @media only screen and (min-width:481px) and (max-width:768px) {
 	body {
 		width: 90%;
@@ -834,24 +851,26 @@ aside h2 {
 	body {
 		width: 90%;
 		margin: 0 auto;
-		min-width: 1024px;
-		max-width: 1280px;
+		margin: 10 auto;
+		min-width: 1000px;
+		max-width: 1200px;
 		background-color: rgba(216, 226, 243, .2);
-		height: inherit;
+		height: 100%;
 	}
+	
 	nav {
 		padding: 0;
-		position: static;
+		position: sticky;
 		height: auto;
 		transform: translateY(0);
-	}
-	.hamburger, .close {
-		display: none;
 	}
 	nav ul {
 		flex-flow: row wrap;
 		justify-content: center;
 	}
+	/* .collapse-menu {
+     display:block;
+	} */
 	#pageFooter {
 		padding-bottom: 50px;
 	}
@@ -881,7 +900,6 @@ aside h2 {
 		margin-right: .5em;
 		float: left;
 		margin-left: 3.9%;
-		/* fixes nasty 1px header fitting problem*/
 		display: inline;
 	}
 	header h2 {
@@ -915,6 +933,18 @@ aside h2 {
 		display: block;
 		text-transform: lowercase;
 	}
+	#mainNav .active {
+		color: rgb(3, 176, 176);
+	}
+
+	.banner h1 {
+		font-weight: bold;
+		font-size: 1.1em;
+		color: rgb(160, 41, 41);
+		letter-spacing: .1em;
+		text-align: center;
+		margin-right: -1em;
+	}
 	/*banner styles*/
 	.banner {
 		height: 350px;
@@ -928,9 +958,12 @@ aside h2 {
 	}
 	.banner h1 {
 		font-size: 2.2em;
-		color: #fff;
+		color: rgb(255, 255, 255);
 		padding-top: 290px;
-		letter-spacing: .1em;
+		letter-spacing:.1em;
+		text-emphasis: 20px;
+		text-size-adjust: 1.5em;
+		text-align: left;
 	}
 	.banner p {
 		width: 21%;
@@ -1088,38 +1121,24 @@ aside h2 {
 	}
 }
 
-.variable {
-	color: #12bb31;
-}
-
-.result {
-	color: #cf8128;
-}
-
-@media (orientation:landscape) {
-	body {
-		width: 90%;
-		margin: 10 auto;
-		min-width: 1000px;
-		max-width: 1200px;
-		height: 100%;
+@media only screen and (max-width:700px){
+	#mainNav {
+		overflow: hidden;
+		margin: 0%;
+		padding: 10px;
+		background-image: url("./images/hb3.png");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
-	#mainNav a.hamburger, #mainNav a.close {
+	/* #mainNav a,li {
+		font-size: .9em;
+		text-align: center;
+		padding-bottom: 50px;
 		display: none;
+	} */
+	.menu-button{
+		display: block;
+		padding: 10px;
 	}
-	#mainNav .active {
-		color: rgb(3, 176, 176);
-	}
-	.banner h1 {
-		color: rgb(241, 240, 240) !important;
-		font-size: 1.5em;
-		align-items: center;
-	}
-}
-.content-container {
-	margin-top: 8vh;
-}
-
-.archItem {
-	font-size: 20px;
 }

@@ -38,12 +38,16 @@ export const ForgotPasswordPage = () => {
     };
     return success ? (
         <Container maxWidth='md' className='bottom-container'>
+           <div style={{marginBottom:'5%'}} className='alert-container'>
            {showSuccessMessage && <div className="success">Success!</div>}
+           </div>
             <p>A reset link has been sent to your email</p>
         </Container>
     ) : (
         <Container maxWidth='md' className='bottom-container'>
-            {showErrorMessage && <div className='fail'> {errorMessage}</div>}
+              <div style={{marginBottom:'5%'}} className='alert-container'>
+             {showErrorMessage && <div className='fail'> {errorMessage}</div>}
+              </div>
             <div className='forgot-password'>
                 <h1>Password reset</h1>
                 <p>Enter your email to receive  a reset link  </p>

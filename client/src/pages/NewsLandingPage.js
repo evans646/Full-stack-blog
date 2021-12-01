@@ -35,9 +35,7 @@ export const FirstNews = ()=> {
    <section className='news'>
     <h2  ><a href={data.url} target='_blank' rel="noreferrer"  title="Tech news">{data.title}</a></h2>
     <p className="pubdate">
-      <time  pubdate className='date-time'>{dateFormat(data.publishedAt,"dddd, mmmm dS, yyyy, h:MM:ss TT")
-
-}</time>
+      <time  pubdate="true" className='date-time'>{dateFormat(data.publishedAt,"dddd, mmmm dS, yyyy, h:MM:ss TT")}</time>
     </p>
     <img src={data.urlToImage} width={800} style={{padding:'0',height: '50vh'}} alt='tech-crunch' className='tech-crunch-img'/> 
     <p >{<p>{description}... read more <sup><Link to='/'><FaRegShareSquare/></Link></sup></p>}</p>
@@ -63,9 +61,6 @@ export const SecondNews = ()=>{
     //       newsData()
     // },)
 
-    // setInterval(()=>{
-    //   console.log('hey')
-    // },4000*100)
 
     let description = data.description && data.description.substring(0,150)
 
@@ -74,7 +69,7 @@ export const SecondNews = ()=>{
    <section  className='news'>
    <h2><a href={data.url} target='_blank' rel="noreferrer"  title="Tech news">{data.title}</a></h2>
     <p className="pubdate">
-      <time  pubdate className='date-time'>{dateFormat(data.publishedAt,"dddd, mmmm dS, yyyy, h:MM:ss TT")}</time>
+      <time  pubdate="true" className='date-time'>{dateFormat(data.publishedAt,"dddd, mmmm dS, yyyy, h:MM:ss TT")}</time>
     </p>
     <img src={data.urlToImage} width={800} style={{padding:'0',height: '50vh'}} alt='tech-crunch' className='tech-crunch-img'/> 
     <p class="caption">{<p>{description}... read more <sup><Link to='/'><FaRegShareSquare/></Link></sup></p>}</p>
@@ -106,7 +101,7 @@ export const ThirdNews= () => {
    <section className='news'>
    <h2><a href={data.url} target='_blank' rel="noreferrer"  title="Tech news">{data.title}</a></h2>
     <p className="pubdate">
-      <time  pubdate className='date-time'>{dateFormat(data.publishedAt,"dddd, mmmm dS, yyyy, h:MM:ss TT")}</time>
+      <time  pubdate="true" className='date-time'>{dateFormat(data.publishedAt,"dddd, mmmm dS, yyyy, h:MM:ss TT")}</time>
     </p>
     <img src={data.urlToImage} width={800} style={{padding:'0',height: '50vh'}} alt='tech-crunch' className='tech-crunch-img'/> 
     <p className="caption">{<p>{description}... read more <sup><Link to='/'><FaRegShareSquare/></Link></sup></p>}</p>
