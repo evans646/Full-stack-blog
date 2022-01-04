@@ -2,17 +2,17 @@ import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';//there is a problem with the react dom
 import './index.css';
-import './App.css'
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './app/App.css';
+
+import { App, serviceWorker } from './app';
 import {Provider} from 'react-redux';
+
 import 'animate.css';
 
 import {configureStore} from './store/store';
 
 
 const store = configureStore({});
-
 
 
 ReactDOM.render(

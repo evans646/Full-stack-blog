@@ -12,18 +12,14 @@ export const upvoteRoute = {
         const {userId } = req.params;
 
         const articleInfo = await db.collection('articles').findOne({ name: articleName });
-   
         await db.collection('articles').updateOne({ name: articleName },{
                    '$set': {
                       upvotes: articleInfo.upvotes + 1,
-                      hasUpvoted:true,
                   }}); 
-                     
         await db.collection('articles').updateOne({ _id: articleInfo._id },
          { $push: {
                upvotedIds:userId
          }});
-     
        const updatedArticleInfo = await db.collection('articles').findOne({ name: articleName }); 
        res.status(200).json(updatedArticleInfo);
     }

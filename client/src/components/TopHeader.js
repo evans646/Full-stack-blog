@@ -7,7 +7,7 @@ import {IoLogoTwitter} from "react-icons/io";
 import {BsInstagram} from "react-icons/bs";
 import {SiLinkedin} from "react-icons/si";
 
-import { useUser } from "./auth/useUser";
+import { useUser } from "../auth/useUser";
 
 
 
@@ -18,9 +18,8 @@ export const TopHeader = () => {
     const { given_name,name, username} = user || '';
 
 
-  const handleLogOut = (e) => {
+    const handleLogOut = (e) => {
     e.preventDefault();
-    // We'll want to log the user out here
     localStorage.removeItem("token");
     window.location.reload();
   };
@@ -41,4 +40,5 @@ export const TopHeader = () => {
     </span>
  </div>
  )};
+
 

@@ -14,13 +14,13 @@ export const logInRoute = {
 
         if (!user) return res.sendStatus(401);
 
-        const { _id: id, isVerified, passwordHash, salt,Upvoted } = user;
+        const { _id: id, isVerified, passwordHash, salt,Upvoted ,email} = user;
 
         const pepper = process.env.PEPPER_STRING;
 
         const isCorrect = await bcrypt.compare(salt + password + pepper, passwordHash);
         if (isCorrect) {
-            jwt.sign({ id, isVerified, username ,Upvoted}, process.env.JWT_SECRET, { expiresIn: '2d' }, (err, token) => {
+            jwt.sign({ id, isVerified, username ,Upvoted,email}, process.env.JWT_SECRET, { expiresIn: '2d' }, (err, token) => {
                 if (err) {
                     // throw new ExpressError('Authentication failed try again', 500)//internal error
                     res.sendStatus(500);

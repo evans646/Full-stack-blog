@@ -14,7 +14,7 @@ import './login.css';
 
 
 
-export const LogInPage = () => {
+export function LoginPage (){
  
     const [, setToken] = useToken();
 

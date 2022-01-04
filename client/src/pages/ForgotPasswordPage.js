@@ -1,10 +1,10 @@
-import React,{ useState ,useEffect} from 'react';
+import{ useState ,useEffect} from 'react';
 import {useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Container from '@material-ui/core/Container';
 
 
-export const ForgotPasswordPage = () => {
+export function ForgotPasswordPage() {
     const [errorMessage, setErrorMessage] = useState('');
     const [success, setSuccess] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);

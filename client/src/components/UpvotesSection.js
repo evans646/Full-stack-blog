@@ -5,15 +5,14 @@ import Container from '@material-ui/core/Container';
 
 import { useUser } from '../auth/useUser';
 
-import '../App.css'
 
-
-const UpvotesSection = ({ articleName, upvotes, setArticleInfo,hasUpvoted}) => {
+export function UpvotesSection({ articleName, upvotes, setArticleInfo,hasUpvoted}) {
   
     const history = useHistory();
     const user = useUser();
 
     const {id} = user || '';
+  
 
     const upvoteArticle = async () =>{
     const response = await axios.post(`/api/articles/${articleName}/${id}/upvote`);
@@ -27,15 +26,14 @@ const UpvotesSection = ({ articleName, upvotes, setArticleInfo,hasUpvoted}) => {
     setArticleInfo(body);
   }; 
 
-  
+
   return (
   <Container id='upvotes-section'>
    {!user ? (<button onClick={() => history.push('/login')}> Upvote</button>) : (<button onClick={() => upvoteArticle()}>Upvote</button>) && !hasUpvoted ? ( <button onClick={() =>  upvoteArticle()}>Upvote</button>):(<button className='downvote-btn' style={{backgroundColor:'black'}} onClick={() => downvoteArticle()}>Downvote</button>)}
-   {upvotes > 1 ? <p>{upvotes} Upvotes </p> : <p> {upvotes} Upvote</p>}
+   {upvotes > 1 ? <p style={{ fontWeight:'bold' }}>{upvotes} Upvotes </p> : <p style={{ fontWeight:'bold' }}> {upvotes} Upvote</p>}
   </Container>
   );
 };
 
 export default UpvotesSection;
 
-// export default UpvotesSection;

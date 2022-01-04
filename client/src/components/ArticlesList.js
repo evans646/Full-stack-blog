@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 //import Typography from '@material-ui/core/Typography';
 import { FaRegShareSquare } from "react-icons/fa";
 
-const ArticlesList = ({ articles}) => {
+export function ArticlesList ({ articles}) {
 
     return (
     <Container maxWidth='lg'>
@@ -18,5 +18,3 @@ const ArticlesList = ({ articles}) => {
     </Container>
     )
 };
-
-export default ArticlesList;

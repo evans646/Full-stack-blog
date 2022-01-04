@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 
-export const DataStructures = () => {
+export function DataStructuresPage() {
   return (
     <div>
       <Container maxWidth="lg" className="archItem">
@@ -50,4 +50,4 @@ export const DataStructures = () => {
       </Container>
     </div>
   );
-};
+}

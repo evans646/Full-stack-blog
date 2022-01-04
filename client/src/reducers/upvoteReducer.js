@@ -1,6 +1,6 @@
 import {
     SET_USER_UPVOTE_SUCCESS 
-}from '../actions/upvoteActions';
+} from '../actions/upvoteActions';
 
 
 

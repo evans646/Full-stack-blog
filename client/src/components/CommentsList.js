@@ -7,22 +7,20 @@ import { useUser } from '../auth/useUser';
 import '../index.css'
 
 let colors = [
-    'red', 
-    'blue',
+    'red',
     'teal',
 ];
 
 
-const CommentsList = ({ comments}) => {
+export function CommentsList ({ comments}){
     
     const user = useUser();
     const { given_name,name, picture} = user || '';
  
-    return (
-    
+    return(
      <ConfigProvider colors={colors}>
          <div className='comment-list-section'>
-       {comments.length > 1 ? <Typography variant='h6' fontWeight='600' ><span className='comments-list-head'>{comments.length} COMMENTS</span></Typography>:<Typography variant='h6' fontWeight='600' ><span className='comments-list-head'>{comments.length} COMMENT</span></Typography >  }
+       {comments.length > 1 ? <Typography variant='h6' fontWeight='600' ><span className='comments-list-head'>{comments.length } COMMENTS</span></Typography>:'' }
             {comments.map((comment, key) => (
                 <div className='comment' key={key} >
                     <Typography variant='h6' className='comment-username' fontWeight='500'><Avatar src={picture}  size="70" round={true} name={comment.username ||name} /><span> {comment.username || name|| given_name} </span> wrote</Typography>
@@ -36,6 +34,3 @@ const CommentsList = ({ comments}) => {
      </ConfigProvider>
      )
 };
-
-export default CommentsList;
-

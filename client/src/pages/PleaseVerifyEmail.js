@@ -1,4 +1,4 @@
-import React,{ useEffect } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router";
 import Container from '@material-ui/core/Container';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +6,8 @@ import Container from '@material-ui/core/Container';
 
 
 
-export const PleaseVerifyEmailPage = () => {
+
+export function PleaseVerifyEmailPage() {
     const history = useHistory();
   
     useEffect(() => {
@@ -24,4 +25,5 @@ export const PleaseVerifyEmailPage = () => {
             </p>
         </Container>
     );
-};
+}
+

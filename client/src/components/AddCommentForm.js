@@ -6,7 +6,7 @@ import { useUser } from '../auth/useUser';
 
 
 
- const AddCommentForm = ({ articleName, setArticleInfo }) => {
+export function AddCommentForm ({ articleName, setArticleInfo }){
     
      const [,setUsername] = useState('');
      const [commentText, setCommentText] = useState('');
@@ -45,6 +45,3 @@ import { useUser } from '../auth/useUser';
         </div>
     );
 };
-
-
-export default AddCommentForm;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -11,10 +11,9 @@ import { IoMdArrowDropdown } from "react-icons/io";
 
 import { IconContext } from "react-icons";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
-import { useUser } from "./auth/useUser";
+import { useUser } from "../auth/useUser";
 // import menuIcon from './images/menu.png';
 
-import "./index.css";
 
 //material ui styles
 const useStyles = makeStyles((theme) => ({
@@ -23,9 +22,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const NavBar = () => {
+export const Navbar = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
+  const [toggleMenu, setToggleMenu] = useState(false);
+
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -47,8 +48,7 @@ export const NavBar = () => {
     <div className="navWrap">
       <nav id="mainNav">
         <ul>
-          <li>
-            <NavLink exact className="current" to="/">
+          <li><NavLink exact className="current" to="/">
               Home
               <em> navigate to home </em>
             </NavLink>
@@ -60,7 +60,7 @@ export const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/articles-list" activeclassname="active">
+           <NavLink to="/articles-list" activeclassname="active">
               Articles
               <em> our articles</em>
             </NavLink>
@@ -77,14 +77,11 @@ export const NavBar = () => {
               <em>e library</em>
             </Link>
             <Box>
-              <Menu
-                className={classes.paper}
-                id="simple-menu"
+              <Menu className={classes.paper} id="simple-menu"
                 anchorEl={anchorEl}
                 keepMounted
                 open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
+                onClose={handleClose}>
                 <span className="e-lib-item">
                   <MenuItem onClick={handleClose}>
                     <NavLink exact to="/e-library" activeclassname="active">

@@ -442,3 +442,5 @@ export const isLoading = (state = false, action)=>{
 now if we chcek the state in devtools we will see that the isLoading has been added  so we can make use of it by :
 todolist/
 
+
+i am adding views to the article

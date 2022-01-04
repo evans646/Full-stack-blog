@@ -5,7 +5,11 @@ import ImageListItem from "@mui/material/ImageListItem";
 
 const useH1 = {
   textAlign: "center",
+  paddingTop:'5%',
+  fontSize:'2rem',
+  fontWeight:'bold'
 };
+
 const itemData = [
   {
     img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
@@ -57,10 +61,11 @@ const itemData = [
   },
 ];
 
-export const EbooksPage = () => {
+export function EbooksPage(){
   return (
-    <Container maxWidth="md" className="bottom-container">
-      <h1 style={useH1}>Ebooks</h1>
+    <>
+     <h1 style={useH1}>Ebooks</h1>
+     <Container maxWidth="md" className="bottom-container" style={{ marginLeft:'20%'}}>
       <ImageList sx={{ width: 900, height: 800 }} cols={3} rowHeight={164}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
@@ -74,5 +79,6 @@ export const EbooksPage = () => {
         ))}
       </ImageList>
     </Container>
+    </>
   );
 };

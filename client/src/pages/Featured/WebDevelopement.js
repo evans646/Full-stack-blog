@@ -12,7 +12,7 @@ const h4 = {
   fontSize: "20px",
 };
 
-export const WebDevelopmentPage = () => {
+export function WebDevelopmentPage() {
   return (
     <Container maxWidth="lg" className="archItem">
       <div className="content-container">
@@ -97,4 +97,4 @@ export const WebDevelopmentPage = () => {
       </div>
     </Container>
   );
-};
+}

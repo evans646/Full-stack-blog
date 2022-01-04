@@ -29,7 +29,7 @@ const center = {
 };
 
 
-export const SocialMediaMarketing = () => {
+export function SocialMediaMarketingPage(){
    const history = useHistory();
    let contents = [
       <Container maxWidth='lg' className="archItem" >

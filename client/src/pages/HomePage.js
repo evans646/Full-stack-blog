@@ -2,35 +2,45 @@ import React from "react";
 import { Link } from "react-router-dom";
 import softwareImg from "../images/software.jpeg";
 import hardwareImg from "../images/hardware.jpeg";
-//import { useMediaQuery } from 'react-responsive'
-import {FirstNews,SecondNews,ThirdNews} from "./NewsLandingPage";
+
+import Techpic from "../images/dev.jpeg"
+
+import { FirstNews, SecondNews, ThirdNews } from "./NewsLandingPage";
 
 import { DiCode } from "react-icons/di";
 import ScrollAnimation from "react-animate-on-scroll";
 
-const HomePage = () => {
-
+export function HomePage (){
 
   return (
     <section id="content">
       <div className="banner">
         <h1>Modern Technology</h1>
         <p>
-          We’re betting you do to. Welcome to our site, a growing small group of
-          passionate programmers. feel free to browse through for any
-          information you may need concerning TECH.
+          A growing small group of passionate programmers. feel free to browse
+          through for any information you may need concerning TECH.
         </p>
       </div>
-      <article id="latest" >
+      <article id="latest">
         <span style={{ float: "right" }}>
           <DiCode size={75} color={"rgb(3, 176, 176)"} className="icon" />
         </span>
         <h1>Tech Crunch</h1>
         <div>
-         <FirstNews/>
-         <SecondNews/>
-         <ThirdNews/>
+          <FirstNews />
+          <SecondNews />
+          <ThirdNews />
         </div>
+        <section>
+          <h1>The future of technology</h1>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint harum
+          est rem ullam, odio dolores aspernatur architecto reprehenderit
+          facilis velit natus, facere aliquam. Suscipit ea fuga dolore modi
+          illum, dicta aperiam veritatis cumque praesentium aliquam corrupti id
+          totam qui sunt aut libero soluta minima, reprehenderit non expedita
+          harum eveniet! Facere!
+          <img src={Techpic} width='840' height='400' alt=''/>
+        </section>
       </article>
       <aside>
         <nav id="archives">
@@ -62,28 +72,31 @@ const HomePage = () => {
               </Link>
             </li>
             <li>
-              <Link
-                to="/featured/businessManagement"
-                title="business management"
-              >
+              <Link to="/featured/businessManagement" title="business management" >
                 Business Management
               </Link>
             </li>
             <li>
               <Link
                 to="/featured/socialMediamrkting"
-                title="social media marketing"
-              >
+                title="social media marketing">
                 Social Media Marketing
               </Link>
             </li>
           </ul>
-
           <select name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <option value="volvo" id="cars">
+              Volvo
+            </option>
+            <option value="saab" id="cars">
+              Saab
+            </option>
+            <option value="mercedes" id="cars">
+              Mercedes
+            </option>
+            <option value="audi" id="cars">
+              Audi
+            </option>
           </select>
         </nav>
         <ScrollAnimation animateIn="fadeIn" animateOut="fadeOut">
@@ -93,11 +106,9 @@ const HomePage = () => {
               <img src={softwareImg} width="200" height="200" alt="software" />
             </Link>
             <p>
-              Do you know where this is? Send your guess to us via the contact
-              page. All correct entries will be added to a drawing at the end of
-              the month. The randomly selected winner will win a framed print of
-              their choice from our shop. Cool! The randomly selected winner
-              will win a framed print of their choice from our shop. Cool!
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
+              suscipit, a consequatur nostrum magnam non accusamus incidunt
+              explicabo voluptas impedit eveniet, perferendis asperiores ?
             </p>
           </section>
         </ScrollAnimation>
@@ -118,8 +129,5 @@ const HomePage = () => {
     </section>
   );
 };
-
-
-export default HomePage;
 
 

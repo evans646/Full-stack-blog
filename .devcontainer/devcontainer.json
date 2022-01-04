@@ -19,7 +19,10 @@
 		"batisteo.vscode-django",
 		"hookyqr.beautify",
 		"formulahendry.terminal",
-		"prasadbobby.auto-rename-tag"
+		"prasadbobby.auto-rename-tag",
+		"formulahendry.auto-rename-tag",
+		"aeschli.vscode-css-formatter",
+		"softwaredotcom.swdc-vscode"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

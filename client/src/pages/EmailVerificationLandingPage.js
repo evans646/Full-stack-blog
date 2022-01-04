@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ import { EmailVerificationFail } from './EmailVerificationFail';
 
 
 
-export const EmailVerificationLandingPage = () => {
+export function EmailVerificationLandingPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [isSuccess, setIsSuccess] = useState(false);
     const { verificationString } = useParams();

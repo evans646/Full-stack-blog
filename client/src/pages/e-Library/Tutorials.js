@@ -5,6 +5,9 @@ import ImageListItem from "@mui/material/ImageListItem";
 
 const useH1 = {
   textAlign: "center",
+  paddingTop:'5%',
+  fontSize:'2rem',
+  fontWeight:'bold'
 };
 const itemData = [
   {
@@ -57,10 +60,11 @@ const itemData = [
   },
 ];
 
-export const Tutorials = () => {
+export function TutorialsPage () {
   return (
-    <Container maxWidth="md" className="bottom-container">
-      <h1 style={useH1}>Tuts</h1>
+    <>
+    <h1 style={useH1}>Tuts</h1>
+    <Container maxWidth="md" className="bottom-container" style={{ marginLeft:'20%'}}>
       <ImageList sx={{ width: 900, height: 800 }} cols={3} rowHeight={164}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
@@ -74,5 +78,6 @@ export const Tutorials = () => {
         ))}
       </ImageList>
     </Container>
+    </>
   );
 };
