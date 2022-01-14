@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import softwareImg from "../images/software.jpeg";
 import hardwareImg from "../images/hardware.jpeg";
 
-import Techpic from "../images/dev.jpeg"
+import Techpic from "../images/dev.jpeg";
+import FeaturedImg from "../images/featured.png";
 
 import { FirstNews, SecondNews, ThirdNews } from "./NewsLandingPage";
 
@@ -11,6 +12,7 @@ import { DiCode } from "react-icons/di";
 import ScrollAnimation from "react-animate-on-scroll";
 
 export function HomePage (){
+
 
   return (
     <section id="content">
@@ -31,7 +33,7 @@ export function HomePage (){
           <SecondNews />
           <ThirdNews />
         </div>
-        <section>
+        <ScrollAnimation animateIn='bonce' animateOut='bounce' duration={10} initiallyVisible={false}>
           <h1>The future of technology</h1>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint harum
           est rem ullam, odio dolores aspernatur architecto reprehenderit
@@ -40,11 +42,12 @@ export function HomePage (){
           totam qui sunt aut libero soluta minima, reprehenderit non expedita
           harum eveniet! Facere!
           <img src={Techpic} width='840' height='400' alt=''/>
-        </section>
+        </ScrollAnimation>
       </article>
       <aside>
         <nav id="archives">
-          <h2>FEATURED</h2>
+          {/* <h2>FEATURED</h2> */}
+          <img src={FeaturedImg} width='100' height='90' alt='' style={{marginLeft:'7vh'}}/>
           <ul>
             <li>
               <Link to="/featured/webtechnologies" title="web technologies">
@@ -121,13 +124,15 @@ export function HomePage (){
             <p>
               Tempora obcaecati velit suscipit at sunt officiis nostrum
               excepturi facilis repudiandae cum nam, consequuntur in assumenda
-              iure? Earum iure ut rem iusto explicabo inventore ipsam,
+              iure? Earum iure ut rem iusto explicabo inventore ipsam
             </p>
           </section>
         </ScrollAnimation>
+        <h2>Social media display</h2>
       </aside>
     </section>
   );
 };
+
 
 

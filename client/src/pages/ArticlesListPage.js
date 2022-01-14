@@ -1,4 +1,4 @@
-import {ArticlesList} from "../components/index";
+import { ArticlesList } from "../components/index";
 import articleContent from "./article-content";
 
 export function ArticlesListPage() {

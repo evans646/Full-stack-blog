@@ -16,12 +16,37 @@ import RingLoader from "react-spinners/RingLoader";
 import { useUser } from "../auth/useUser";
 //import { alertTitleClasses } from '@mui/material';
 
+import Box from '@mui/material/Box';
+import Popper from '@mui/material/Popper';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Fade from '@mui/material/Fade';
+import Paper from '@mui/material/Paper';
+
+
+
+
+
+
 const override = css`
   display: block;
   margin: 17% auto;
 `;
 
 export function ArticlePage({ match }) {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [open, setOpen] = useState(false);
+  const [placement, setPlacement] =useState();
+
+
+
+  const handleClick = (newPlacement) => (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpen((prev) => placement !== newPlacement || !prev);
+    setPlacement(newPlacement);
+  };
+
   const name = match.params.name;
 
   const user = useUser();
@@ -34,9 +59,11 @@ export function ArticlePage({ match }) {
     comments: [],
     upvotedIds: [],
   });
+
   const [loading, setLoading] = useState(false);
   let [color, setColor] = useState("#ffffff");
-  let views = 5; //i will use an eye icon and display the views beside it.I also want to display a date of when the article was publish,
+  // const [views,] = useState([{views:[]}]);
+  //let views = []; //i will use an eye icon and display the views beside it.I also want to display a date of when the article was publish,
   //that will be part of the article from the front end
 
   useEffect(() => {
@@ -64,6 +91,14 @@ export function ArticlePage({ match }) {
 
   if (!article) return <NotFoundPage />;
 
+
+let views = [2]
+
+
+
+// let views = localStorage.setItem('views',new Array)
+
+
   //check to see if the user has added upvote on the article
   const voted = Object.values(articleInfo.upvotedIds).filter((userId) => userId === id)
       .length > 0
@@ -79,7 +114,6 @@ export function ArticlePage({ match }) {
       <h1 className="article-title">{article.title}</h1>
       <div style={{ marginLeft: "27vh", padding: "0" }}>
         <p style={{ fontWeight: "bold" }}>
-          {" "}
           <FaRegEye
             style={{
               fontSize: "1.8em",
@@ -87,11 +121,11 @@ export function ArticlePage({ match }) {
               color: "#d1fd1d",
               cursor: "pointer",
             }}
-          />{" "}
+          />
           {views}
         </p>
         <p style={{ fontWeight: "bold" }}>
-          Commitment{" "}
+          Commitment
           <span
             style={{
               color: "#6c757d",
@@ -107,7 +141,7 @@ export function ArticlePage({ match }) {
                 color: "#d1fd1d",
                 cursor: "pointer",
               }}
-            />{" "}
+            />
             2 mins
           </span>
         </p>
@@ -136,8 +170,8 @@ export function ArticlePage({ match }) {
           </p>
         ))}
       </Container>
-      <CommentsList comments={articleInfo.comments} content={article.content} />
       <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
+      <CommentsList comments={articleInfo.comments} content={article.content} />
       <h3 className="other-article-list"> Related Articles</h3>
       <ArticlesList articles={relatedArticles} />
     </>

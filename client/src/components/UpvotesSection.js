@@ -3,7 +3,54 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Container from '@material-ui/core/Container';
 
+import styled from 'styled-components';
+
+
 import { useUser } from '../auth/useUser';
+
+
+const UpvoteButton = styled.button`
+box-sizing: border-box;
+font-size: 20px;
+margin-left: 30px;
+padding: 10px;
+background-color: rgba(0, 0, 0);
+color: white;
+border-radius: 8px;
+cursor: pointer;
+margin-bottom: 40px;
+outline: none;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+-ms-border-radius: 8px;
+-o-border-radius: 8px;
+`;
+
+const DownvoteButton = styled.button`
+box-sizing: border-box;
+font-size: 20px;
+margin-left: 30px;
+padding: 10px;
+background-color: rgba(0, 0, 0,0.656);
+color: white;
+border-radius: 8px;
+cursor: pointer;
+margin-bottom: 40px;
+outline: none;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+-ms-border-radius: 8px;
+-o-border-radius: 8px;
+`
+const UpvoteSectionWrapper = styled.div`
+display: inline-block;
+font-family: 'Cantarell';
+margin-left: 30px;
+font-size: 20px;
+line-height: 30px;
+`
+
+
 
 
 export function UpvotesSection({ articleName, upvotes, setArticleInfo,hasUpvoted}) {
@@ -29,11 +76,12 @@ export function UpvotesSection({ articleName, upvotes, setArticleInfo,hasUpvoted
 
   return (
   <Container id='upvotes-section'>
-   {!user ? (<button onClick={() => history.push('/login')}> Upvote</button>) : (<button onClick={() => upvoteArticle()}>Upvote</button>) && !hasUpvoted ? ( <button onClick={() =>  upvoteArticle()}>Upvote</button>):(<button className='downvote-btn' style={{backgroundColor:'black'}} onClick={() => downvoteArticle()}>Downvote</button>)}
-   {upvotes > 1 ? <p style={{ fontWeight:'bold' }}>{upvotes} Upvotes </p> : <p style={{ fontWeight:'bold' }}> {upvotes} Upvote</p>}
+   {!user ? (<UpvoteButton onClick={() => history.push('/login')}> Upvote</UpvoteButton>) : (<UpvoteButton  onClick={() => upvoteArticle()}>Upvote</UpvoteButton>) && !hasUpvoted ? ( <UpvoteButton  onClick={() =>  upvoteArticle()}>Upvote</UpvoteButton>):(<DownvoteButton   onClick={() => downvoteArticle()}>Downvote</DownvoteButton>)}
+   {upvotes > 1 ? <p  className='upvotes-counter'>{upvotes} Upvotes </p> : <p className='upvotes-counter' > {upvotes} Upvote</p>}
   </Container>
   );
 };
 
-export default UpvotesSection;
+
+
 

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 export const Navbar = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
-  const [toggleMenu, setToggleMenu] = useState(false);
+  //const [toggleMenu, setToggleMenu] = useState(false);
 
 
   const handleClick = (event) => {

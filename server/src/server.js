@@ -19,9 +19,10 @@ routes.forEach(route => {
 // connection for every request.
 
 initializeDbConnection()
+    .then(() => console.log('DATABASE CONNECTED'))
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`DATABASE CONNECTED AND APP IS LISTENING ON PORT ${PORT}`);
+            console.log(`APP IS LISTENING ON PORT ${PORT}`);
         });
     });
 

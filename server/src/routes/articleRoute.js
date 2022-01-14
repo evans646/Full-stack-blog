@@ -1,5 +1,6 @@
 import { getDbConnection } from '../db';
 
+
 export const articleRoute = {
     path: '/api/articles/:name',
     method: 'get',
@@ -10,3 +11,5 @@ export const articleRoute = {
         res.status(200).json(articleInfo);
     },
 };
+
+

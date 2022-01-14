@@ -444,3 +444,28 @@ todolist/
 
 
 i am adding views to the article
+
+
+ i have installed 
+ 
+   <div>
+        <input value={this.state.value}
+          onChange={({target: {value}}) => this.setState({value, copied: false})} />
+
+        <CopyToClipboard text={this.state.value}
+          onCopy={() => this.setState({copied: true})}>
+          <span>Copy to clipboard with span</span>
+        </CopyToClipboard>
+
+        <CopyToClipboard text={this.state.value}
+          onCopy={() => this.setState({copied: true})}>
+          <button>Copy to clipboard with button</button>
+        </CopyToClipboard>
+
+        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+      </div>
+
+
+page views 
+You can add a field in your database schema in which you can update it by adding 1 or something similar when a user visits a page. If you want to go further you can then store the user IP in the database or use cookies to avoid counting page visits for the same person multiple times.
+

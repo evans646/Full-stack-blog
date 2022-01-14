@@ -18,10 +18,15 @@ import { FaRegShareSquare } from "react-icons/fa";
 
 
 
+
 export const ShareIcons = ({ content }) => {
   
-let icons = 
-   <section className="share-icons">
+
+
+
+  return (
+
+     <section className="share-icons-wrapper">
    <FacebookShareButton
      url={"http://www.techboost.com"}
      quote={content}
@@ -41,7 +46,7 @@ let icons =
      quote={content}
      hashtag="#techboost"
    >
-     <WhatsappIcon size={45} />
+   <WhatsappIcon size={45} />
    </WhatsappShareButton>
    <VKShareButton
      url={"http://www.techboost.com"}
@@ -64,20 +69,6 @@ let icons =
    >
      <RedditIcon size={45} />
    </RedditShareButton>
- </section>
-
-
-  const [Icons, setOpenIcons] = useState(false);
-
-  return (
-    <section className="share-icons-wrapper">
-      <span>
-        <FaRegShareSquare
-          className="share-icon"
-          onClick={() => setOpenIcons(true)}
-        />
-      </span>
-      {icons}
     </section>
   );
 };

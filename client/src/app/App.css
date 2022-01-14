@@ -91,8 +91,6 @@ html {
 
 .read-more {
   color: #738976;
-  ;
-  border-bottom: 1px solid blue
 }
 
 .other-article-list {
@@ -113,10 +111,6 @@ html {
   margin-left: 10px;
   font-size: 20px;
   font-weight: bold
-}
-
-#add-comment-form span {
-  border-bottom: 1px solid blue;
 }
 
 #add-comment-form input, textarea {
@@ -142,16 +136,12 @@ html {
 }
 
 .comment-list-section {
-  padding: 8px;
-}
-
-span.comments-list-head {
-  padding-left: 15px;
-
+  padding: 20px;
+  width: 90%;
 }
 
 .share-icons-wrapper {
-  padding:0;
+  padding: 0;
   width: 2px;
   height: 10px;
   z-index: 10;
@@ -160,28 +150,45 @@ span.comments-list-head {
   bottom: -50% !important;
   position: sticky;
 }
-.share-icon{
+
+.share-icon {
   z-index: 10;
   left: 100%;
   top: -2%;
   bottom: -70% !important;
   position: sticky;
-  font-size:2em
+  font-size: 2em
 }
-.share-icons{
- display:none
+
+.share-icons {
+  display: none
 }
 
 .comment {
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  line-height: 2;
   padding: 16px;
+  background-color: rgb(249, 242, 242);
+  border-radius: 5%;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
 }
 
 .comment-username {
+  background-color: rgba(203, 99, 99, 0.779);
+  margin-right: 10%;
+  width: 26%;
   font-size: 15px;
-  font-weight: semiBold;
-  font-weight: normal;
+  font-weight: bold;
   color: black;
+  border-radius:35px;
+  -webkit-border-radius:35px;
+  -moz-border-radius:35px;
+  -ms-border-radius:35px;
+  -o-border-radius:35px;
 }
 
 .comment-span {
@@ -274,40 +281,13 @@ span.comments-list-head {
   line-height: 30px;
 }
 
-
-#upvotes-section button {
-  box-sizing: border-box;
-  font-size: 20px;
-  margin-left: 30px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.649);
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 40px;
-  outline: none;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+.upvotes-counter {
+  font-weight: bold;
 }
 
-
-
-/* button.downvote-btn {
-  box-sizing: border-box;
-  font-size: 20px;
-  margin-left: 30px;
+#upvotes-section.downvote-btn {
   background-color: rgb(0, 0, 0);
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 40px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-} */
+}
 
 .aboutPage h1 {
   padding-top: 5vh;
