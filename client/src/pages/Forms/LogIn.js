@@ -10,6 +10,11 @@ import Typography from '@mui/material/Typography';
 import { useToken } from '../../auth/useToken';
 import {useQueryParams} from '../util/useQueryParams';
 
+
+
+import {IoMdWarning} from "react-icons/io";
+
+
 import './login.css';
 
 
@@ -81,7 +86,7 @@ export function LoginPage (){
     return (
         <Container maxWidth="md" className='bottom-container'>
              <div style={{marginBottom:'5%'}}>
-            {showErrorMessage && <div className="fail">{errorMessage}</div>}
+            {showErrorMessage && <div className="fail"><IoMdWarning style={{marginRight:'3%'}}/> {errorMessage}</div>}
             </div>
             <form className="loginPage">
                 <Typography variant='h5' className='loginPage-header'>Login</Typography>

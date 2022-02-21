@@ -469,3 +469,9 @@ i am adding views to the article
 page views 
 You can add a field in your database schema in which you can update it by adding 1 or something similar when a user visits a page. If you want to go further you can then store the user IP in the database or use cookies to avoid counting page visits for the same person multiple times.
 
+
+
+
+
+
+When you clck on load moerebtn you should get some loading efcet 

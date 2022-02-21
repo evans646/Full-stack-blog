@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config()
 import express from 'express';
 const app = express();
 import mongoose from 'mongoose';
@@ -18,7 +20,7 @@ const __dirname = path.resolve();
 import Article from './models/articles.js';
 import Comment from './models/comments.js';
 
-const dbUrl = 'mongodb://localhost:27017/Blog';
+const dbUrl = process.env.DB_URL ;
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,

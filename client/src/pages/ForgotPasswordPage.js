@@ -41,7 +41,7 @@ export function ForgotPasswordPage() {
            <div style={{marginBottom:'5%'}} className='alert-container'>
            {showSuccessMessage && <div className="success">Success!</div>}
            </div>
-            <p>A reset link has been sent to your email</p>
+            <p>A reset link has been sent to the email provided</p>
         </Container>
     ) : (
         <Container maxWidth='md' className='bottom-container'>

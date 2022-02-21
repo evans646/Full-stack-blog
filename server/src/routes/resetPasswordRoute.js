@@ -9,7 +9,7 @@ export const resetPasswordRoute = {
     const { passwordResetCode } = req.params;
     const { newPassword } = req.body;
 
-    const db = getDbConnection("my-blog");
+    const db = getDbConnection("blog-project");
     const newSalt = uuid();
     const pepper = process.env.PEPPER_STRING;
   

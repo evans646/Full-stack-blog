@@ -3,6 +3,9 @@ import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import Container from '@material-ui/core/Container';
 import Typography from '@mui/material/Typography';
+
+import {IoMdWarning} from "react-icons/io";
+
 import { useToken } from '../../auth/useToken';
 import './register.css'
 
@@ -46,7 +49,9 @@ const onSignUpClicked = async() => {
 
 return (
 <Container maxWidth='md' className='register-container'>
-{showErrorMessage && <div className="fail">{errorMessage}</div>}
+<div style={{marginBottom:'5%'}}>
+      {showErrorMessage && <div className="fail"> <IoMdWarning style={{marginRight:'3%'}}/> {errorMessage}</div>}
+ </div>
     <div id="registration-page">
     <Typography variant='h5' className='registration-header'>Register</Typography>
                 <label htmlFor="username">
@@ -84,9 +89,12 @@ return (
                     !emailValue || !passwordValue ||
                     passwordValue !== confirmPasswordValue}
                   onClick={()=>onSignUpClicked()}>Submit</button>
-                 <div className='link'>
-                 <Link to='/login'><em>Have an account already? login</em></Link>
+                 <div className='link'  style={{paddingTop:'10px'}}>
+                     <hr/>
+                 <Link to='/login' ><em>Have an account already? login</em></Link>
                  </div>
         </div>
    </Container>
 )};
+
+

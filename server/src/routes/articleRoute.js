@@ -6,10 +6,9 @@ export const articleRoute = {
     method: 'get',
     handler: async (req, res) => {
         const articleName = req.params.name;
-        const db = getDbConnection('my-blog');
+        const db = getDbConnection('blog-project');
         const articleInfo = await db.collection('articles').findOne({ name: articleName });
         res.status(200).json(articleInfo);
     },
 };
-
 

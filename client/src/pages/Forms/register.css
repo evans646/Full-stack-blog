@@ -4,12 +4,12 @@
     font-family: 'Cantarell';
     font-weight: normal;
     padding: 15px 20px;
-    background-color: rgba(124, 122, 147, 0.8);
+    background-color: rgba(21, 86, 110, 0.964);
     box-shadow: 0px 3px 6px #42424299;
     margin-bottom: 20px;
     text-align: center;
     border-radius: 10px 10px 0 0;
-    border-bottom: solid 3px teal;
+    border-bottom: solid 3px   #10fbc0;
 }
 .register-container{
   margin: 10vh;
@@ -17,14 +17,13 @@
 
 #registration-page{
     background-color: #fffffff5;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     padding-bottom: 20px;
-    box-shadow: 1px 1px 1px 1px rgba(1, 1, 1, 0.3);
-    border-bottom: 5px solid teal;
+    border-bottom: 3px solid   #10fbc0;
     border-radius: 10px 10px 0 0;
 }
-.inputRequirements {
+/* .inputRequirements {
   font-size: 15px;
   font-style: italic;
   text-align: left;
@@ -33,7 +32,7 @@
   max-width: 400px;
   margin: 10px auto;
   color: rgb(150,150,150);
-}
+} */
 
 #registration-page fieldset {
   padding: 0;
@@ -93,20 +92,19 @@
 #registration-page input[type="button"],
 #registration-page input[type="submit"] {
   height:50px;
-  width: 70%;
+  width: 48%;
   font-family: 'Cantarell';
-  padding: 10px;
+  padding: 5px;
   font-size: 15px;
   cursor: pointer;
-  max-width: 40%;
-  margin-left: 170px;
-  background-color: rgb(250, 183, 15);
+  margin-left: 29%;
+  background-color: rgb(13, 195, 195);
   cursor: pointer;
   color: rgb(40, 40, 40);
   font-weight: 600;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: 1px solid rgb(200, 200, 200);
+  border-radius: 3px;
 }
 
  .link a{
@@ -129,7 +127,7 @@
 
   #registration-page  button:hover, #registration-page  input[type="button"]:hover, #registration-page  input[type="submit"]:hover,
   #registration-page  button:focus,#registration-page input[type="button"]:focus, #registration-page  input[type="submit"]:focus {
-  background-color: rgb(255, 219, 58);
+  background-color:  #10fbc0;;  
   color: rgb(40, 40, 40);
 }
 

@@ -4,12 +4,12 @@ import softwareImg from "../images/software.jpeg";
 import hardwareImg from "../images/hardware.jpeg";
 
 import Techpic from "../images/dev.jpeg";
-import FeaturedImg from "../images/featured.png";
+import { Typography } from "@mui/material";
 
 import { FirstNews, SecondNews, ThirdNews } from "./NewsLandingPage";
 
-import { DiCode } from "react-icons/di";
 import ScrollAnimation from "react-animate-on-scroll";
+import { padding } from "@mui/system";
 
 export function HomePage (){
 
@@ -24,9 +24,6 @@ export function HomePage (){
         </p>
       </div>
       <article id="latest">
-        <span style={{ float: "right" }}>
-          <DiCode size={75} color={"rgb(3, 176, 176)"} className="icon" />
-        </span>
         <h1>Tech Crunch</h1>
         <div>
           <FirstNews />
@@ -41,13 +38,12 @@ export function HomePage (){
           illum, dicta aperiam veritatis cumque praesentium aliquam corrupti id
           totam qui sunt aut libero soluta minima, reprehenderit non expedita
           harum eveniet! Facere!
-          <img src={Techpic} width='840' height='400' alt=''/>
+          <img src={Techpic} width='840' height='400' style={{borderBottomLeftRadius:'22px'}} alt='Technology'/>
         </ScrollAnimation>
       </article>
       <aside>
         <nav id="archives">
-          {/* <h2>FEATURED</h2> */}
-          <img src={FeaturedImg} width='100' height='90' alt='' style={{marginLeft:'7vh'}}/>
+         <Typography variant="h5" style={{marginLeft:'8vh',padding:'10px'}}>Featured</Typography>
           <ul>
             <li>
               <Link to="/featured/webtechnologies" title="web technologies">
@@ -104,9 +100,9 @@ export function HomePage (){
         </nav>
         <ScrollAnimation animateIn="fadeIn" animateOut="fadeOut">
           <section className="contest">
-            <h2>Software</h2>
+          <Typography variant="h5" style={{marginLeft:'8vh',padding:'10px'}}>Software</Typography>
             <Link to="/software">
-              <img src={softwareImg} width="200" height="200" alt="software" />
+              <img src={softwareImg} width="200" height="200" alt="software" style={{borderBottomLeftRadius:'22px'}} />
             </Link>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae
@@ -117,9 +113,9 @@ export function HomePage (){
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeIn" animateOut="fadeOut">
           <section className="contest">
-            <h2>Hardware</h2>
+          <Typography variant="h5" style={{marginLeft:'8vh',padding:'10px'}}>Hardware</Typography>
             <Link to="/hardware">
-              <img src={hardwareImg} width="200" height="200" alt="hardware" />
+              <img src={hardwareImg} width="200" height="200" alt="hardware" style={{borderTopRightRadius:'22px'}}  />
             </Link>
             <p>
               Tempora obcaecati velit suscipit at sunt officiis nostrum

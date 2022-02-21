@@ -5,31 +5,21 @@
     font-family: 'Cantarell';
     font-weight: normal;
     padding: 15px 20px;
-    background-color: rgb(1, 144, 180);
+    background-color: rgba(21, 86, 110, 0.964);
     box-shadow: 0px 3px 6px #42424299;
     margin-bottom: 20px;
     text-align: center;
     border-radius: 10px 10px 0 0;
-    border-bottom: solid 3px #fbb110;
+    border-bottom: solid 3px #10fbc0;
 }
 
 .loginPage {
     background-color: #fffffff5;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     padding-bottom: 20px;
-    border-bottom: 5px solid #018fb4;
+    border-bottom: solid 3px #10fbc0;
     border-radius: 10px 10px 0 0;
-}
-.inputRequirements {
-  font-size: 15px;
-  font-style: italic;
-  text-align: left;
-  list-style: disc;
-  list-style-position: inside;
-  max-width: 400px;
-  margin: 10px auto;
-  color: rgb(150,150,150);
 }
 
 .loginPage fieldset {
@@ -49,7 +39,7 @@
   font-size: 15px;
   color: rgb(40, 40, 40);
   vertical-align: top;
-  display: block;
+  /* display: block; */
   margin: 10px auto 0;
   text-align: center;
 }
@@ -92,22 +82,21 @@
 
 .loginPage button,
 .loginPage input[type="button"],
-.loginPage input[type="submit"] {
- height:50px;
-  width: 70%;
+.loginPage input[type="submit"] { 
+  height:50px;
+  width: 48%;
   font-family: 'Cantarell';
-  padding: 10px;
+  padding: 5px;
   font-size: 15px;
   cursor: pointer;
-  max-width: 40%;
-  margin-left: 170px;
-  background-color: rgb(250, 183, 15);
+  margin-left: 29%;
+  background-color: rgb(13, 195, 195);
   cursor: pointer;
   color: rgb(40, 40, 40);
   font-weight: 600;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border: 1px solid rgb(200, 200, 200);
+  border-radius: 3px;
 }
 
  .link a{
@@ -136,7 +125,7 @@
 
 .loginPage button:hover, .loginPage input[type="button"]:hover, .loginPage input[type="submit"]:hover,
 .loginPage button:focus,.loginPage  input[type="button"]:focus, .loginPage input[type="submit"]:focus {
-  background-color: rgb(255, 219, 58);
+  background-color:  #10fbc0;
   color: rgb(40, 40, 40);
 }
 

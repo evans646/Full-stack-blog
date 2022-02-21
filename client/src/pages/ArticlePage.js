@@ -9,20 +9,20 @@ import {
   CommentsList,
 } from "../components/index";
 import { NotFoundPage } from "./index";
-import articleContent from "./article-content";
+import {articles} from "./article-content";
 import { FaRegEye, FaRegClock } from "react-icons/fa";
 import { css } from "@emotion/react";
 import RingLoader from "react-spinners/RingLoader";
 import { useUser } from "../auth/useUser";
-//import { alertTitleClasses } from '@mui/material';
 
-import Box from '@mui/material/Box';
-import Popper from '@mui/material/Popper';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import Fade from '@mui/material/Fade';
-import Paper from '@mui/material/Paper';
+
+// import Box from '@mui/material/Box';
+// import Popper from '@mui/material/Popper';
+// import Typography from '@mui/material/Typography';
+// import Grid from '@mui/material/Grid';
+// import Button from '@mui/material/Button';
+// import Fade from '@mui/material/Fade';
+// import Paper from '@mui/material/Paper';
 
 
 
@@ -52,13 +52,14 @@ export function ArticlePage({ match }) {
   const user = useUser();
   const { id } = user || "";
 
-  const article = articleContent.find((article) => article.name === name);
+  const article = articles.find((article) => article.name === name);
 
   const [articleInfo, setArticleInfo] = useState({
     upvotes: 0,
     comments: [],
     upvotedIds: [],
   });
+  
 
   const [loading, setLoading] = useState(false);
   let [color, setColor] = useState("#ffffff");
@@ -84,12 +85,12 @@ export function ArticlePage({ match }) {
       setLoading(true);
     }
   }, [name]);
-
+  
   const loadingMessage = (
     <RingLoader color={color} loading={loading} css={override} size={100} />
   );
 
-  if (!article) return <NotFoundPage />;
+if (!article) return <NotFoundPage />
 
 
 let views = [2]
@@ -105,7 +106,7 @@ let views = [2]
       ? true
       : false;
 
-  const relatedArticles = articleContent.filter(
+  const relatedArticles = articles.filter(
     (article) => article.name !== name
   );
 
@@ -116,34 +117,32 @@ let views = [2]
         <p style={{ fontWeight: "bold" }}>
           <FaRegEye
             style={{
-              fontSize: "1.8em",
+              fontSize: "1.7em",
               marginBottom: "-10px",
               color: "#d1fd1d",
               cursor: "pointer",
             }}
           />
-          {views}
+          {views}   Views
         </p>
         <p style={{ fontWeight: "bold" }}>
-          Commitment
           <span
             style={{
               color: "#6c757d",
               marginLeft: "2vh",
               fontFamily: "Cardo",
               fontSize: "1rem",
-            }}
-          >
+            }}>
             <FaRegClock
               style={{
                 fontSize: "1.8em",
-                marginBottom: "-10px",
+                marginBottom: "-4px",
                 color: "#d1fd1d",
                 cursor: "pointer",
               }}
             />
-            2 mins
           </span>
+          2 mins Commitment
         </p>
         <p
           style={{
@@ -172,7 +171,7 @@ let views = [2]
       </Container>
       <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
       <CommentsList comments={articleInfo.comments} content={article.content} />
-      <h3 className="other-article-list"> Related Articles</h3>
+      <h3 className="read-next-articles-list"> Read Next</h3>
       <ArticlesList articles={relatedArticles} />
     </>
   );

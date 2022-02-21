@@ -58,6 +58,6 @@ export function SoftwarePage() {
       </div>
     </Container>
   </>
-   );
-}
+  );
+};
 

@@ -25,12 +25,11 @@ export const TopHeader = () => {
   };
 
       
-    return (
+     return (
   <div className='header-background'>
       <div className='header-links'>
-          {user ? <h4 className='header-greet'>Hi, {username||name||given_name} <span className='header-greet-divider'>|</span><Link className='header-logout-link' to="/" onClick={handleLogOut}>Logout</Link></h4>:''}
+          {user ? <h4 className='header-greet'>Hi, {username||name||given_name} <span className='header-greet-divider'>|</span><Link className='header-logout-link' to="/" onClick={e=> handleLogOut(e)}>Logout</Link></h4>:<button className='top-header-signIn-btn'>Sign In</button> }
      </div>
-
     <h4 className='header-str-connect'>Stay connected</h4>
     <span className='header-social-icons'>
     <a href="https://www.facebook.com" target="_blank" rel="noreferrer"><FaFacebook size={25} color={'#3b5998'}  id='header-icon'/></a>

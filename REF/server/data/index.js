@@ -1,12 +1,19 @@
+import dotenv from 'dotenv';
+dotenv.config()
+
 import mongoose from 'mongoose';
 import Article from '../models/articles.js'
 
-mongoose.connect('mongodb://localhost:27017/my-blog', {
+
+const dbUrl = process.env.DB_URL;
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
-    useFindAndModify:false
+    useFindAndModify: false
 });
+
+
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "CONNECTION ERROR:"));
 db.once("open", () => {

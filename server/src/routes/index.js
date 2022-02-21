@@ -11,11 +11,11 @@ import { resetPasswordRoute } from './resetPasswordRoute';
 import { getGoogleOauthUrlRoute } from './getGoogleUrlAuthRoute';
 import { googleOauthCallbackRoute } from './googleAuthCallbackRoute';
 import { downVoteRoute } from './downVoteRoute';
-import { githubOauthCallbackRoute } from './githubCallbackRoute';
+import {insertDataRoute} from './insertData';
 
 
 export const routes = [
-    githubOauthCallbackRoute,
+    insertDataRoute,
     upvoteRoute,
     downVoteRoute,
     getGoogleOauthUrlRoute,

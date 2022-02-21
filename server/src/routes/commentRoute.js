@@ -6,7 +6,7 @@ export const commentRoute = {
     method: 'post',
     handler: async (req, res) => {
         try {
-        const db = getDbConnection('my-blog');
+        const db = getDbConnection('blog-project');
         const { username, text } = req.body;
         const articleName = req.params.name
         const articleInfo = await db.collection('articles').findOne({ name: articleName });

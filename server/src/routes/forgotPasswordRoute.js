@@ -9,7 +9,7 @@ export const forgotPasswordRoute = {
     handler: async (req, res) => {
         const { email } = req.params;
 
-        const db = getDbConnection('my-blog');
+        const db = getDbConnection('blog-project');
         const passwordResetCode = uuid();
 
         const { result } = await db.collection('users').updateOne({ email }, { $set: { passwordResetCode } });

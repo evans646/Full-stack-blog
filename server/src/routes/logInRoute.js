@@ -9,7 +9,7 @@ export const logInRoute = {
     handler: async (req, res) => {
         const { username, password } = req.body;
 
-        const db = getDbConnection('my-blog');
+        const db = getDbConnection('blog-project');
         const user = await db.collection('users').findOne({ username });
 
         if (!user) return res.sendStatus(401);
