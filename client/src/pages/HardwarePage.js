@@ -5,7 +5,7 @@ export function HardwarePage() {
   return ( 
     <>
     <Container>
-    <h1 style={{ textAlign: "center" }}>Hardware</h1>
+    <h1 style={{ textAlign: "center" ,fontWeight:'bold',fontSize:'3rem'}}>Hardware</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
       reprehenderit sapiente adipisci voluptatibus omnis quae incidunt

@@ -4,7 +4,7 @@ export const downVoteRoute = {
   path: "/api/articles/:name/:userId/downvote",
   method: "post",
   handler: async (req, res) => {
-    const db = getDbConnection("bog-project");
+    const db = getDbConnection('blog-project');
     const articleName = req.params.name;
 
     const { userId } = req.params;

@@ -10,7 +10,7 @@
     margin-bottom: 20px;
     text-align: center;
     border-radius: 10px 10px 0 0;
-    border-bottom: solid 3px #10fbc0;
+    border-bottom: solid 3px #07c0b0;
 }
 
 .loginPage {
@@ -18,7 +18,7 @@
     max-width: 500px;
     margin: 0 auto;
     padding-bottom: 20px;
-    border-bottom: solid 3px #10fbc0;
+    border-bottom: solid 3px #07c0b0;
     border-radius: 10px 10px 0 0;
 }
 
@@ -125,7 +125,7 @@
 
 .loginPage button:hover, .loginPage input[type="button"]:hover, .loginPage input[type="submit"]:hover,
 .loginPage button:focus,.loginPage  input[type="button"]:focus, .loginPage input[type="submit"]:focus {
-  background-color:  #10fbc0;
+  background-color:  #07c0b0;
   color: rgb(40, 40, 40);
 }
 

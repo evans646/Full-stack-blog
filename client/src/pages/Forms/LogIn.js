@@ -2,7 +2,8 @@ import React, { useState,useEffect } from 'react';
 import Container from '@material-ui/core/Container';
 import GoogleButton from 'react-google-button';
 import GithubButton from 'react-github-login-button';
-import {useHistory,Link } from 'react-router-dom';
+import {useNavigate,Link } from 'react-router-dom';
+
 import axios from 'axios';
 import Typography from '@mui/material/Typography';
 
@@ -29,7 +30,7 @@ export function LoginPage (){
     const [usernameValue, setUsernameValue] = useState('');
     const [googleOauthUrl, setGoogleOauthUrl] = useState('');
     const [showErrorMessage, setShowErrorMessage] = useState(false);
-    let   history = useHistory();
+    const navigate = useNavigate();
     // const Location = useLocation();
     //  console.log(lastLocation)
     const { token: oauthToken } = useQueryParams();
@@ -45,10 +46,10 @@ export function LoginPage (){
     useEffect(() => {
         if (oauthToken) {
             setToken(oauthToken);
-            history.push('/');
+            navigate('/')
             window.location.reload();
         }
-    }, [oauthToken, setToken, history]);
+    }, [oauthToken, setToken, navigate]);
 
     useEffect(() => {
         const loadOauthUrl = async () => {
@@ -66,13 +67,13 @@ export function LoginPage (){
     const onLogInClicked = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/login', {
+            const response = await axios.post('api/login', {
                 username: usernameValue,
                 password: passwordValue,
             })
             const { token } = response.data;
             setToken(token);
-            history.push('/')
+            navigate('/')
             // history.goBack();
             window.location.reload();
         } catch (e) {
@@ -81,8 +82,8 @@ export function LoginPage (){
             setShowErrorMessage(true)
         };
     };
-    //So if status code is 500, incorrect username or pass
-    //if it is 401 //invalid credentials user does not exist
+    // So if status code is 500, incorrect username or pass
+    // if it is 401 //invalid credentials user does not exist
     return (
         <Container maxWidth="md" className='bottom-container'>
              <div style={{marginBottom:'5%'}}>

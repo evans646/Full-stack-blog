@@ -31,7 +31,7 @@ export const insertDataRoute = {
     path: '/api/insert',
     method: 'get',
     handler: async(req, res) => {
-        const db = getDbConnection('blog-project');
+        const db = getDbConnection('react-blog-project');
         const dataExist = await db.collection('articles').find(articles);
         if(dataExist){
             await  db.collection('articles').deleteMany({})
@@ -43,3 +43,4 @@ export const insertDataRoute = {
         res.json(data);
     }
 };
+

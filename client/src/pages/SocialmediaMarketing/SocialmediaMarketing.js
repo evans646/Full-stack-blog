@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 import Container from '@material-ui/core/Container';
 import Accordion from '@mui/material/Accordion';
@@ -30,7 +30,7 @@ const center = {
 
 
 export function SocialMediaMarketingPage(){
-   const history = useHistory();
+   const history = useNavigate();
    let contents = [
       <Container maxWidth='lg' className="archItem" >
       <div className='content-container'>
@@ -44,7 +44,7 @@ export function SocialMediaMarketingPage(){
               </AccordionSummary>
             <AccordionDetails>
             <div style={{marginLeft:'20px',listStyle:'none',fontSize:'15px',padding:'5px',lineHeight:'2.0em'}}>
-            <ol>
+            <ol  key={11}>
             <li>1.0 BUSINESS CONCEPT OF SOCIAL MEDIA MARKETING </li>
             <li>1.1 TECHNOLOGY SKILL</li>
             <li>1.2 SUMMARY</li>
@@ -59,9 +59,9 @@ export function SocialMediaMarketingPage(){
       Social media marketing is a powerful way for businesses of all sizes to reach prospects and customers. Your customers are already interacting with brands through social media, and if you're not speaking directly to your audience through social platforms like Facebook, Twitter, Instagram, and Pinterest, you're missing out! Great marketing on social media can bring remarkable success to your business, creating devoted brand advocates and even driving leads and sales.
       </p>
       <img src={mediapic} width={700} style={{marginLeft:'10%',padding:'2.2%'}} alt='social media'/>
-      <p><b style={{fontSize:'23px'}}>What is Social Media  ?</b> </p>
+      <p><b style={{fontSize:'23px',float:'left'}}>What is Social Media  ?</b> </p>
      <Container maxWidth='md'>
-     <ul  style={{paddingLeft:'22px',padding:'7px'}}>
+     <ul  style={{paddingLeft:'22px',padding:'7px'}}  key={33}>
          <li>Social Blends technology and social interactions
           to Creates an online Environment where members of a virtual community can interact.</li>
          <li>It also enable people to share subjects of mutual interests through pictures and posts and videos </li>
@@ -98,7 +98,7 @@ export function SocialMediaMarketingPage(){
            While there are many ways to market a business, social media is an option that provides many Benefits.
         </p>
        <Container maxWidth='lg'>
-       <ol>
+       <ol  key={6}>
            <li><h4><b>Inexpensive :</b> </h4></li><p> Most social media platforms are free and easy to join and create account.</p>
            <li><h4><b>Audience Targeting :</b> </h4></li><p>Social media allows you to  reach your target audience and provide a way for your current  customers to reach you. </p>
            <li><h4><b>Flexible :</b> </h4></li><p> Social media is flexible because you have control over messaging and you can modify the content as your business grows </p>
@@ -112,7 +112,7 @@ export function SocialMediaMarketingPage(){
    Each platform such as <b>Facebook</b> ,<b>Instagram </b>and <b>Twitter</b> comes with different functions :
      </p>
    <Container maxWidth='md'>
-      <ul>
+      <ul key={1}>
       <li><b>Facebook</b></li>
      <p>
      Facebook is where you show the human side of your business, you are able to target specific audiences when advertising. Which guarantees your post will be seen by the audiences that matters most to your business. Keep your Facebook page professional and update it at least twice a week.
@@ -146,7 +146,7 @@ export function SocialMediaMarketingPage(){
    <li><h4><b>Define your goals:</b> </h4></li>
    <p  style={{padding:'1vh'}}> Define what you want to achieve with your marketing plan: </p>
    <Container maxWidth='md'>
-   <ul  style={{listStyle:'disc'}}>
+   <ul  style={{listStyle:'disc'}} key={2}>
       <li>	Increase traffic to your website or business </li>
       <li>Build awareness of your brand  </li>
       <li>Establish better business processes</li>
@@ -163,7 +163,7 @@ export function SocialMediaMarketingPage(){
    Determine your target  audience to help you shape the content and platforms of your social media channels 
    </p>
    <Container maxWidth='md'>
-   <ul  style={{listStyle:'disc'}}>
+   <ul  style={{listStyle:'disc'}}  key={3}>
       <li>Location </li>
       <li>Age  </li>
       <li>Gender</li>
@@ -180,7 +180,7 @@ export function SocialMediaMarketingPage(){
    Your brand’s social personality should reflect : 
    </p>
    <Container maxWidth='md'>
-   <ul  style={{listStyle:'disc'}}>
+   <ul  style={{listStyle:'disc'}}  key={4}>
       <li>What makes your business special </li>
       <li>It's value to your customer</li>
       <li>What inspires you to do the work you</li>
@@ -195,7 +195,7 @@ export function SocialMediaMarketingPage(){
    Social media helps build relationships with your customers :
    </p>
    <Container maxWidth='md'>
-   <ul style={{listStyle:'disc'}}>
+   <ul style={{listStyle:'disc'}}  key={5}>
       <li> Allows communications to flow in both directions </li>
       <li> Enables you and your customers to add value to the interaction  </li>
    </ul>

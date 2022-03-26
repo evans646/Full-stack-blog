@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate,Redirect } from 'react-router';
 import axios from 'axios';
 import Container from '@material-ui/core/Container';
 
@@ -55,7 +55,7 @@ line-height: 30px;
 
 export function UpvotesSection({ articleName, upvotes, setArticleInfo,hasUpvoted}) {
   
-    const history = useHistory();
+    const navigate = useNavigate();
     const user = useUser();
 
     const {id} = user || '';
@@ -76,7 +76,10 @@ export function UpvotesSection({ articleName, upvotes, setArticleInfo,hasUpvoted
 
   return (
   <Container id='upvotes-section'>
-   {!user ? (<UpvoteButton onClick={() => history.push('/login')}> Upvote</UpvoteButton>) : (<UpvoteButton  onClick={() => upvoteArticle()}>Upvote</UpvoteButton>) && !hasUpvoted ? ( <UpvoteButton  onClick={() =>  upvoteArticle()}>Upvote</UpvoteButton>):(<DownvoteButton   onClick={() => downvoteArticle()}>Downvote</DownvoteButton>)}
+   {!user ? (<UpvoteButton onClick={() => navigate(`/login? redirect=${navigate(-1)}`)}> Upvote</UpvoteButton>) : 
+   (<UpvoteButton  onClick={() => upvoteArticle()}>Upvote</UpvoteButton>) && !hasUpvoted ?
+    ( <UpvoteButton  onClick={() =>  upvoteArticle()}>Upvote</UpvoteButton>):
+   (<DownvoteButton   onClick={() => downvoteArticle()}>Downvote</DownvoteButton>)}
    {upvotes > 1 ? <p  className='upvotes-counter'>{upvotes} Upvotes </p> : <p className='upvotes-counter' > {upvotes} Upvote</p>}
   </Container>
   );

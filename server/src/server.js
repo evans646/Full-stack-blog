@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { routes } from './routes';
 import { initializeDbConnection } from './db';
 
@@ -8,6 +9,8 @@ const app = express();
 // This allows us to access the body of POST/PUT
 // requests in our route handlers (as req.body)
 app.use(express.json());
+//so we can mak
+app.use(cors({origin: "*"}));
 
 // Add all the routes to our Express server
 // exported from routes/index.js

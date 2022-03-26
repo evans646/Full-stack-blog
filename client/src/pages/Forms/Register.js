@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import Container from '@material-ui/core/Container';
 import Typography from '@mui/material/Typography';
@@ -21,7 +21,7 @@ const [passwordValue, setPasswordValue] = useState('');
 const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
 const [showErrorMessage, setShowErrorMessage] = useState(false);
 
-const history = useHistory();
+const navigate = useNavigate();
 
 useEffect(() => {
     if (showErrorMessage) {
@@ -40,7 +40,7 @@ const onSignUpClicked = async() => {
         });
         const { token } = response.data;
         setToken(token);
-        history.push('/please-verify');
+        navigate('/please-verify');
     } catch (e) {
         setErrorMessage(e.message);
         setShowErrorMessage(true)

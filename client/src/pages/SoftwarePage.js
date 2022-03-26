@@ -6,7 +6,7 @@ export function SoftwarePage() {
   return ( 
     <>
     <Container>
-      <h1 className='software-page'>Software</h1>
+    <h1 style={{ textAlign: "center" ,fontWeight:'bold',fontSize:'3rem'}}>Software</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut rem
         voluptas, tempore dolore, facere odio dolorem quae laboriosam

@@ -1,9 +1,9 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 
 
 export const EmailVerificationSuccess = () => {
-    const history = useHistory();
+    const history = useNavigate();
 
     return (
         <Container maxWidth='md'>

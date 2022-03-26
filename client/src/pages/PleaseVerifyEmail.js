@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from 'react-router';
 import Container from '@material-ui/core/Container';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faCheckCircle} from '@fortawesome/free-solid-svg-icons'
@@ -8,14 +8,14 @@ import Container from '@material-ui/core/Container';
 
 
 export function PleaseVerifyEmailPage() {
-    const history = useHistory();
+    const navigate = useNavigate();
   
     useEffect(() => {
         setTimeout(() => {
-            history.push('/')
-            window.location.reload();
+            navigate('/')
+            window.reload();
         },3000)
-    },[history])
+    },[navigate])
  
     return (
         <Container maxWidth='md'>

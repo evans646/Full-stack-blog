@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Tweet } from 'react-twitter-widgets'
 import softwareImg from "../images/software.jpeg";
 import hardwareImg from "../images/hardware.jpeg";
 
@@ -17,11 +18,11 @@ export function HomePage (){
   return (
     <section id="content">
       <div className="banner">
-        <h1>Modern Technology</h1>
-        <p>
+        {/* <h1>Modern Technology</h1> */}
+        {/* <p>
           A growing small group of passionate programmers. feel free to browse
           through for any information you may need concerning TECH.
-        </p>
+        </p> */}
       </div>
       <article id="latest">
         <h1>Tech Crunch</h1>
@@ -124,7 +125,19 @@ export function HomePage (){
             </p>
           </section>
         </ScrollAnimation>
-        <h2>Social media display</h2>
+        <Typography variant="h5" style={{marginLeft:'8vh',padding:'10px'}}>Tech Tweets</Typography>
+        <section>
+        <Tweet tweetId="1505459990919884807" 
+        options={{
+          height: '200'
+        }}
+        />
+        <Tweet tweetId="1507387442327957507" 
+        options={{
+          height: '200'
+        }}
+        />
+        </section>
       </aside>
     </section>
   );

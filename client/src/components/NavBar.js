@@ -9,10 +9,14 @@ import Divider from "@mui/material/Divider";
 import { FaUserCircle } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 
+import { FaBars,FaTimes } from "react-icons/fa";
+
 import { IconContext } from "react-icons";
 import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 import { useUser } from "../auth/useUser";
 // import menuIcon from './images/menu.png';
+// import '../css/navbar.css';
+
 
 //material ui styles
 const useStyles = makeStyles((theme) => ({
@@ -22,9 +26,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Navbar = () => {
+  //to control nav responsiveness
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const handleNavClick = () => setToggleMenu(!toggleMenu);
+  const Close = () => setToggleMenu(false);
+
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
-  //const [toggleMenu, setToggleMenu] = useState(false);
+
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -43,12 +53,16 @@ export const Navbar = () => {
   };
 
   return user ? (
-    <div className="navWrap">
+    <div >
+        <NavLink className="hamburger" href="#navbar" aria-label="Open main menu">
+          <span className="sr-only">Open main menu</span>
+          <FaBars aria-hidden="true" style={{padding:'10px'}} />
+        </NavLink>
       <nav id="mainNav">
         <ul>
           <li>
             <NavLink exact className="current" to="/">
-              Home
+              Home 
               <em> navigate to home </em>
             </NavLink>
           </li>
@@ -149,12 +163,18 @@ export const Navbar = () => {
             </PopupState>
           </li>
         </ul>
+        <NavLink class="close" href="#" aria-label="Close main menu">
+            <span class="sr-only">Close main menu</span>
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </NavLink>
       </nav>
-      {/* <img src={menuIcon} className='menu-icon'/> */}
     </div>
   ) : (
     <div>
-      <nav id="mainNav">
+        <NavLink className="hamburger"  to="#navbar" aria-label="Open main menu">
+          Menu<FaBars aria-hidden="true"  onClick={handleClick}/>
+       </NavLink>
+      <nav id="mainNav" onClick={e => e.stopPropagation()} >
         <ul>
           <li>
             <Link to="/" className="current" activeclassname="active">
@@ -220,7 +240,7 @@ export const Navbar = () => {
           <li>
             <NavLink
               className="signup"
-              to="/account/register"
+              to="/register"
               activeclassname="active"
             >
               Register
@@ -234,6 +254,9 @@ export const Navbar = () => {
             </NavLink>
           </li>
         </ul>
+        <Link className="close-menu"  to="#" aria-label="Close main menu">
+          <FaTimes   aria-hidden="true"  onClick={handleClick}/>
+        </Link>
       </nav>
     </div>
   );

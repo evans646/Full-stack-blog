@@ -1,5 +1,5 @@
 import{ useState ,useEffect} from 'react';
-import {useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Container from '@material-ui/core/Container';
 
@@ -11,7 +11,7 @@ export function ForgotPasswordPage() {
     const [showErrorMessage, setShowErrorMessage] = useState(false);
     const [emailValue, setEmailValue] = useState('');
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (showSuccessMessage || showErrorMessage) {
@@ -28,12 +28,11 @@ export function ForgotPasswordPage() {
             setSuccess(true);
             setShowSuccessMessage(true)
             setTimeout(() => {
-                history.push('/login')
+            navigate('/login')
             },3000)
         } catch (e) {
             setErrorMessage(e.message)
             setShowErrorMessage(true)
-
         };
     };
     return success ? (

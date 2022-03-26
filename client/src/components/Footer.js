@@ -24,10 +24,10 @@ export function FooterSection() {
         <SiLinkedin size={26} style={{padding:'5px'}}/>
         </div>
 
-      <p style={{ marginTop: "7%",fontSize:'1.2rem' }}>
+      <p style={{ marginTop: "4%",fontSize:'1.2rem' }}>
         &copy; 2022 Techboost All Rights Reserved
       </p>
-      <h1 style={{marginLeft:"35%",marginTop: "7%",fontSize:'1.2rem' }}>Privacy policy | Terms of service</h1>
+      <h1 style={{marginLeft:"35%",marginTop: "4%",fontSize:'1.2rem' }}>Privacy policy | Terms of service</h1>
     </footer>
   );
 };

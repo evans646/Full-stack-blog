@@ -85,36 +85,16 @@ export const articles = [
             consequat quam. Vivamus accumsan dui in facilisis aliquet. `
 
         ]
-    } 
-];
-
-
-
-
-
-
-
-export const MoreArticles=[
+    },
     {
-        name: 'learn-react',
-        title: 'The Fastest Way to Learn React',
+        name: 'AWS',
+        title: 'Hmm  aws',
         pupdate:Date.now(10-12-2021),
         content: [
-            `Welcome! Today we're going to be talking about the fastest way to
-            learn React. We'll be discussing some topics such as proin congue
+            `Welcome! to Aws mastery, We'll be discussing some topics such as proin congue
             ligula id risus posuere, vel eleifend ex egestas. Sed in turpis leo. 
             Aliquam malesuada in massa tincidunt egestas. Nam consectetur varius turpis, 
             non porta arcu porttitor non.`,
-
-        <div className="code">
-      EMBED CODE HERE
-        </div>,
-            `Donec vel mauris lectus. Etiam nec lectus urna. Sed sodales ultrices dapibus. 
-            Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
-            nisi. Nunc vel pulvinar diam. Nam eleifend egestas viverra. Donec finibus lectus 
-            sed lorem ultricies, eget ornare leo luctus. Morbi vehicula, nulla eu tempor 
-            interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi id 
-            consequat quam. Vivamus accumsan dui in facilisis aliquet.`,
             `Etiam nec lectus urna. Sed sodales ultrices dapibus. 
             Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
             nisi. Nunc vel pulvinar diam. Nam eleifend egestas viverra. Donec finibus lectus 
@@ -123,8 +103,8 @@ export const MoreArticles=[
             consequat quam. Vivamus accumsan dui in facilisis aliquet.`,
         ]
     },    {
-        name: 'learn-node',
-        title: 'How to Build a Node Server in 10 Minutes',
+        name: 'Firebase',
+        title: 'How to a fullstack app with firebase',
         pupdate:Date.now(6-12-2020),
         content: [
             `In this article, we're going to be talking looking at a very quick way
@@ -142,8 +122,8 @@ export const MoreArticles=[
             consequat quam. Vivamus accumsan dui in facilisis aliquet.`,
         ]
     },     {
-        name: 'my-thoughts-on-resumes',
-        title: 'My Thoughts on Resumes',
+        name: 'Dealing with managers',
+        title: 'How to effctively deal with your manager at work',
         pupdate:Date.now(5-12-2021),
         content: [
             `Today is the day I talk about something which scares most people: resumes.
@@ -168,8 +148,8 @@ export const MoreArticles=[
         ]
     }, 
     {
-        name :'python',
-        title :'Learning python the easy way',
+        name :'Web3',
+        title :'Learn about Web3 saga',
         pupdate:Date.now(10-12-2022),
         content : [
             `Etiam nec lectus urna. Sed sodales ultrices dapibus. 
@@ -182,3 +162,10 @@ export const MoreArticles=[
         ]
     } 
 ];
+
+
+
+
+
+
+

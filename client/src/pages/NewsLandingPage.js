@@ -165,14 +165,14 @@ export const ThirdNews = () => {
         />
         <p className="caption">
           {
-            <p>
+            <h5>
               {description}... read more
               <sup>
                 <Link to="/">
                   <FaRegShareSquare />
                 </Link>
               </sup>
-            </p>
+            </h5>
           }
         </p>
       </section>

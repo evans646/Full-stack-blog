@@ -1,6 +1,8 @@
 import React from "react";
-import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
+import { useNavigate, Link  } from 'react-router-dom';
+// import { Link } from "react-router-dom";
+
+
 import Container from "@material-ui/core/Container";
 
 import { FaRegShareSquare } from "react-icons/fa";
@@ -11,7 +13,7 @@ import CalenderPic from "../../images/calender.webp";
 import QuestionPic from "../../images/mark2.png";
 
 export function SecondSocialMediaPage() {
-  const history = useHistory();
+  const history = useNavigate();
 
   return (
     <Container maxWidth="lg" className="archItem">

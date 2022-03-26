@@ -1,10 +1,11 @@
-import Container from "@material-ui/core/Container";
-import myImg from "../images/mypic.jpeg";
+import Container from '@material-ui/core/Container';
+import myImg from '../images/mypic.jpeg';
+
 
 export function AboutPage() {
   return (
-    <Container maxWidth="lg">
-      <div className="aboutPage">
+    <Container maxWidth='lg'>
+      <div className='aboutPage'>
         <h1>About me</h1>
         <p>
           Hellooo!!! Yoou are welcome, my name is Evans Ansong, Proin congue
@@ -13,7 +14,7 @@ export function AboutPage() {
           turpis, non porta arcu porttitor non. In tincidunt vulputate nulla
           quis egestas. Ut eleifend ut ipsum non fringilla. Praesent imperdiet
           nulla nec est luctus.
-          <img id="mypic" src={myImg} alt="img" width={"30%"} />
+          <img id='mypic' src={myImg} alt='img' width={'30%'} />
         </p>
         <p>
           Donec vel mauris lectus. Etiam nec lectus urna. Sed sodales ultrices
