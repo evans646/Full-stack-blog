@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Container from "@material-ui/core/Container";
 
-import { PasswordResetSuccess } from "./PasswordResetSuccess";
-import { PasswordResetFail } from "./PasswordResetFail";
+import { PasswordResetSuccess } from "./passwordResetSuccess";
+import { PasswordResetFail } from "./passwordResetFail";
 
 export function PasswordResetLandingPage() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -28,7 +27,7 @@ export function PasswordResetLandingPage() {
   if (isSuccess) return <PasswordResetSuccess />;
 
   return (
-    <Container maxWidth="md">
+    <div maxWidth="md">
       <h1>Reset Password</h1>
       <p>Please enter a new password</p>
       <input
@@ -53,6 +52,6 @@ export function PasswordResetLandingPage() {
       >
         Reset Password
       </button>
-    </Container>
+    </div>
   );
 }

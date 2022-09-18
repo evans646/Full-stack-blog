@@ -1,10 +1,8 @@
-import '@testing-library/jest-dom';
+import { render, screen } from '@testing-library/react';
+import App from './App';
 
-import {timesTwo} from "./setupTests"
-
-
-
-
-test("Multiplies by two", () => {//multiplies by two is the name of the function test
-  expect(timesTwo(4)).toBe(8)
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
 });

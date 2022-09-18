@@ -9,7 +9,7 @@ export const signUpRoute = {
     method: 'post',
     handler: async(req, res) => {
         const { email, username, password } = req.body;
-        const db = getDbConnection('blog-project');
+        const db = getDbConnection('techarena');
         const user = await db.collection('users').findOne({ email });
         if (user) {
             res.status(409).json({ message: 'User exist with this account' });
@@ -24,7 +24,6 @@ export const signUpRoute = {
                 salt,
                 passwordHash,
                 isVerified: false,
-                Upvoted: false,
                 verificationString
             });
             const { insertedId } = result;
@@ -46,7 +45,6 @@ export const signUpRoute = {
                     username,
                     email,
                     isVerified: false,
-                    Upvoted: false,
                 },
                 process.env.JWT_SECRET, {
                     expiresIn: '2d',

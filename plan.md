@@ -475,3 +475,8 @@ You can add a field in your database schema in which you can update it by adding
 
 
 When you clck on load moerebtn you should get some loading efcet 
+
+
+
+
+styling please veryfy page next ..

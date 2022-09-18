@@ -1,7 +1,7 @@
 import{ useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Container from '@material-ui/core/Container';
+
 
 
 export function ForgotPasswordPage() {
@@ -36,14 +36,14 @@ export function ForgotPasswordPage() {
         };
     };
     return success ? (
-        <Container maxWidth='md' className='bottom-container'>
+        <div className='pageContainer'>
            <div style={{marginBottom:'5%'}} className='alert-container'>
            {showSuccessMessage && <div className="success">Success!</div>}
            </div>
             <p>A reset link has been sent to the email provided</p>
-        </Container>
+        </div>
     ) : (
-        <Container maxWidth='md' className='bottom-container'>
+        <div  className="main">
               <div style={{marginBottom:'5%'}} className='alert-container'>
              {showErrorMessage && <div className='fail'> {errorMessage}</div>}
               </div>
@@ -51,17 +51,19 @@ export function ForgotPasswordPage() {
                 <h1>Password reset</h1>
                 <p>Enter your email to receive  a reset link  </p>
                 <label htmlFor="email">
-                    <input type="text" id="email"
+                    <input type="text" id="email" 
+                        className="un "
                         minLength="3"
                         value={emailValue}
                         onChange={e => setEmailValue(e.target.value)}
                         placeholder="someone@email.com"/>
                 </label>
                 <button
+                    className="submit"
                     disabled={!emailValue}
                     onClick={onSubmitClicked}
                 >Send reset link</button>
             </div>
-        </Container>
+        </div>
     );
 };

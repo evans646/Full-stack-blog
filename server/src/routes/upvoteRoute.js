@@ -1,27 +1,24 @@
 import { getDbConnection } from '../db';
-//import { ObjectID } from 'mongodb';
-
 
 
 export const upvoteRoute = {
-     path: '/api/articles/:name/:userId/upvote',
+     path: '/api/blogs/:name/:userId/upvote',
      method: 'post',
      handler: async (req, res) => {
-        const db = getDbConnection('blog-project');
-        const articleName = req.params.name;
+        const db = getDbConnection('techarena');
+        const blogName = req.params.name;
         const {userId } = req.params;
 
-        const articleInfo = await db.collection('articles').findOne({ name: articleName });
-        await db.collection('articles').updateOne({ name: articleName },{
+        const blogInfo = await db.collection('blogs').findOne({ name: blogName });
+        await db.collection('blogs').updateOne({ name: blogName },{
                    '$set': {
-                      upvotes: articleInfo.upvotes + 1,
+                      upvotes: blogInfo.upvotes + 1,
                   }}); 
-        await db.collection('articles').updateOne({ _id: articleInfo._id },
+        await db.collection('blogs').updateOne({ _id: blogInfo._id },
          { $push: {
                upvotedIds:userId
          }});
-       const updatedArticleInfo = await db.collection('articles').findOne({ name: articleName }); 
-       res.status(200).json(updatedArticleInfo);
+       const updatedBlogInfo = await db.collection('blogs').findOne({ name: blogName }); 
+       res.status(200).json(updatedBlogInfo);
     }
 };
-

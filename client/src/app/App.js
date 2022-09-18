@@ -1,15 +1,12 @@
-import React from 'react';
-import ScrollToTop from "react-scroll-to-top";
+import {AppRoutes} from '../routes';
+import './App.css'
 
-
-import { AppRoutes } from '../Routes';
-
-export function App() {
-    return ( 
-        <div>
-        <ScrollToTop smooth/>
-            <AppRoutes/>
-        </div>
-     );
+function App() {
+  return (
+    <div>
+     <AppRoutes/>
+    </div>
+  );
 }
 
+export default App;
