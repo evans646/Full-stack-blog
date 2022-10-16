@@ -11,4 +11,4 @@ export const getGoogleOauthUrl = () => {
         prompt: 'consent',
         scope: scopes,
     });
-};
+}

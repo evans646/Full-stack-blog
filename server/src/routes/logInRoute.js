@@ -1,6 +1,6 @@
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import { getDbConnection } from '../db';
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import { getDbConnection } from "../db";
 
 
 export const logInRoute = {
@@ -10,7 +10,7 @@ export const logInRoute = {
         const { username, password } = req.body;
 
         const db = getDbConnection("techarena");
-        const user = await db.collection('users').findOne({ username });
+        const user = await db.collection("users").findOne({ username });
         if (!user) return res.sendStatus(401);
         const { _id: id, isVerified, passwordHash, salt,Upvoted ,email} = user;
 

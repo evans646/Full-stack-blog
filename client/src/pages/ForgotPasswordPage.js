@@ -1,4 +1,4 @@
-import{ useState ,useEffect} from 'react';
+import React,{ useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -24,35 +24,37 @@ export function ForgotPasswordPage() {
 
     const onSubmitClicked = async () => {
         try {
-            await axios.put(`/api/forgot-password/${emailValue}`);
+            await axios.put(`http://localhost:8080/api/forgot-password/${emailValue}`);
             setSuccess(true);
             setShowSuccessMessage(true)
             setTimeout(() => {
-            navigate('/login')
+            navigate("/signin")
             },3000)
         } catch (e) {
             setErrorMessage(e.message)
             setShowErrorMessage(true)
+            setEmailValue("")
         };
     };
     return success ? (
-        <div className='pageContainer'>
-           <div style={{marginBottom:'5%'}} className='alert-container'>
+        <div className= "alert-wrapper">
+           <span>
            {showSuccessMessage && <div className="success">Success!</div>}
-           </div>
+           </span>
             <p>A reset link has been sent to the email provided</p>
         </div>
     ) : (
-        <div  className="main">
-              <div style={{marginBottom:'5%'}} className='alert-container'>
+     <>         
+        <div className={errorMessage ? "alert-wrapper":""}>
              {showErrorMessage && <div className='fail'> {errorMessage}</div>}
-              </div>
-            <div className='forgot-password'>
+        </div>
+        <div  className="main">
+            <div className="forgot-password">
                 <h1>Password reset</h1>
-                <p>Enter your email to receive  a reset link  </p>
+                <p>Enter your email to receive  a reset link</p>
                 <label htmlFor="email">
                     <input type="text" id="email" 
-                        className="un "
+                        className="input"
                         minLength="3"
                         value={emailValue}
                         onChange={e => setEmailValue(e.target.value)}
@@ -65,5 +67,6 @@ export function ForgotPasswordPage() {
                 >Send reset link</button>
             </div>
         </div>
+     </>
     );
 };

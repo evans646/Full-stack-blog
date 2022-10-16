@@ -8,12 +8,9 @@ export const forgotPasswordRoute = {
     method: 'put',
     handler: async (req, res) => {
         const { email } = req.params;
-
-        const db = getDbConnection('blog-project');
+        const db = getDbConnection('techarena');
         const passwordResetCode = uuid();
-
-        const { result } = await db.collection('users').updateOne({ email }, { $set: { passwordResetCode } });
-
+        const { result } = await db.collection('users').updateOne({ email }, { $set:{ passwordResetCode } });
         if (result.nModified > 0) {
             try {
                 await sendEmail({
@@ -22,14 +19,10 @@ export const forgotPasswordRoute = {
                     subject: 'Password Reset',
                     text: `
                         To reset your password, click this link:
-                        http://localhost:3000/reset-password/${passwordResetCode}
-                    `
+                        http://localhost:3000/reset-password/${passwordResetCode}`
                 });
             } catch (e) {
-                console.log(e);
-                res.sendStatus(500);
-            }
-        };
+                res.sendStatus(500);}};
         res.sendStatus(200);
     }
 };

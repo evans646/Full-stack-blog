@@ -10,7 +10,7 @@ export const updateOrCreateUserFromOauth = async({ oauthUserInfo }) => {
         picture,
     } = oauthUserInfo;
 
-    const db = getDbConnection('blog-project');
+    const db = getDbConnection('techarena');
     const existingUser = await db.collection('users').findOne({ email });
 
     if (existingUser) {
@@ -38,7 +38,7 @@ export const updateOrCreateGithubUserFromOauth = async({ oauthUserInfo }) => {
         avatar,
     } = oauthUserInfo;
 
-    const db = getDbConnection('blog-project');
+    const db = getDbConnection('techarena');
     const existingUser = await db.collection('users').findOne({ email });
 
     if (existingUser) {

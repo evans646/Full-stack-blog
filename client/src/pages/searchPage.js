@@ -1,40 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import {Link} from 'react-router-dom';
-import {SearchBar} from '../components/searchBar';
-import {SearchList} from '../interface/searchLists';
+import React, { useState, useEffect } from "react";
+import {SearchBar} from "../interface/index";
+import blogContent from "../data/blog-content";
 
 const SearchPage = (props) => {
-  const [input, setInput] = useState('');
-  const [searchListDefault, setSearchListDefault] = useState();
-  const [searchList, setSearchList] = useState();
-
+  const [blogList, setBlogList] = useState();
+ 
   const fetchData = async () => {
-    return await fetch('http://localhost:8080/api/blogs')
-      .then(response => response.json())
-      .then(data => {
-         setSearchList(data) 
-         setSearchListDefault(data)
-       });}
+        setBlogList(blogContent)
+       };
 
-  const updateInput = async (input) => {
-     const filtered = searchListDefault.filter(blog => {
-      return blog.name.toLowerCase().includes(input.toLowerCase())
-       
-     })
-     setInput(input);
-     setSearchList(filtered);
-  };
 
-  // useEffect( () => {fetchData()},[]);
-	
+  useEffect( () => {fetchData()},[]);
   return (
-    <div  className="columns searchColumn">
-      <SearchBar 
-       input={input} 
-       onChange={updateInput}/>
-      <button onClick={()=>fetchData()}>Fetch</button>
-      <SearchList searchList={searchList}/>
-    </div>
+    <>
+      <SearchBar data={blogList}/>
+    </>
    );
 };
 

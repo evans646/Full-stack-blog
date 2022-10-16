@@ -1,38 +1,29 @@
-import React,{useState} from 'react';
+import React from "react";
+import {FaRegComment} from "react-icons/fa";
 
-export function Recentcomments(){
-    const [recentComments,setRecentcomments] = useState(false);
 
+export function RecentComments(){
     return(
-        <div className="columns comments">
-        <span className="title">
-          Recent Comments
-          <a href="#" title="Explore More"><i className="fa fa-share"></i></a
-        ></span>
+    <div className="columns comments">
+          <h2>Recent Comments</h2>
         <section>
-          <marquee
-            direction="down"
-            scrollamount="3"
-            onMouseOver={()=>setRecentcomments(false)}
-            onMouseOut={()=>setRecentcomments(true)}
-            className="marquee2">
-            <p>
-              Remember, torn clothes should not be left at home. Dispose of them
-              out. Buying new clothes like towels.
-            </p>
-            <p>
-              wearing clothes, bedsheets are like inviting good luck to the home.
-            </p>
-            <p>
-              Arrange doormats before every door and please change the doormats
-              once in 6/8 months or maximum within 1 year. For More Daily
-            </p>
-            <p>
-              Arrange doormats before every door and please change the doormats
-              once in 6/8 months or maximum within 1 year. For More Daily
-            </p>
+          <marquee className="marquee" direction="down" scrollamount="4" onMouseOver="this.stop()" onMouseOut="this.start()">
+            <p> 
+             <FaRegComment  id="recentComment-icon"/>
+
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis totam illum suscipit neque accusamus possimus eum nulla illo explicabo.
+            </p> 
+            <p> 
+              <FaRegComment  id="recentComment-icon"/>
+
+              Voluptas blanditiis saepe officiis porro suscipit iure, neque pariatur aliquam architecto sequi a voluptate dolorem ad?
+             </p> 
+             <p> 
+             <FaRegComment  id="recentComment-icon"/> Lorem  Voluptas blanditiis saepe officiis porro suscipit iure, neque pariatur aliquam architecto sequi a voluptate dolorem ad?
+             </p> 
           </marquee>
         </section>
-      </div>
+     </div>
     )
-}
+};
+

@@ -1,9 +1,12 @@
-export {HomePage} from "./home";
-export {BlogsListPage} from "./blogListsPage";
-export {BlogPage }from "./blogPage";
-export {NotFound} from "./notFoundPage";
-export {SignInPage} from "./loginPage";
-export {SignupPage} from "./signupPage";
-export {ForgotPasswordPage} from "./forgotPasswordPage";
-export {PasswordResetLandingPage} from "./passwordResetLandingPage";
-export {PleaseVerifyEmailPage} from "./pleaseVerifyPage";
+export {NotFoundPage} from "./NotFoundPage";
+export {HomePage} from "./HomePage";
+export {BlogsListPage } from "./BlogListPage";
+export {BlogPage } from "./BlogPage";
+export {SignInPage} from "./SignInPage";
+export {SignUpPage} from "./SignUpPage";
+export {ForgotPasswordPage} from "./ForgotPasswordPage";
+export {PasswordResetLandingPage} from "./PasswordResetLandingPage";
+export {PleaseVerifyEmailPage} from "./PleaseVerifyPage";
+export {EmailVerificationLandingPage} from "./EmailVerificationLandingPage";
+
+

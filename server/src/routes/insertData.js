@@ -5,17 +5,13 @@ const blogs = [
     {
         name: 'learn-react',
         upvotes: 0,
-        comments:[{username:'Evans',text:'I am in love with this comment'}],
-        upvotedIs:[
-         
-        ],
+        comments:[],
+        upvotedIs:[],
     }, {
         name: 'learn-node',
         upvotes: 0,
         comments:[],
-        upvotedIds:[
-          
-        ],
+        upvotedIds:[],
     },
     {
         name: 'my-thoughts-on-resumes',
@@ -28,12 +24,38 @@ const blogs = [
         comments:[],
         upvotedIs:[],
 
+    } ,
+    {
+        name: 'developer-hacks-with-books',
+        upvotes: 0,
+        comments:[],
+        upvotedIs:[],
+    },
+    {
+        name:'react-best-practices',
+        upvotes: 0,
+        comments:[],
+        upvotedIs:[], 
+    },
+    {
+        name:'developer-tips',
+        upvotes: 0,
+        comments:[],
+        upvotedIs:[],
+
+    },
+    {
+        name:'react-addicts',
+        upvotes: 0,
+        comments:[],
+        upvotedIs:[],
+
     }
 ];
 
 
 export const insertDataRoute = {
-    path: '/api/insert',
+    path: '/api/insert', 
     method: 'post',
     handler: async(req, res) => {
         const db = getDbConnection('techarena');

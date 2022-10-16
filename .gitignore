@@ -1,0 +1,27 @@
+node_modules
+.vscode 
+
+/node_modules
+/.devcontainer
+**.devcontainer
+**node_modules
+
+
+# dependencies
+/node_modules
+*/node_modules/*
+/.pnp
+.pnp.js
+/.env
+.env
+*/.env
+.env/*
+**/.env
+# testing
+/coverage
+
+
+# production
+/build
+.vscode
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.

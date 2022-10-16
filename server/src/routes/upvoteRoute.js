@@ -5,7 +5,7 @@ export const upvoteRoute = {
      path: '/api/blogs/:name/:userId/upvote',
      method: 'post',
      handler: async (req, res) => {
-        const db = getDbConnection('techarena');
+        const db = getDbConnection('techarena'); 
         const blogName = req.params.name;
         const {userId } = req.params;
 
