@@ -1,12 +1,16 @@
 node_modules
 .vscode 
-
+/.vscode 
+**.vscode 
+.devcontainer
 /node_modules
 /.devcontainer
 **.devcontainer
 **node_modules
+plan.md
+/plan.md
 
-
+.DS_Store
 # dependencies
 /node_modules
 */node_modules/*
