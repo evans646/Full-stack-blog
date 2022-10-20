@@ -4,7 +4,7 @@ import { routes } from './routes';
 import { initializeDbConnection } from './db';
 
 const PORT = process.env.PORT || 8080;
-const app = express();
+const app = express(); 
 
 // This allows us to access the body of POST/PUT
 // requests in our route handlers (as req.body)
@@ -19,13 +19,12 @@ routes.forEach(route => {
 });
 // Connect to the database, then start the server.
 // This prevents us from having to create a new DB
-// connection for every request.
-
-initializeDbConnection()
+// connection for every request. 
+initializeDbConnection() 
     .then(() => console.log('DATABASE CONNECTED'))
     .then(() => {
         app.listen(PORT, () => {
             console.log(`APP IS LISTENING ON PORT ${PORT}`);
         });
-    });
+    }); 
 

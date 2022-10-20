@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {Link,NavLink} from "react-router-dom";
-import { RiMenu3Line, RiCloseLine} from "react-icons/ri";
+import { RiMenu5Fill} from "react-icons/ri";
+import { AiOutlineClose} from "react-icons/ai";
 import logo from "../logo.svg";
 
 import { useUser } from '../authentication/useUser';
@@ -34,8 +35,8 @@ export function NavBar () {
       </div>
       <div className="nav-menu">
         {toggleMenu
-          ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)} />
-          : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />}
+          ? <AiOutlineClose color="#fff" size={27} onClick={() => setToggleMenu(false)} />
+          : <RiMenu5Fill color="#fff" size={27} onClick={() => setToggleMenu(true)} />}
         {toggleMenu && (
         <div className="navMenu-container scale-up-center">
           <div className="navMenu-links">
@@ -66,8 +67,8 @@ export function NavBar () {
     </div>
     <div className="nav-menu">
       {toggleMenu
-        ? <RiCloseLine color="#fff" size={27} onClick={() => setToggleMenu(false)} />
-        : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />}
+        ? <AiOutlineClose color="#fff" size={27} onClick={() => setToggleMenu(false)} />
+        : <RiMenu5Fill color="#fff" size={27} onClick={() => setToggleMenu(true)} />}
       {toggleMenu && (
       <div className="navMenu-container scale-up-center">
         <div className="navMenu-links">

@@ -26,4 +26,4 @@ const TrendingBlogsList  = () => {
     )
 };
 
-export default TrendingBlogsList
+export default TrendingBlogsList;

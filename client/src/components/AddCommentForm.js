@@ -3,8 +3,6 @@ import { Link,useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import Modal from "react-modal";
 import { RiCloseLine} from "react-icons/ri";
-
-
 import axios from "axios";
 
 import {useUser} from "../authentication/useUser";
@@ -33,16 +31,16 @@ const AddCommentForm = ({ blogName, setBlogInfo }) => {
     
     const user = useUser();
     const { username, given_name,name } = user || "";
-
-
-    const [modalIsOpen, setIsOpen] = useState(false);
     const [,setToken] = useToken();
 
-    const [errorMessage, setErrorMessage] = useState('');
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+
 
     const [passwordValue, setPasswordValue] = useState('');
     const [usernameValue, setUsernameValue] = useState('');
     const [googleOauthUrl, setGoogleOauthUrl] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [showErrorMessage, setShowErrorMessage] = useState(false);
 
     const navigate = useNavigate();
@@ -131,7 +129,6 @@ const AddCommentForm = ({ blogName, setBlogInfo }) => {
        <div className="comment-form">
         <p style={{padding:'2%',fontWeight:'600',marginLeft:'70%',fontSize:'2em',cursor:"pointer"}} onClick={openModal}>
            <p className="comment-noUser-holder">Comment on this blog</p>
-           <hr style={{width:"65%",marginRight:"50%"}}/>
        </p>    
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
         <RiCloseLine color="#000" size={20} onClick={closeModal} className="modalCloseIcon" />

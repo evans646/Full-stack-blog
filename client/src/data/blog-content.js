@@ -27,7 +27,7 @@ const articles = [
 
     },   {
         name: 'react-addicts',
-        title: 'How reacts makes you so addcited to developing quality contents',
+        title: 'How reacts makes you so addicted to developing quality contents',
         imageUrl:'https://images.unsplash.com/photo-1579820010410-c10411aaaa88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2994&q=80',
         content: [
             `Welcome! Today we're going to be talking about the fastest way to

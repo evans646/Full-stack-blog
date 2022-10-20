@@ -13,8 +13,8 @@ export const PasswordResetSuccess = () => {
                <p>
                 Your password has been reset, now please login with your new password.
             </p>
+            <button onClick={() => navigate("/signin")} className="password-success-btn">Sign in page</button>
             </div>
-            <button onClick={() => navigate("/signin")} className="submit">SignIn</button>
         </div>
     );
 };

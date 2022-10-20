@@ -19,7 +19,7 @@ export function TrendingBlogs (){
      <div className="blog-content">
         <h2>
           Trending Blogs
-        <HiOutlineTrendingUp style={{color:'rgba(105, 175, 14, 0.81)',paddingRight:'5px',fontSize:'1.3em'}}/> 
+        <HiOutlineTrendingUp className="trending-icon"/> 
         </h2>
         <div className="left-content">
           <TrendingBlogsList/>

@@ -1,27 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
-:root {
-  scrollbar-color: rgb(210, 210, 210) rgb(46, 54, 69) !important;
-  scrollbar-width: thin !important;
-  --white: #fff;
-  --black: #000;
-  --dark: #2a2a2e;
-  --yellow: #f7b500;
-  --darkyellow: #f79300;
-  --red: #fe3e30;
-  --darkred: #f72729;
-  --blue: #2588cf;
-  --darkblue: #026dbe;
-  --defaultfont: "Poppins", sans-serif;
-  --titlefont: "Roboto", sans-serif;
-}
-
 ::-webkit-scrollbar {
   height: 12px;
   width: 10px;
-  background: var(--dark);
+  background: #2a2a2e;
 }
-
 ::-webkit-scrollbar-thumb {
   background: #0e6a89;
   border-radius: 9px;
@@ -30,7 +12,6 @@
 ::-webkit-scrollbar-corner {
   background: rgba(2, 0, 0, 0.75);
 }
-
 /*Default*/
 body {
   margin: 0;
@@ -54,10 +35,6 @@ p {
   transition: 0.5s;
 }
 
-em {
-  font-style: normal;
-  color: var(--primary);
-}
 
 p {
   line-height: 1.6em;
@@ -213,21 +190,14 @@ fieldset {
   }
 }
 
-/* Tredning sign */
-.tredn-sign{
-  background: rgba(105, 175, 14, 0.81);
-  border-radius: 30px 0 0 30px;
-  color: #fff;
-  width: 190px;
-  text-align: center;
-  padding: 4.5px 18px;
-  position: relative;
-  border-right: 1px solid #fff;
-  cursor: pointer;
+.trending-icon{
+  color:rgba(105, 175, 14, 0.81);
+  padding-right:5px;
+  font-size:1.3em
 }
 /* homepage layout */
 .title {
-  font-family: var(--titlefont);
+  font-family: "Roboto", sans-serif;
 }
 
 .btn1 {
@@ -351,6 +321,13 @@ fieldset {
   position: relative;
   text-decoration: none;
 }
+#page-body {
+  max-width: 850px;
+  margin: auto;
+  padding-top: 64px;
+  padding-bottom: 2%;
+  height: auto;
+}
 .blog-list-card p {
   position: relative;
   margin: 1rem 0 0;
@@ -382,12 +359,6 @@ fieldset {
 .page-title {
   text-align: center;
   margin-bottom: 30px;
-}
-#page-body {
-  max-width: 850px;
-  margin: auto;
-  padding-top: 64px;
-  height: auto;
 }
 
 .blogs-list h1 {
@@ -491,6 +462,10 @@ textarea {
   margin-left: 26px;
 }
 
+.comment-noUser-holder{
+  border-bottom: 1px solid rgba(105, 175, 14, 0.81);
+  width: 65%;
+}
 /* upvote section */
 #upvotes-section {
   padding: 15px;
@@ -672,7 +647,7 @@ textarea {
 .blog-card .tag {
   padding: 5px 10px;
   background-color: #207d9c;
-  color: var(--white);
+  color: #fff;
   position: absolute;
   right: 3.5%;
   top: 3%;
@@ -753,7 +728,6 @@ textarea {
 .columns .title a {
   float: right;
 }
-
 
 /* search form */
 .search form {
@@ -852,10 +826,11 @@ textarea {
 /* mobile styles */
 @media (max-width: 1000px) {
   body{
-    font-size: .9em
+    font-size: .9em;
   }
+
  .navbar-sign-links {
-    font-size: 0.5em
+    font-size: 0.6em
   }
   .comment-noUser-holder{
     font-size: 0.6em;
@@ -887,7 +862,7 @@ textarea {
     margin-left: 40% !important;
   }
   #page-body {
-    padding: 2px;
+    padding-bottom: 5%;
   }
   .blog-container {
     flex-wrap: wrap;
@@ -921,9 +896,30 @@ textarea {
   .right-content {
     flex: 0 0 100%;
   }
+  #page-body{
+    padding-bottom: 7%;
+  }
+  .blog-list-card{
+    padding: 5px;
+  }
+  .blogs-list h1{
+    font-size: 2.2em;
+  }
+ 
+  .submit{
+    font-size: 1.2em;
+    padding: 2px;
+  }
 }
-
+/* small screens */
 @media (max-width: 740px) {
+  body{
+    font-size: .8em;
+  }
+  .navMenu-sign-links button{
+    font-size: 1em;
+    padding:5px;width: 100%;
+  }
   .blog-card {
     flex: 0 0 100%;
   }
@@ -933,6 +929,25 @@ textarea {
     margin: 0;
     height: auto;
     margin-bottom: 4vh;
+  }
+  .read-next{
+    margin-bottom: 2%;
+  }
+  #page-body{
+    padding-left: 3px;
+  }
+  .comment-noUser-holder{
+    border-bottom: 1px solid rgba(105, 175, 14, 0.81);
+  }
+  .submit{
+    font-size: 1.2em;
+    padding: 2px;
+  }
+  footer{
+    padding-top: 5%;
+  }
+  footer p{
+    padding-top: 10px;
   }
 }
 
@@ -1040,6 +1055,19 @@ form.form1 {
   text-decoration: none;
 }
 
+.password-success-btn{
+  cursor: pointer;
+  border-radius: 7px;
+  color: #fff;
+  background-color: rgba(105, 175, 14, 0.81);
+  border: 0;
+  padding: 15px 41px 13px 42px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 0 20px 1px rgb(0 0 0 / 4%);
+  font-family: inherit;
+}
 @media (max-width: 600px) {
   .main {
     border-radius: 0px;
@@ -1056,7 +1084,6 @@ form.form1 {
   font-weight: 500;
 }
 
-
 /* Notfoud */
 #box{
   color: #333;
@@ -1068,19 +1095,19 @@ form.form1 {
   font-weight: bolder;
 }
 .not-found{
-  fill: #D55;
-  stroke: #D55;
+  fill: #D52;
+  stroke: #D52;
   stroke-width: 1.5;
   animation: lupa 5s infinite;
 }
 @keyframes lupa{
   from{
-    fill: #f77;
-    stroke: #d55;
+    fill: rgba(246, 83, 61, 0.4);
+    stroke: #d52;
     stroke-dasharray: 0;
   }to{
-    fill: #d55;
-    stroke: #d55;
+    fill: #d52;
+    stroke: #d52;
     stroke-dasharray: 95;
   }
 }
@@ -1271,4 +1298,5 @@ footer {
 }
 footer p {
   color: #fff;
+  padding-top:5px;
 }

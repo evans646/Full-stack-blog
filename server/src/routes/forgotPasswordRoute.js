@@ -17,12 +17,12 @@ export const forgotPasswordRoute = {
                     to: email,
                     from: 'jw207740@gmail.com', 
                     subject: 'Password Reset',
-                    text: `
-                        To reset your password, click this link:
-                        http://localhost:3000/reset-password/${passwordResetCode}`
+                    text: `To reset your password, click this link:
+                           http://localhost:3000/reset-password/${passwordResetCode}`
                 });
             } catch (e) {
-                res.sendStatus(500);}};
+                res.sendStatus(500); 
+            }};
         res.sendStatus(200);
     }
 };

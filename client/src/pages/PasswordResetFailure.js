@@ -11,7 +11,7 @@ export const PasswordResetFailure = () => {
             <p>
                 Something went wrong while trying to reset your password.
             </p>
-            <button onClick={() => navigate("/signin")} className="submit">Back to SignIn</button> 
+            <button onClick={() => navigate("/signin")} className="password-success-btn">Back to Sign In</button> 
         </div>
     );
 };

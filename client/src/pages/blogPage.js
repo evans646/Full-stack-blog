@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import {  useParams,Link } from "react-router-dom";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+import readingTime from "reading-time";
 
 import CommentsList from "../components/CommentsList";
 import UpvotesSection from "../components/UpvotesSection";
 import AddCommentForm from "../components/AddCommentForm";
 import ReadNextBlogsFilter from "../components/ReadNext";
 
-import readingTime from "reading-time";
 
 import {NotFoundPage} from "./index"; 
 import blogs from "../data/blog-content";
 import {useUser} from "../authentication/useUser";
-
 import {SocialShareIcons} from "../components/ShareBlogIcons";
 
 export function BlogPage () {
@@ -56,9 +55,8 @@ export function BlogPage () {
   
     
     const stats = readingTime(blog.content.map(content=>content.toString()));
-    console.log(blog.content.map(content=>content.toString()),stats)
 
-    const upvoteData = blogInfo.upvotedIds||""
+    const upvoteData = blogInfo.upvotedIds||"";
     const checkUserUpvote= Object.values(upvoteData).filter((userId) => userId === id).length > 0 ? true : false;
    
 
@@ -68,7 +66,7 @@ export function BlogPage () {
           <h1 className="page-title">{blog.title}</h1>
           <Link to="#" className="figure">
             <img  src={blog.imageUrl} 
-            alt="" loading="lazy"  style={{width:'100%',height:"20%",borderRadius:"5px"}}/>
+            alt="blog" loading="lazy"  style={{width:'100%',height:"20%",borderRadius:"5px"}}/>
           </Link>
           <UpvotesSection blogName={name} upvotes={blogInfo.upvotes} setBlogInfo={setBlogInfo} hasUpvoted={checkUserUpvote} stats={stats}/>
         {blog.content.map((paragraph, key) => (

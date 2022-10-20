@@ -4,13 +4,17 @@ node_modules
 
 
 /node_modules
-
+/REF
+/.vscode
+.vscode
 
 **node_modules
-*/graphQL.md/*
-**/.graphQL.md
-**/.graphQL.md
+*/plan.md/*
+**/.plan.md
+**/.plan.md
 
+
+/.DS_Store
 # dependencies
 /node_modules
 */node_modules/*
