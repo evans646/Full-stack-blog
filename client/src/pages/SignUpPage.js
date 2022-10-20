@@ -25,7 +25,7 @@ export function SignUpPage () {
 
   const onSignUpClicked = async () => {
     try {
-      const response = await axios.post("http://localhost:8080/api/signup", {
+      const response = await axios.post("reactfstackblog.herokuapp.com/api/signup", {
         email: emailValue,
         password: passwordValue,
         username: usernameValue,

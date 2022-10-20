@@ -14,7 +14,7 @@ export function PasswordResetLandingPage() {
   
     const onResetClicked = async () => {
       try {
-        await axios.put(`http://localhost:8080/api/users/${passwordResetCode}/reset-password`, {
+        await axios.put(`reactfstackblog.herokuapp.com/api/users/${passwordResetCode}/reset-password`, {
           newPassword: passwordValue,
         });
         setIsSuccess(true);

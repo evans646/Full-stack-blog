@@ -39,7 +39,7 @@ export function SignInPage() {
   useEffect(() => {
     const loadOauthUrl = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/auth/google/url");
+        const response = await axios.get("reactfstackblog.herokuapp.com/auth/google/url");
         const { url } = response.data;
         setGoogleOauthUrl(url);
       } catch (e) {
@@ -53,7 +53,7 @@ export function SignInPage() {
   const onLogInClicked = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/login", {
+      const response = await axios.post("reactfstackblog.herokuapp.com/api/login", {
         username: usernameValue,
         password: passwordValue,
       });
