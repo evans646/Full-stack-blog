@@ -16,7 +16,7 @@ export const googleOauthCallbackRoute = {
             process.env.JWT_SECRET,
             (err, token) => {
                 if (err) return res.sendStatus(500);
-                res.redirect(`http://localhost:3000/signin?token=${token}`)
+                res.redirect(`https://reactfstackblog.herokuapp.com/signin?token=${token}`)
             }
         );
     }
