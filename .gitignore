@@ -11,6 +11,7 @@ plan.md
 /plan.md
 
 .DS_Store
+**/.DS_Store
 # dependencies
 /node_modules
 */node_modules/*
