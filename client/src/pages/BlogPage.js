@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import {  useParams,Link } from "react-router-dom";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import readingTime from "reading-time";
+import {IoBookOutline} from "react-icons/io5";
+import {BsFileWord} from "react-icons/bs";
+import {FaUserCog} from "react-icons/fa";
 
 import CommentsList from "../components/CommentsList";
 import UpvotesSection from "../components/UpvotesSection";
@@ -29,7 +32,7 @@ export function BlogPage () {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await fetch(`http://localhost:8080/api/blogs/${name}`);
+            const result = await fetch(`https://reactfstackblog.herokuapp.com/api/blogs/${name}`);
             const body = await result.json();
             setLoading(true);
             setColor("#207d9c");
@@ -66,14 +69,19 @@ export function BlogPage () {
           <h1 className="page-title">{blog.title}</h1>
           <Link to="#" className="figure">
             <img  src={blog.imageUrl} 
-            alt="blog" loading="lazy"  style={{width:'100%',height:"20%",borderRadius:"5px"}}/>
+            alt="blog" loading="lazy"  style={{width:"100%",height:"18%",borderRadius:"5px",padding:"1px"}}/>
           </Link>
-          <UpvotesSection blogName={name} upvotes={blogInfo.upvotes} setBlogInfo={setBlogInfo} hasUpvoted={checkUserUpvote} stats={stats}/>
+          <section id="stats-section">
+          <IoBookOutline size={40} id="read-time"/><span>{stats.text==='0 min read' ? '1 min read':stats.text}</span>
+          <BsFileWord  size={40} id="read-time"/><span>{stats.words ===0 ? "239 words":stats.words + "word"}</span>
+          <FaUserCog size={40} id="read-time"/><span>shared by admin</span>
+          </section>
         {blog.content.map((paragraph, key) => (
             <p key={key}>{paragraph}</p>
         ))}
         <SocialShareIcons/>
-        <CommentsList comments={blogInfo.comments} />
+        <UpvotesSection blogName={name} upvotes={blogInfo.upvotes} setBlogInfo={setBlogInfo} hasUpvoted={checkUserUpvote} stats={stats}/>
+        <CommentsList comments={blogInfo.comments} name={blogInfo.comments.name}/>
         <AddCommentForm blogName={name} setBlogInfo={setBlogInfo} />
         <h2 style={{padding:"10px"}}>Read next Posts</h2>
         <ReadNextBlogsFilter name={name}/>

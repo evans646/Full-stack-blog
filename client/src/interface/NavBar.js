@@ -28,6 +28,7 @@ export function NavBar () {
         <div className="navlinks-wrapper">
           <p><NavLink to="/">Home</NavLink></p>
           <p><Link to="/all-blogs">All Blogs</Link>{""}</p>
+          <p><Link to="/signout" onClick={handleLogOut}>Sign out</Link></p>
         </div>
       </div>
       <div className="navbar-sign-links">
@@ -63,7 +64,7 @@ export function NavBar () {
     </div>
     <div className="navbar-sign-links">
       <p><Link to="/signin">Sign in</Link></p>
-      <button type="button" className="signUp-btn"><Link to="/signup">Sign up</Link></button>
+      <button type="button"><Link to="/signup"  className="signup-link">Sign up</Link></button>
     </div>
     <div className="nav-menu">
       {toggleMenu
@@ -76,8 +77,8 @@ export function NavBar () {
           <p><Link to="/all-blogs">All Blogs</Link>{""}</p>
         </div>
         <div className="navMenu-sign-links">
-          <Link to="signin"><p>Sign in</p></Link>
-          <button type="button"><Link to="/signup"><p>Sign up</p></Link></button>
+          <p><Link to="/signin">Sign in</Link>{""}</p>
+          <button type="button"><Link to="/signup" className="signup-btn"><p>Sign up</p></Link></button>
         </div>
       </div>
       )}

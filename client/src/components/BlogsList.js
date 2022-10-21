@@ -18,8 +18,7 @@ const BlogsList = ({ blogs }) => (
          <Link to={`/blog/${blog.name}`}>Read more <HiOutlineExternalLink/></Link>
         </p>
       </div>
-   </div>
-    ))}
+    </div>))}
     </>
 );
 

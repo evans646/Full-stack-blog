@@ -76,7 +76,7 @@ export function FormModal(){
     const onLogInClicked = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8080/api/login', {
+            const response = await axios.post('https://reactfstackblog.herokuapp.com/api/login', {
                 username: usernameValue,
                 password: passwordValue,
             })

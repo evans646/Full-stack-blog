@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import blogs from "../data/blog-content";
 import {HiOutlineExternalLink} from "react-icons/hi";
 
-const TrendingBlogs = blogs.slice(1,6)
+const TrendingBlogs = blogs.slice(1,6);
 
 const TrendingBlogsList  = () => {
     return(

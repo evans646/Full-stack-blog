@@ -2,17 +2,17 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Avatar from "react-avatar";
 
-const CommentsList = ({ comments }) => (
+const CommentsList = ({ comments,given_name,name}) => (
     <div className="comments-wapper">
      <h3 style={{padding:'2%',fontWeight:'600'}}>{comments.length > 1 ?  `${comments.length } Comments` :`${comments.length } Comment`}</h3>
        <ul className="comments list-unstyled">
         {
-            comments.map((comment)=>(
-               <li className="clearfix">
+            comments.map((comment,key)=>(
+               <li className="clearfix" key={key}>
 					<Avatar name={comment.username} className="avatar"  size="65"  round={true} />
                     <div className="post-comments">
                         <p className="meta">
-                         <Link to="#">{comment.username||comment.given_name||comment.name}</Link> says :
+                         <Link to="#">{comment.username}</Link> says:
                         </p>
                          <h6>
                       {comment.text}

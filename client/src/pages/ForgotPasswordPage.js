@@ -24,7 +24,7 @@ export function ForgotPasswordPage() {
 
     const onSubmitClicked = async () => {
         try {
-            await axios.put(`reactfstackblog.herokuapp.com/api/forgot-password/${emailValue}`);
+            await axios.put(`https://reactfstackblog.herokuapp.com/api/forgot-password/${emailValue}`);
             setSuccess(true);
             setShowSuccessMessage(true)
             setTimeout(() => {

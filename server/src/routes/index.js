@@ -15,7 +15,7 @@ import {insertDataRoute} from './insertData';
 
 export const routes = [
     blogRoute,
-    insertDataRoute,
+    insertDataRoute, 
     upvoteRoute,
     downVoteRoute,
     getGoogleOauthUrlRoute,

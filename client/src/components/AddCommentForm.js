@@ -30,7 +30,7 @@ const AddCommentForm = ({ blogName, setBlogInfo }) => {
     const [commentText, setCommentText] = useState("");
     
     const user = useUser();
-    const { username, given_name,name } = user || "";
+    const { username,name } = user || "";
     const [,setToken] = useToken();
 
     const [modalIsOpen, setIsOpen] = useState(false);
@@ -43,21 +43,23 @@ const AddCommentForm = ({ blogName, setBlogInfo }) => {
     const [errorMessage, setErrorMessage] = useState('');
     const [showErrorMessage, setShowErrorMessage] = useState(false);
 
+    
+
     const navigate = useNavigate();
    
     const { token: oauthToken } = useQueryParams();
 
     const addComment = async () => {
-         const response = await fetch(`http://localhost:8080/api/blogs/${blogName}/add-comment`, {
+         const response = await fetch(`https://reactfstackblog.herokuapp.com/api/blogs/${blogName}/add-comment`, {
            method: 'post',
-           body: JSON.stringify({ username,name,given_name,text: commentText }),
+           body: JSON.stringify({ username:name,text: commentText}),
            headers: { 
                'Content-Type': 'application/json',
            }
        });
        const body = await response.json();
        setBlogInfo(body);
-       setUsername(username||given_name||name);
+       setUsername(username||name);
        setCommentText("");
    };
 
@@ -93,7 +95,7 @@ const AddCommentForm = ({ blogName, setBlogInfo }) => {
    const onLogInClicked = async (e) => {
        e.preventDefault();
        try {
-           const response = await axios.post('http://localhost:8080/api/login', {
+           const response = await axios.post('https://reactfstackblog.herokuapp.com/api/login', {
                username: usernameValue,
                password: passwordValue,
            })
@@ -118,7 +120,7 @@ const AddCommentForm = ({ blogName, setBlogInfo }) => {
    if (user) {
        return (
            <div id="comment-form">
-               <h3 style={{padding:'2%',fontWeight:'600'}}>Comment as <span style={{color:"rgba(105, 175, 14, 0.81)"}}>{ username||given_name||name}</span></h3>
+               <h3 style={{padding:'2%',fontWeight:'600'}}>Comment as <span style={{color:"rgba(105, 175, 14, 0.81)"}}>{username||name}</span></h3>
                <label>
                    <textarea rows='4' cols='50' value={commentText} onChange={(event) => setCommentText(event.target.value)} />
                </label>
@@ -131,7 +133,7 @@ const AddCommentForm = ({ blogName, setBlogInfo }) => {
            <p className="comment-noUser-holder">Comment on this blog</p>
        </p>    
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-        <RiCloseLine color="#000" size={20} onClick={closeModal} className="modalCloseIcon" />
+        <RiCloseLine color="#000" size={20} onClick={closeModal} className="modalCloseIcon"/>
         <p>
         <div  style={{marginBottom:'5%',textAlign:'center'}}>
             {showErrorMessage && <div className="fail">{errorMessage}</div>}
