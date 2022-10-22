@@ -18,7 +18,7 @@ export function TrendingBlogs (){
     <>
      <div className="blog-content">
         <h2>
-          Trending Blogs
+          Trending Posts
         <HiOutlineTrendingUp className="trending-icon"/> 
         </h2>
         <div className="left-content">

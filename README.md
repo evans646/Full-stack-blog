@@ -1,6 +1,13 @@
+<h3>TECH ARENA - Full stack blog website</h3>
 <p>
-    This is a full stop blog site 
-    with trending and recent posts, recent comments. full markdown blogs, information, comments,upvotes, authentication and much more. It is fully responsive  
+    This is a Full stack blog website created with 
+<ul>
+    <li>MongoDB</li>
+    <li>Express.js</li>
+    <li>React.js</li>
+    <li>Node.js</li>
+</ul>
+ It features Trending and Recent posts, recent comments. full markdown blogs, information babout blog, comments,upvotes, authentication and much more. It is fully responsive  
 </p>
 
 <p>
