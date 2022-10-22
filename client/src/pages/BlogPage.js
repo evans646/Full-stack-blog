@@ -75,9 +75,11 @@ export function BlogPage () {
           <IoBookOutline size={40} id="read-time"/><span>{stats.text==='0 min read' ? '1 min read':stats.text}</span>
           <BsFileWord  size={40} id="read-time"/><span>{stats.words ===0 ? "239 words":stats.words + "word"}</span>
           </section>
-        {blog.content.map((paragraph, key) => (
+          <section className="blog-p-wrapper">
+          {blog.content.map((paragraph, key) => (
             <p key={key}>{paragraph}</p>
         ))}
+          </section>
         <SocialShareIcons/>
         <UpvotesSection blogName={name} upvotes={blogInfo.upvotes} setBlogInfo={setBlogInfo} hasUpvoted={checkUserUpvote} stats={stats}/>
         <CommentsList comments={blogInfo.comments} name={blogInfo.comments.name}/>

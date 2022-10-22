@@ -10,4 +10,4 @@ export const blogRoute = {
         const articleInfo = await db.collection('blogs').findOne({ name: blogName });
         res.status(200).json(articleInfo);
     },
-};
+}; 

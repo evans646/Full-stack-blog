@@ -98,7 +98,7 @@ export function FormModal(){
       setIsOpen(false);
     };
   
-    return(
+    return( 
     <>
       <BiUpvote onClick={openModal} id="upvote-button-modal"/>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">

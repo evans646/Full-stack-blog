@@ -28,7 +28,6 @@ export function NavBar () {
         <div className="navlinks-wrapper">
           <p><NavLink to="/">Home</NavLink></p>
           <p><Link to="/all-blogs">All Blogs</Link>{""}</p>
-          <p><Link to="/signout" onClick={handleLogOut}>Sign out</Link></p>
         </div>
       </div>
       <div className="navbar-sign-links">
@@ -43,6 +42,7 @@ export function NavBar () {
           <div className="navMenu-links">
             <p><Link to="/">Home</Link>{""}</p>
             <p><Link to="/all-blogs">All Blogs</Link>{""}</p>
+            <p><Link to="/signout" onClick={handleLogOut}>Sign out</Link></p>
           </div>
           <div className="navbar-sign-links">
           <p><Link to="/signout" onClick={handleLogOut}>Sign out</Link></p>
