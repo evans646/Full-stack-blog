@@ -7,7 +7,8 @@
     <li>React.js</li>
     <li>Node.js</li>
 </ul>
- It features Trending and Recent posts, Recent comments, Full markdown blogs, information about a blog, comments,upvotes, authentication and much more. It is fully responsive  
+<hr>
+ It Features Trending and Recent posts, Recent comments, Full markdown posts, Information about a blog, Comments,Upvotes, Authentication and much more. It is fully responsive  
 </p>
 
 <p>
