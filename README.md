@@ -1,4 +1,5 @@
 <h3>TECH ARENA - Full stack blog website</h3>
+<hr>
 <p>
     This is a Full stack blog website created with 
 <ul>
