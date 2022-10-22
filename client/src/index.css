@@ -475,8 +475,17 @@ textarea {
 }
 
 .comment-noUser-holder{
-  border-bottom: 1px solid rgba(105, 175, 14, 0.81);
-  width: 65%;
+  width: 40%;
+  padding:2%;
+  font-weight:600;
+  margin-left:75%;
+  font-size:1.2em;
+  cursor:pointer;
+}
+.divider{
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 }
 /* upvote section */
 #upvotes-section {
@@ -855,9 +864,6 @@ textarea {
     font-size: .9em;
   }
 
- .navbar-sign-links {
-    font-size: 0.6em
-  }
   .comment-noUser-holder{
     font-size: 0.6em;
     margin-right: 20px;
@@ -929,6 +935,9 @@ textarea {
   .blogs-list h1{
     font-size: 2.2em;
   }
+  .loadmore-blogs-btn{
+    margin-right: 3px;
+  }
  
   .submit{
     font-size: 1.2em;
@@ -950,9 +959,7 @@ textarea {
     font-size: 1em;
     padding:5px;width: 100%;
   }
-  .navbar-sign-links {
-    display: block;
-  }
+ 
   .blog-card {
     flex: 0 0 100%;
   }
@@ -966,22 +973,24 @@ textarea {
   .read-next{
     margin-bottom: 2%;
   }
+  .loadmore-blogs-btn{
+    margin-right: 3px;
+  }
   #page-body{
     padding: 5px;
 
     margin-bottom: 35%;
   }
-  .comment-noUser-holder{
-    border-bottom: 1px solid rgba(105, 175, 14, 0.81);
-  }
   .submit{
     font-size: 1.2em;
     padding: 2px;
+    margin-right: 16%;
   }
 
   #upvotes-section{
    padding: 10px; 
    margin-right: 20px;
+   padding: 17px; 
   }
   #upvote-button{
     font-size: 2.3em;
@@ -994,8 +1003,7 @@ textarea {
   }
   #stats-section{
     padding: 10px; 
-    display:flex;
-    flex-direction:column;
+    font-size: 1em
   }
   #read-time{
     font-size: 2.5em !important;
@@ -1004,7 +1012,7 @@ textarea {
   }
   .main {
     background-color: #ffffff;
-    width: 340px !important;
+    width: 340px;
     height: auto;
     margin: 5% auto;
     padding: 8px;
@@ -1017,9 +1025,7 @@ textarea {
     color: rgb(151, 147, 147);
     font-style: italic;
   }
-  .input{
-    margin-left:10% !important
-  }
+  
   footer{
     margin-top: auto !important;
   }
@@ -1027,6 +1033,13 @@ textarea {
     padding: 10px 15px;
   }
 }
+
+/* Tablet */
+/* @media only screen and (min-width : 768px) {
+  body{
+    background-color: blue;
+  }
+} */
 /* sgnin & signup pages*/
 .main {
   background-color: #ffffff;

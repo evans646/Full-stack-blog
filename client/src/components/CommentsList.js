@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Avatar from "react-avatar";
 
-const CommentsList = ({ comments,given_name,name}) => (
+const CommentsList = ({ comments}) => (
     <div className="comments-wapper">
      <h3 style={{padding:'2%',fontWeight:'600'}}>{comments.length > 1 ?  `${comments.length } Comments` :`${comments.length } Comment`}</h3>
        <ul className="comments list-unstyled">

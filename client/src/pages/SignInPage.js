@@ -87,9 +87,9 @@ export function SignInPage() {
         <input className="password" type="password" align="center" placeholder="Password" onChange={(e) => setPasswordValue(e.target.value)}/>
         <button className="submit" align="center" disabled={!usernameValue || !passwordValue} onClick={onLogInClicked}>Sign in</button>
        <hr/>
+       <p style={{marginLeft:"33%"}}>Sign in with google</p>
        <FcGoogle  disabled={!googleOauthUrl} onClick={() => { window.location.href = googleOauthUrl}}
          style={{marginLeft:"40%",fontSize:'3.3em',cursor:"pointer"}}/>
-  
         <p className="forgot-link" align="center">
           <Link to="/forgot-password">Forgot Password ?</Link>
         </p>

@@ -4,7 +4,7 @@ import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import readingTime from "reading-time";
 import {IoBookOutline} from "react-icons/io5";
 import {BsFileWord} from "react-icons/bs";
-import {FaUserCog} from "react-icons/fa";
+
 
 import CommentsList from "../components/CommentsList";
 import UpvotesSection from "../components/UpvotesSection";
@@ -74,7 +74,6 @@ export function BlogPage () {
           <section id="stats-section">
           <IoBookOutline size={40} id="read-time"/><span>{stats.text==='0 min read' ? '1 min read':stats.text}</span>
           <BsFileWord  size={40} id="read-time"/><span>{stats.words ===0 ? "239 words":stats.words + "word"}</span>
-          <FaUserCog size={40} id="read-time"/><span>shared by admin</span>
           </section>
         {blog.content.map((paragraph, key) => (
             <p key={key}>{paragraph}</p>

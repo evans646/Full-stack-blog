@@ -129,9 +129,8 @@ const AddCommentForm = ({ blogName, setBlogInfo }) => {
        )
    } return (
        <div className="comment-form">
-        <p style={{padding:'2%',fontWeight:'600',marginLeft:'70%',fontSize:'2em',cursor:"pointer"}} onClick={openModal}>
-           <p className="comment-noUser-holder">Comment on this blog</p>
-       </p>    
+           <p className="comment-noUser-holder"  onClick={openModal}>Comment on this blog</p>
+           <hr className="divier"/>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
         <RiCloseLine color="#000" size={20} onClick={closeModal} className="modalCloseIcon"/>
         <p>
@@ -145,6 +144,7 @@ const AddCommentForm = ({ blogName, setBlogInfo }) => {
       <input className="password" type="password" align="center" placeholder="Password" onChange={e => setPasswordValue(e.target.value)}/>
       <button className="submit" align="center" disabled={!usernameValue || !passwordValue} onClick={onLogInClicked}>Sign in</button>
        <hr/>
+       <p style={{marginLeft:"33%"}}>Sign in with google</p>
        <FcGoogle  disabled={!googleOauthUrl} onClick={() => { window.location.href = googleOauthUrl }}
          style={{marginLeft:"40%",fontSize:'3.3em',cursor:"pointer"}}/>
          <p align="center">Sign in with google</p>
