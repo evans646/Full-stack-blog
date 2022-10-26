@@ -9,7 +9,7 @@
     <li>Node.js</li>
 </ul>
 <hr>
- It Features Trending and Recent posts, Recent comments, Full markdown posts, Information about a blog, Comments,Upvotes, Authentication and much more. It is fully responsive  
+ It features Trending and Recent posts, Recent comments, Full markdown posts, Information about a post, Comments,Upvotes, Authentication and much more. It is fully responsive  
 </p>
 
 <p>
